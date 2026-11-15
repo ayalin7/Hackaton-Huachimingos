@@ -1,0 +1,1198 @@
+{
+  "centro_campo": {
+    "ra": 248.1647690070621,
+    "dec": 66.75551128475799,
+    "fov_deg": 0.04
+  },
+  "clase_alerce": "DEFAULT",
+  "alerce_info": {
+    "oid": "ZTF24aaqojlu",
+    "clase": "DEFAULT",
+    "clase_original": "DEFAULT",
+    "probabilidad": 0.0
+  },
+  "rango_temporal_mjd": {
+    "mjd_inicio": 61179.181355166664,
+    "mjd_fin_interpolado": 61276.69608083333
+  },
+  "ecuaciones_trayectoria": [
+    {
+      "nombre_oficial": "R Draconis",
+      "clasificacion_objeto": "Objetivo Principal (R Draconis)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 10.675405192375184,
+      "semieje_b_arcsec": 9.92550494670868,
+      "angulo_deg": 56.709988338916176,
+      "ecuacion": {
+        "modelo": "lineal_movimiento_propio",
+        "t0_mjd": 61179.181355166664,
+        "ra_0_deg": 248.1665668943303,
+        "dec_0_deg": 66.75554582797999,
+        "mu_ra_cosdec_mas_yr": -36302.75035020548,
+        "mu_dec_mas_yr": -39982.34811836492,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61229.725628,
+          "lambda_um": 0.9311,
+          "color_hex": "#affa37",
+          "flux_ujy": 9031972.106896624,
+          "flux_err_ujy": 18876.722598571334,
+          "mag_ab": 6.510609153023496
+        }
+      ]
+    },
+    {
+      "nombre_oficial": "SPHEREx-IR SRC_003",
+      "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 13.97593493461609,
+      "semieje_b_arcsec": 7.6773378372192385,
+      "angulo_deg": 82.87083546392645,
+      "ecuacion": {
+        "modelo": "lineal_movimiento_propio",
+        "t0_mjd": 61179.181355166664,
+        "ra_0_deg": 248.16407938066084,
+        "dec_0_deg": 66.75099235249017,
+        "mu_ra_cosdec_mas_yr": 111065.05958690461,
+        "mu_dec_mas_yr": 45130.840288925836,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61227.486038,
+          "lambda_um": 0.9311,
+          "color_hex": "#affa37",
+          "flux_ujy": 19472661.472504444,
+          "flux_err_ujy": 24768.98057064484,
+          "mag_ab": 5.676502337751712
+        }
+      ]
+    },
+    {
+      "nombre_oficial": "SPHEREx-IR SRC_004",
+      "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 14.349939012527466,
+      "semieje_b_arcsec": 7.990161633491517,
+      "angulo_deg": -85.69691502547843,
+      "ecuacion": {
+        "modelo": "cinematica_gaia_dr3",
+        "t0_mjd": 61179.181355166664,
+        "ra_0_deg": 248.17356454016922,
+        "dec_0_deg": 66.75873591065394,
+        "mu_ra_cosdec_mas_yr": 0.0,
+        "mu_dec_mas_yr": 0.0,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61176.365236,
+          "lambda_um": 2.0324,
+          "color_hex": "#7a0403",
+          "flux_ujy": 37161741.30253324,
+          "flux_err_ujy": 43476.550855994414,
+          "mag_ab": 4.974825483011888
+        }
+      ]
+    },
+    {
+      "nombre_oficial": "SPHEREx-IR SRC_001",
+      "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 15.265252256393433,
+      "semieje_b_arcsec": 12.15934021472931,
+      "angulo_deg": -29.954979642911916,
+      "ecuacion": {
+        "modelo": "cinematica_gaia_dr3",
+        "t0_mjd": 61179.181355166664,
+        "ra_0_deg": 248.1767224905671,
+        "dec_0_deg": 66.75495037939373,
+        "mu_ra_cosdec_mas_yr": 0.0,
+        "mu_dec_mas_yr": 0.0,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61176.363744,
+          "lambda_um": 2.0324,
+          "color_hex": "#7a0403",
+          "flux_ujy": 22789112.858806405,
+          "flux_err_ujy": 35854.19592114959,
+          "mag_ab": 5.505747074362457
+        }
+      ]
+    },
+    {
+      "nombre_oficial": "SPHEREx-IR SRC_007",
+      "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 11.605897283554077,
+      "semieje_b_arcsec": 7.7862941265106205,
+      "angulo_deg": 34.674753057512035,
+      "ecuacion": {
+        "modelo": "cinematica_gaia_dr3",
+        "t0_mjd": 61227.938718,
+        "ra_0_deg": 248.17399731770104,
+        "dec_0_deg": 66.75565257928477,
+        "mu_ra_cosdec_mas_yr": 0.0,
+        "mu_dec_mas_yr": 0.0,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61229.725628,
+          "lambda_um": 0.9311,
+          "color_hex": "#affa37",
+          "flux_ujy": 9137875.535756005,
+          "flux_err_ujy": 14521.779155348147,
+          "mag_ab": 6.497952526367369
+        }
+      ]
+    }
+  ],
+  "epochs": [
+    {
+      "epoch_id": 1,
+      "mjd_promedio": 61179.181355166664,
+      "objeto_objetivo": {
+        "fuente_id": "SRC_007",
+        "ra": 248.1713557129336,
+        "dec": 66.75721019018546,
+        "ra_err_mas": 18.13448790375837,
+        "dec_err_mas": 18.13448790375837,
+        "tipo_morfologia": "puntual",
+        "semieje_a_arcsec": 10.9229807138443,
+        "semieje_b_arcsec": 6.402614736557007,
+        "angulo_deg": -89.59265685256777,
+        "distancia_centro_arcsec": 11.179206916338112,
+        "espectro": [
+          {
+            "mjd": 61182.134045,
+            "lambda_um": 2.0324,
+            "color_hex": "#7a0403",
+            "flux_ujy": 17061828.13855351,
+            "flux_err_ujy": 12028.148488943401,
+            "mag_ab": 5.820001714648169
+          }
+        ],
+        "nombre_oficial": "R Draconis",
+        "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+      },
+      "catalogo_campo": [
+        {
+          "fuente_id": "SRC_006",
+          "ra": 248.1665668943303,
+          "dec": 66.75554582797999,
+          "ra_err_mas": 12.988466251995,
+          "dec_err_mas": 12.988466251995,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 10.675405192375184,
+          "semieje_b_arcsec": 9.92550494670868,
+          "angulo_deg": 56.709988338916176,
+          "distancia_centro_arcsec": 2.55738925403762,
+          "espectro": [
+            {
+              "mjd": 61181.725825,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 24842188.457007118,
+              "flux_err_ujy": 12834.307573932785,
+              "mag_ab": 5.412090992057824
+            },
+            {
+              "mjd": 61182.132553,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 24569778.75156225,
+              "flux_err_ujy": 29601.29411615656,
+              "mag_ab": 5.424062507985596
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "distancia_match_arcsec": 2.257,
+          "gaia_mag_g": 6.37,
+          "paralaje_mas": 1.251,
+          "pmra_mas_yr": -20.643,
+          "pmdec_mas_yr": 6.149,
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_005",
+          "ra": 248.16599252676895,
+          "dec": 66.75690626357083,
+          "ra_err_mas": 40.296977415671705,
+          "dec_err_mas": 40.296977415671705,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 14.52625961303711,
+          "semieje_b_arcsec": 9.387693190574646,
+          "angulo_deg": 64.97095187588486,
+          "distancia_centro_arcsec": 5.314257158769858,
+          "espectro": [
+            {
+              "mjd": 61176.366728,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 22064441.848648112,
+              "flux_err_ujy": 25990.86327800538,
+              "mag_ab": 5.540833257714086
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "distancia_match_arcsec": 3.814,
+          "gaia_mag_g": 19.44,
+          "paralaje_mas": 0.0,
+          "pmra_mas_yr": 0.0,
+          "pmdec_mas_yr": 0.0,
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_008",
+          "ra": 248.16428582603524,
+          "dec": 66.75274512348375,
+          "ra_err_mas": 18.04186106515222,
+          "dec_err_mas": 18.04186106515222,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 10.882702112197876,
+          "semieje_b_arcsec": 6.749847960472107,
+          "angulo_deg": -86.74368932710708,
+          "distancia_centro_arcsec": 9.98181717171392,
+          "espectro": [
+            {
+              "mjd": 61182.134045,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 17041250.65984094,
+              "flux_err_ujy": 11996.516222504533,
+              "mag_ab": 5.8213119609449535
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_002",
+          "ra": 248.15747716472825,
+          "dec": 66.75550713492346,
+          "ra_err_mas": 39.71304353450867,
+          "dec_err_mas": 39.71304353450867,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 11.497890734672547,
+          "semieje_b_arcsec": 4.8653353452682495,
+          "angulo_deg": -17.10822538964938,
+          "distancia_centro_arcsec": 10.359967464241354,
+          "espectro": [
+            {
+              "mjd": 61176.363744,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 18423736.884581335,
+              "flux_err_ujy": 27021.024168201817,
+              "mag_ab": 5.7366213155353005
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_007",
+          "ra": 248.1713557129336,
+          "dec": 66.75721019018546,
+          "ra_err_mas": 18.13448790375837,
+          "dec_err_mas": 18.13448790375837,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 10.9229807138443,
+          "semieje_b_arcsec": 6.402614736557007,
+          "angulo_deg": -89.59265685256777,
+          "distancia_centro_arcsec": 11.179206916338112,
+          "espectro": [
+            {
+              "mjd": 61182.134045,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 17061828.13855351,
+              "flux_err_ujy": 12028.148488943401,
+              "mag_ab": 5.820001714648169
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_003",
+          "ra": 248.16407938066084,
+          "dec": 66.75099235249017,
+          "ra_err_mas": 37.94016548700217,
+          "dec_err_mas": 37.94016548700217,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 13.97593493461609,
+          "semieje_b_arcsec": 7.6773378372192385,
+          "angulo_deg": 82.87083546392645,
+          "distancia_centro_arcsec": 16.297640208944408,
+          "espectro": [
+            {
+              "mjd": 61176.365236,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 36757501.71768015,
+              "flux_err_ujy": 42371.45967527776,
+              "mag_ab": 4.986700656784891
+            },
+            {
+              "mjd": 61176.366728,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 15754498.488010122,
+              "flux_err_ujy": 17965.88510169083,
+              "mag_ab": 5.906554165131501
+            }
+          ],
+          "nombre_oficial": "SPHEREx-IR SRC_003",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)"
+        },
+        {
+          "fuente_id": "SRC_004",
+          "ra": 248.17356454016922,
+          "dec": 66.75873591065394,
+          "ra_err_mas": 39.536661440667565,
+          "dec_err_mas": 39.536661440667565,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 14.349939012527466,
+          "semieje_b_arcsec": 7.990161633491517,
+          "angulo_deg": -85.69691502547843,
+          "distancia_centro_arcsec": 17.055757343215365,
+          "espectro": [
+            {
+              "mjd": 61176.365236,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 37161741.30253324,
+              "flux_err_ujy": 43476.550855994414,
+              "mag_ab": 4.974825483011888
+            }
+          ],
+          "nombre_oficial": "SPHEREx-IR SRC_004",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)"
+        },
+        {
+          "fuente_id": "SRC_001",
+          "ra": 248.1767224905671,
+          "dec": 66.75495037939373,
+          "ra_err_mas": 56.55974788926994,
+          "dec_err_mas": 56.55974788926994,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 15.265252256393433,
+          "semieje_b_arcsec": 12.15934021472931,
+          "angulo_deg": -29.954979642911916,
+          "distancia_centro_arcsec": 17.102842286763487,
+          "espectro": [
+            {
+              "mjd": 61176.363744,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 22789112.858806405,
+              "flux_err_ujy": 35854.19592114959,
+              "mag_ab": 5.505747074362457
+            }
+          ],
+          "nombre_oficial": "SPHEREx-IR SRC_001",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)"
+        }
+      ],
+      "bandas": [
+        {
+          "banda_idx": 0,
+          "mjd": 61176.363744,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.1767224905671,
+              "dec": 66.75495037939373,
+              "ra_err_mas": 56.55974788926994,
+              "dec_err_mas": 56.55974788926994,
+              "flux_ujy": 22789112.858806405,
+              "flux_err_ujy": 35854.19592114959,
+              "mag_ab": 5.505747074362457,
+              "semieje_a_arcsec": 15.265252256393433,
+              "semieje_b_arcsec": 12.15934021472931,
+              "angulo_deg": -29.954979642911916,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.15747716472825,
+              "dec": 66.75550713492346,
+              "ra_err_mas": 39.71304353450867,
+              "dec_err_mas": 39.71304353450867,
+              "flux_ujy": 18423736.884581335,
+              "flux_err_ujy": 27021.024168201817,
+              "mag_ab": 5.7366213155353005,
+              "semieje_a_arcsec": 11.497890734672547,
+              "semieje_b_arcsec": 4.8653353452682495,
+              "angulo_deg": -17.10822538964938,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 1,
+          "mjd": 61176.365236,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.16407938066084,
+              "dec": 66.75099235249017,
+              "ra_err_mas": 37.94016548700217,
+              "dec_err_mas": 37.94016548700217,
+              "flux_ujy": 36757501.71768015,
+              "flux_err_ujy": 42371.45967527776,
+              "mag_ab": 4.986700656784891,
+              "semieje_a_arcsec": 13.97593493461609,
+              "semieje_b_arcsec": 7.6773378372192385,
+              "angulo_deg": 82.87083546392645,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.17356454016922,
+              "dec": 66.75873591065394,
+              "ra_err_mas": 39.536661440667565,
+              "dec_err_mas": 39.536661440667565,
+              "flux_ujy": 37161741.30253324,
+              "flux_err_ujy": 43476.550855994414,
+              "mag_ab": 4.974825483011888,
+              "semieje_a_arcsec": 14.349939012527466,
+              "semieje_b_arcsec": 7.990161633491517,
+              "angulo_deg": -85.69691502547843,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 2,
+          "mjd": 61176.366728,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.16507464597396,
+              "dec": 66.75119574763839,
+              "ra_err_mas": 27.01871400423019,
+              "dec_err_mas": 27.01871400423019,
+              "flux_ujy": 15754498.488010122,
+              "flux_err_ujy": 17965.88510169083,
+              "mag_ab": 5.906554165131501,
+              "semieje_a_arcsec": 10.060735416412355,
+              "semieje_b_arcsec": 5.934348368644715,
+              "angulo_deg": 70.38264735906937,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.16599252676895,
+              "dec": 66.75690626357083,
+              "ra_err_mas": 40.296977415671705,
+              "dec_err_mas": 40.296977415671705,
+              "flux_ujy": 22064441.848648112,
+              "flux_err_ujy": 25990.86327800538,
+              "mag_ab": 5.540833257714086,
+              "semieje_a_arcsec": 14.52625961303711,
+              "semieje_b_arcsec": 9.387693190574646,
+              "angulo_deg": 64.97095187588486,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 3,
+          "mjd": 61181.725825,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 248.1665668943303,
+              "dec": 66.75554582797999,
+              "ra_err_mas": 12.988466251995,
+              "dec_err_mas": 12.988466251995,
+              "flux_ujy": 24842188.457007118,
+              "flux_err_ujy": 12834.307573932785,
+              "mag_ab": 5.412090992057824,
+              "semieje_a_arcsec": 10.675405192375184,
+              "semieje_b_arcsec": 9.92550494670868,
+              "angulo_deg": 56.709988338916176,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 4,
+          "mjd": 61182.132553,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 248.16643858743885,
+              "dec": 66.75598117975628,
+              "ra_err_mas": 38.26362851834974,
+              "dec_err_mas": 38.26362851834974,
+              "flux_ujy": 24569778.75156225,
+              "flux_err_ujy": 29601.29411615656,
+              "mag_ab": 5.424062507985596,
+              "semieje_a_arcsec": 13.486081743240357,
+              "semieje_b_arcsec": 12.493578624725343,
+              "angulo_deg": 40.19680390711643,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 5,
+          "mjd": 61182.134045,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.1713557129336,
+              "dec": 66.75721019018546,
+              "ra_err_mas": 18.13448790375837,
+              "dec_err_mas": 18.13448790375837,
+              "flux_ujy": 17061828.13855351,
+              "flux_err_ujy": 12028.148488943401,
+              "mag_ab": 5.820001714648169,
+              "semieje_a_arcsec": 10.9229807138443,
+              "semieje_b_arcsec": 6.402614736557007,
+              "angulo_deg": -89.59265685256777,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.16428582603524,
+              "dec": 66.75274512348375,
+              "ra_err_mas": 18.04186106515222,
+              "dec_err_mas": 18.04186106515222,
+              "flux_ujy": 17041250.65984094,
+              "flux_err_ujy": 11996.516222504533,
+              "mag_ab": 5.8213119609449535,
+              "semieje_a_arcsec": 10.882702112197876,
+              "semieje_b_arcsec": 6.749847960472107,
+              "angulo_deg": -86.74368932710708,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        }
+      ],
+      "es_interpolado": false
+    },
+    {
+      "epoch_id": 2,
+      "mjd_promedio": 61227.938718,
+      "objeto_objetivo": {
+        "fuente_id": "SRC_008",
+        "ra": 248.15656838175673,
+        "dec": 66.75575555651724,
+        "ra_err_mas": 74.32235173446253,
+        "dec_err_mas": 74.32235173446253,
+        "tipo_morfologia": "puntual",
+        "semieje_a_arcsec": 15.100263500213623,
+        "semieje_b_arcsec": 7.77848482131958,
+        "angulo_deg": 33.33663020664733,
+        "distancia_centro_arcsec": 11.684199188279337,
+        "espectro": [
+          {
+            "mjd": 61229.725628,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 9031972.106896624,
+            "flux_err_ujy": 18876.722598571334,
+            "mag_ab": 6.510609153023496
+          }
+        ],
+        "nombre_oficial": "R Draconis",
+        "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+      },
+      "catalogo_campo": [
+        {
+          "fuente_id": "SRC_006",
+          "ra": 248.16753412502797,
+          "dec": 66.756062291854,
+          "ra_err_mas": 30.29516860631815,
+          "dec_err_mas": 30.29516860631815,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 12.090444493293763,
+          "semieje_b_arcsec": 11.002320623397827,
+          "angulo_deg": 86.29475465334048,
+          "distancia_centro_arcsec": 4.400917281406955,
+          "espectro": [
+            {
+              "mjd": 61227.489022,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 10409922.987414187,
+              "flux_err_ujy": 11076.121509103585,
+              "mag_ab": 6.356446830750072
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "distancia_match_arcsec": 0.693,
+          "gaia_mag_g": 19.44,
+          "paralaje_mas": 0.0,
+          "pmra_mas_yr": 0.0,
+          "pmdec_mas_yr": 0.0,
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_005",
+          "ra": 248.166876990385,
+          "dec": 66.75439697793726,
+          "ra_err_mas": 48.78998829741954,
+          "dec_err_mas": 48.78998829741954,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 13.343663549423217,
+          "semieje_b_arcsec": 13.163393211364747,
+          "angulo_deg": 23.153120390029088,
+          "distancia_centro_arcsec": 5.006218857202059,
+          "espectro": [
+            {
+              "mjd": 61227.48753,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 11190159.65819693,
+              "flux_err_ujy": 17374.047416260313,
+              "mag_ab": 6.2779749148578565
+            },
+            {
+              "mjd": 61227.959562,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 15047524.101557506,
+              "flux_err_ujy": 10182.703725300573,
+              "mag_ab": 5.9564030032695525
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "distancia_match_arcsec": 2.308,
+          "gaia_mag_g": 6.37,
+          "paralaje_mas": 1.251,
+          "pmra_mas_yr": -20.643,
+          "pmdec_mas_yr": 6.149,
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_004",
+          "ra": 248.15994026846076,
+          "dec": 66.75513465109354,
+          "ra_err_mas": 47.56102218414725,
+          "dec_err_mas": 47.56102218414725,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 14.104254102706909,
+          "semieje_b_arcsec": 9.518201565742492,
+          "angulo_deg": 50.992641890373605,
+          "distancia_centro_arcsec": 6.993231191182686,
+          "espectro": [
+            {
+              "mjd": 61227.486038,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20302771.151884254,
+              "flux_err_ujy": 29071.367701707037,
+              "mag_ab": 5.63117732382497
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_001",
+          "ra": 248.16939092280973,
+          "dec": 66.7577041920603,
+          "ra_err_mas": 32.6244192833779,
+          "dec_err_mas": 32.6244192833779,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 12.96428918838501,
+          "semieje_b_arcsec": 7.40586063861847,
+          "angulo_deg": -24.381343789600997,
+          "distancia_centro_arcsec": 10.268369264888412,
+          "espectro": [
+            {
+              "mjd": 61227.484528,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 12726867.14391023,
+              "flux_err_ujy": 13599.554410175957,
+              "mag_ab": 6.13826184597599
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_002",
+          "ra": 248.16196376688927,
+          "dec": 66.75285281922841,
+          "ra_err_mas": 19.976334669968374,
+          "dec_err_mas": 19.976334669968374,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 10.052994847297668,
+          "semieje_b_arcsec": 6.231813716888428,
+          "angulo_deg": -25.33722193375511,
+          "distancia_centro_arcsec": 10.367280789786399,
+          "espectro": [
+            {
+              "mjd": 61227.484528,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 12508719.493863467,
+              "flux_err_ujy": 10554.61235825162,
+              "mag_ab": 6.157033488179127
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_008",
+          "ra": 248.15656838175673,
+          "dec": 66.75575555651724,
+          "ra_err_mas": 74.32235173446253,
+          "dec_err_mas": 74.32235173446253,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 15.100263500213623,
+          "semieje_b_arcsec": 7.77848482131958,
+          "angulo_deg": 33.33663020664733,
+          "distancia_centro_arcsec": 11.684199188279337,
+          "espectro": [
+            {
+              "mjd": 61229.725628,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 9031972.106896624,
+              "flux_err_ujy": 18876.722598571334,
+              "mag_ab": 6.510609153023496
+            }
+          ],
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)"
+        },
+        {
+          "fuente_id": "SRC_007",
+          "ra": 248.17399731770104,
+          "dec": 66.75565257928477,
+          "ra_err_mas": 43.43543982121812,
+          "dec_err_mas": 43.43543982121812,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 11.605897283554077,
+          "semieje_b_arcsec": 7.7862941265106205,
+          "angulo_deg": 34.674753057512035,
+          "distancia_centro_arcsec": 13.121037595448543,
+          "espectro": [
+            {
+              "mjd": 61229.725628,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 9137875.535756005,
+              "flux_err_ujy": 14521.779155348147,
+              "mag_ab": 6.497952526367369
+            }
+          ],
+          "nombre_oficial": "SPHEREx-IR SRC_007",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)"
+        },
+        {
+          "fuente_id": "SRC_003",
+          "ra": 248.17451280965543,
+          "dec": 66.75266583393739,
+          "ra_err_mas": 36.04476216729985,
+          "dec_err_mas": 36.04476216729985,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 12.03284809589386,
+          "semieje_b_arcsec": 5.8361636877059935,
+          "angulo_deg": 62.165205787492006,
+          "distancia_centro_arcsec": 17.222058258908216,
+          "espectro": [
+            {
+              "mjd": 61227.486038,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 19472661.472504444,
+              "flux_err_ujy": 24768.98057064484,
+              "mag_ab": 5.676502337751712
+            }
+          ],
+          "nombre_oficial": "SPHEREx-IR SRC_003",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)"
+        }
+      ],
+      "bandas": [
+        {
+          "banda_idx": 0,
+          "mjd": 61227.484528,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.16939092280973,
+              "dec": 66.7577041920603,
+              "ra_err_mas": 32.6244192833779,
+              "dec_err_mas": 32.6244192833779,
+              "flux_ujy": 12726867.14391023,
+              "flux_err_ujy": 13599.554410175957,
+              "mag_ab": 6.13826184597599,
+              "semieje_a_arcsec": 12.96428918838501,
+              "semieje_b_arcsec": 7.40586063861847,
+              "angulo_deg": -24.381343789600997,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.16196376688927,
+              "dec": 66.75285281922841,
+              "ra_err_mas": 19.976334669968374,
+              "dec_err_mas": 19.976334669968374,
+              "flux_ujy": 12508719.493863467,
+              "flux_err_ujy": 10554.61235825162,
+              "mag_ab": 6.157033488179127,
+              "semieje_a_arcsec": 10.052994847297668,
+              "semieje_b_arcsec": 6.231813716888428,
+              "angulo_deg": -25.33722193375511,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 1,
+          "mjd": 61227.486038,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.17451280965543,
+              "dec": 66.75266583393739,
+              "ra_err_mas": 36.04476216729985,
+              "dec_err_mas": 36.04476216729985,
+              "flux_ujy": 19472661.472504444,
+              "flux_err_ujy": 24768.98057064484,
+              "mag_ab": 5.676502337751712,
+              "semieje_a_arcsec": 12.03284809589386,
+              "semieje_b_arcsec": 5.8361636877059935,
+              "angulo_deg": 62.165205787492006,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.15994026846076,
+              "dec": 66.75513465109354,
+              "ra_err_mas": 47.56102218414725,
+              "dec_err_mas": 47.56102218414725,
+              "flux_ujy": 20302771.151884254,
+              "flux_err_ujy": 29071.367701707037,
+              "mag_ab": 5.63117732382497,
+              "semieje_a_arcsec": 14.104254102706909,
+              "semieje_b_arcsec": 9.518201565742492,
+              "angulo_deg": 50.992641890373605,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 2,
+          "mjd": 61227.48753,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 248.166876990385,
+              "dec": 66.75439697793726,
+              "ra_err_mas": 48.78998829741954,
+              "dec_err_mas": 48.78998829741954,
+              "flux_ujy": 11190159.65819693,
+              "flux_err_ujy": 17374.047416260313,
+              "mag_ab": 6.2779749148578565,
+              "semieje_a_arcsec": 13.343663549423217,
+              "semieje_b_arcsec": 13.163393211364747,
+              "angulo_deg": 23.153120390029088,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 3,
+          "mjd": 61227.489022,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 248.16753412502797,
+              "dec": 66.756062291854,
+              "ra_err_mas": 30.29516860631815,
+              "dec_err_mas": 30.29516860631815,
+              "flux_ujy": 10409922.987414187,
+              "flux_err_ujy": 11076.121509103585,
+              "mag_ab": 6.356446830750072,
+              "semieje_a_arcsec": 12.090444493293763,
+              "semieje_b_arcsec": 11.002320623397827,
+              "angulo_deg": 86.29475465334048,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 4,
+          "mjd": 61227.959562,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 248.1656894029663,
+              "dec": 66.7541119220045,
+              "ra_err_mas": 17.17836276208835,
+              "dec_err_mas": 17.17836276208835,
+              "flux_ujy": 15047524.101557506,
+              "flux_err_ujy": 10182.703725300573,
+              "mag_ab": 5.9564030032695525,
+              "semieje_a_arcsec": 10.779355573654176,
+              "semieje_b_arcsec": 10.08169400691986,
+              "angulo_deg": 18.033432569335552,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 5,
+          "mjd": 61229.725628,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 248.17399731770104,
+              "dec": 66.75565257928477,
+              "ra_err_mas": 43.43543982121812,
+              "dec_err_mas": 43.43543982121812,
+              "flux_ujy": 9137875.535756005,
+              "flux_err_ujy": 14521.779155348147,
+              "mag_ab": 6.497952526367369,
+              "semieje_a_arcsec": 11.605897283554077,
+              "semieje_b_arcsec": 7.7862941265106205,
+              "angulo_deg": 34.674753057512035,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 248.15656838175673,
+              "dec": 66.75575555651724,
+              "ra_err_mas": 74.32235173446253,
+              "dec_err_mas": 74.32235173446253,
+              "flux_ujy": 9031972.106896624,
+              "flux_err_ujy": 18876.722598571334,
+              "mag_ab": 6.510609153023496,
+              "semieje_a_arcsec": 15.100263500213623,
+              "semieje_b_arcsec": 7.77848482131958,
+              "angulo_deg": 33.33663020664733,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        }
+      ],
+      "es_interpolado": false
+    },
+    {
+      "epoch_id": 3,
+      "mjd_promedio": 61276.69608083333,
+      "es_interpolado": true,
+      "objeto_objetivo": {
+        "fuente_id": "PRED_001",
+        "nombre_oficial": "R Draconis",
+        "clasificacion_objeto": "Objetivo Principal (R Draconis)",
+        "ra": 248.15974508646465,
+        "dec": 66.75258068408442,
+        "ra_err_mas": 35.0,
+        "dec_err_mas": 35.0,
+        "tipo_morfologia": "puntual",
+        "semieje_a_arcsec": 10.675405192375184,
+        "semieje_b_arcsec": 9.92550494670868,
+        "angulo_deg": 56.709988338916176,
+        "es_interpolado": true,
+        "espectro": [
+          {
+            "mjd": 61276.69608083333,
+            "lambda_um": 2.0324,
+            "color_hex": "#7a0403",
+            "flux_ujy": 5497715.858343124,
+            "flux_err_ujy": 24235.69091053826,
+            "mag_ab": 5.412090992057824
+          },
+          {
+            "mjd": 61276.69608083333,
+            "lambda_um": 2.0324,
+            "color_hex": "#7a0403",
+            "flux_ujy": 5525269.451553345,
+            "flux_err_ujy": 27848.798489019995,
+            "mag_ab": 5.424062507985596
+          }
+        ]
+      },
+      "catalogo_campo": [
+        {
+          "fuente_id": "PRED_001",
+          "nombre_oficial": "R Draconis",
+          "clasificacion_objeto": "Objetivo Principal (R Draconis)",
+          "ra": 248.15974508646465,
+          "dec": 66.75258068408442,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 10.675405192375184,
+          "semieje_b_arcsec": 9.92550494670868,
+          "angulo_deg": 56.709988338916176,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 5497715.858343124,
+              "flux_err_ujy": 24235.69091053826,
+              "mag_ab": 5.412090992057824
+            },
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 5525269.451553345,
+              "flux_err_ujy": 27848.798489019995,
+              "mag_ab": 5.424062507985596
+            }
+          ]
+        },
+        {
+          "fuente_id": "PRED_002",
+          "nombre_oficial": "SPHEREx-IR SRC_003",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+          "ra": 248.18494623865,
+          "dec": 66.7543393153846,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 13.97593493461609,
+          "semieje_b_arcsec": 7.6773378372192385,
+          "angulo_deg": 82.87083546392645,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 2187821.227329254,
+              "flux_err_ujy": 46998.308172145815,
+              "mag_ab": 4.986700656784891
+            },
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 15754498.488010122,
+              "flux_err_ujy": 23355.65063219808,
+              "mag_ab": 5.906554165131501
+            }
+          ]
+        },
+        {
+          "fuente_id": "PRED_003",
+          "nombre_oficial": "SPHEREx-IR SRC_004",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+          "ra": 248.17356454016922,
+          "dec": 66.75873591065394,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 14.349939012527466,
+          "semieje_b_arcsec": 7.990161633491517,
+          "angulo_deg": -85.69691502547843,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 37161741.30253324,
+              "flux_err_ujy": 54345.689,
+              "mag_ab": 4.974825483011888
+            }
+          ]
+        },
+        {
+          "fuente_id": "PRED_004",
+          "nombre_oficial": "SPHEREx-IR SRC_001",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+          "ra": 248.1767224905671,
+          "dec": 66.75495037939373,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 15.265252256393433,
+          "semieje_b_arcsec": 12.15934021472931,
+          "angulo_deg": -29.954979642911916,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 22789112.858806405,
+              "flux_err_ujy": 44817.745,
+              "mag_ab": 5.505747074362457
+            }
+          ]
+        },
+        {
+          "fuente_id": "PRED_005",
+          "nombre_oficial": "SPHEREx-IR SRC_007",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+          "ra": 248.17399731770104,
+          "dec": 66.75565257928477,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 11.605897283554077,
+          "semieje_b_arcsec": 7.7862941265106205,
+          "angulo_deg": 34.674753057512035,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61276.69608083333,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 9137875.535756005,
+              "flux_err_ujy": 18152.224,
+              "mag_ab": 6.497952526367369
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
