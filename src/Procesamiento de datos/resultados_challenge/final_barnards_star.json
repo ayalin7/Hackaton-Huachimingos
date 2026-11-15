@@ -1,0 +1,982 @@
+{
+  "centro_campo": {
+    "ra": 269.44617455011434,
+    "dec": 4.769394412147778,
+    "fov_deg": 0.04
+  },
+  "clase_alerce": "DEFAULT",
+  "alerce_info": {
+    "oid": null,
+    "clase": "DEFAULT",
+    "probabilidad": 0.0
+  },
+  "rango_temporal_mjd": {
+    "mjd_inicio": 61276.14093633334,
+    "mjd_fin_interpolado": 61334.67745433332
+  },
+  "ecuaciones_trayectoria": [
+    {
+      "nombre_oficial": "Barnard's Star",
+      "clasificacion_objeto": "Objetivo Principal (Barnard's Star)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 7.8405948877334595,
+      "semieje_b_arcsec": 7.74692165851593,
+      "angulo_deg": -37.48065965535039,
+      "ecuacion": {
+        "modelo": "lineal_movimiento_propio",
+        "t0_mjd": 61276.14093633334,
+        "ra_0_deg": 269.44547074380245,
+        "dec_0_deg": 4.76979557761225,
+        "mu_ra_cosdec_mas_yr": 31416.30766299495,
+        "mu_dec_mas_yr": 6347.187898865169,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61305.628021,
+          "lambda_um": 1.3766,
+          "color_hex": "#7a0403",
+          "flux_ujy": 7209008.843783414,
+          "flux_err_ujy": 2936.334380763547,
+          "mag_ab": 6.755376726525766
+        },
+        {
+          "mjd": 61303.185466,
+          "lambda_um": 2.0324,
+          "color_hex": "#7a0403",
+          "flux_ujy": 11884732.659393035,
+          "flux_err_ujy": 1984.1738486171205,
+          "mag_ab": 6.212592079893344
+        },
+        {
+          "mjd": 61305.628021,
+          "lambda_um": 4.1206,
+          "color_hex": "#7a0403",
+          "flux_ujy": 5451898.197891802,
+          "flux_err_ujy": 1550.1326035468865,
+          "mag_ab": 7.058696277902152
+        }
+      ]
+    },
+    {
+      "nombre_oficial": "Gaia #582592",
+      "clasificacion_objeto": "Fuente Extragal\u00e1ctica / Lejana",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 5.352970135211945,
+      "semieje_b_arcsec": 4.995689618587494,
+      "angulo_deg": 48.5408601104329,
+      "ecuacion": {
+        "modelo": "lineal_movimiento_propio",
+        "t0_mjd": 61276.14093633334,
+        "ra_0_deg": 269.438616460042,
+        "dec_0_deg": 4.786476808571792,
+        "mu_ra_cosdec_mas_yr": -6183.935369216997,
+        "mu_dec_mas_yr": 695.7819364123891,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61305.628021,
+          "lambda_um": 1.3766,
+          "color_hex": "#7a0403",
+          "flux_ujy": 34482.61097501871,
+          "flux_err_ujy": 1617.887599500225,
+          "mag_ab": 12.556065265862834
+        }
+      ]
+    },
+    {
+      "nombre_oficial": "SPHEREx-IR SRC_004",
+      "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+      "tipo_morfologia": "puntual",
+      "semieje_a_arcsec": 4.374816966056824,
+      "semieje_b_arcsec": 2.918363440036774,
+      "angulo_deg": -89.90375830888351,
+      "ecuacion": {
+        "modelo": "cinematica_gaia_dr3",
+        "t0_mjd": 61276.14093633334,
+        "ra_0_deg": 269.4277512312948,
+        "dec_0_deg": 4.7624938238209085,
+        "mu_ra_cosdec_mas_yr": 0.0,
+        "mu_dec_mas_yr": 0.0,
+        "acc_ra_mas_yr2": 0.0,
+        "acc_dec_mas_yr2": 0.0
+      },
+      "espectro_referencia": [
+        {
+          "mjd": 61276.364458,
+          "lambda_um": 0.9311,
+          "color_hex": "#affa37",
+          "flux_ujy": 57502.52092988656,
+          "flux_err_ujy": 928.7016374792062,
+          "mag_ab": 12.000848410473813
+        }
+      ]
+    }
+  ],
+  "epochs": [
+    {
+      "epoch_id": 1,
+      "mjd_promedio": 61276.14093633334,
+      "objeto_objetivo": {
+        "fuente_id": "SRC_003",
+        "ra": 269.4465618300156,
+        "dec": 4.770334954790309,
+        "ra_err_mas": 12.830641288257778,
+        "dec_err_mas": 12.830641288257778,
+        "tipo_morfologia": "puntual",
+        "semieje_a_arcsec": 8.28358190059662,
+        "semieje_b_arcsec": 7.895211982727051,
+        "angulo_deg": -5.410086973634965,
+        "distancia_centro_arcsec": 3.6599256224246433,
+        "espectro": [
+          {
+            "mjd": 61275.962171,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 2563081.825889103,
+            "flux_err_ujy": 1685.7833207396627,
+            "mag_ab": 7.87815944435102
+          },
+          {
+            "mjd": 61276.36595,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 4467838.630927415,
+            "flux_err_ujy": 1643.2060176074472,
+            "mag_ab": 7.274821925006875
+          }
+        ],
+        "nombre_oficial": "Barnard's Star",
+        "clasificacion_objeto": "Objetivo Principal (Barnard's Star)"
+      },
+      "catalogo_campo": [
+        {
+          "fuente_id": "SRC_002",
+          "ra": 269.44547074380245,
+          "dec": 4.76979557761225,
+          "ra_err_mas": 9.337896857484825,
+          "dec_err_mas": 9.337896857484825,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 7.8405948877334595,
+          "semieje_b_arcsec": 7.74692165851593,
+          "angulo_deg": -37.48065965535039,
+          "distancia_centro_arcsec": 2.9087740903034813,
+          "espectro": [
+            {
+              "mjd": 61275.959186,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 2012628.5709847624,
+              "flux_err_ujy": 1017.824216638775,
+              "mag_ab": 8.140656538333817
+            },
+            {
+              "mjd": 61275.960678,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 2120165.4130710787,
+              "flux_err_ujy": 1561.113572278569,
+              "mag_ab": 8.084141258661331
+            },
+            {
+              "mjd": 61276.233175,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 5179419.757810209,
+              "flux_err_ujy": 1435.37347422658,
+              "mag_ab": 7.114362849413367
+            },
+            {
+              "mjd": 61276.364458,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 5027945.4148775935,
+              "flux_err_ujy": 1684.6653567384415,
+              "mag_ab": 7.146589236812932
+            }
+          ],
+          "nombre_oficial": "Barnard's Star",
+          "clasificacion_objeto": "Objetivo Principal (Barnard's Star)"
+        },
+        {
+          "fuente_id": "SRC_003",
+          "ra": 269.4465618300156,
+          "dec": 4.770334954790309,
+          "ra_err_mas": 12.830641288257778,
+          "dec_err_mas": 12.830641288257778,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 8.28358190059662,
+          "semieje_b_arcsec": 7.895211982727051,
+          "angulo_deg": -5.410086973634965,
+          "distancia_centro_arcsec": 3.6599256224246433,
+          "espectro": [
+            {
+              "mjd": 61275.962171,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 2563081.825889103,
+              "flux_err_ujy": 1685.7833207396627,
+              "mag_ab": 7.87815944435102
+            },
+            {
+              "mjd": 61276.36595,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 4467838.630927415,
+              "flux_err_ujy": 1643.2060176074472,
+              "mag_ab": 7.274821925006875
+            }
+          ],
+          "nombre_oficial": "Barnard's Star",
+          "clasificacion_objeto": "Objetivo Principal (Barnard's Star)"
+        },
+        {
+          "fuente_id": "SRC_001",
+          "ra": 269.438616460042,
+          "dec": 4.786476808571792,
+          "ra_err_mas": 405.43518561776284,
+          "dec_err_mas": 405.43518561776284,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.352970135211945,
+          "semieje_b_arcsec": 4.995689618587494,
+          "angulo_deg": 48.5408601104329,
+          "distancia_centro_arcsec": 67.20889227602774,
+          "espectro": [
+            {
+              "mjd": 61275.959186,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 21155.547629479828,
+              "flux_err_ujy": 680.3932182506012,
+              "mag_ab": 13.086504942538086
+            },
+            {
+              "mjd": 61275.960678,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20905.5490683166,
+              "flux_err_ujy": 797.1501861504923,
+              "mag_ab": 13.09941167615756
+            },
+            {
+              "mjd": 61275.962171,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20873.30780469692,
+              "flux_err_ujy": 956.966357065422,
+              "mag_ab": 13.10108742876393
+            },
+            {
+              "mjd": 61276.233175,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20760.844044149104,
+              "flux_err_ujy": 935.5591941965203,
+              "mag_ab": 13.106953107209087
+            },
+            {
+              "mjd": 61276.364458,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 21176.119076870094,
+              "flux_err_ujy": 1046.2765875321593,
+              "mag_ab": 13.085449696255012
+            },
+            {
+              "mjd": 61276.36595,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 23726.160029265546,
+              "flux_err_ujy": 1074.683401198744,
+              "mag_ab": 12.961996983970911
+            }
+          ],
+          "nombre_oficial": "Gaia #582592",
+          "distancia_match_arcsec": 0.302,
+          "gaia_mag_g": 13.6,
+          "paralaje_mas": 0.453,
+          "pmra_mas_yr": -0.7,
+          "pmdec_mas_yr": -6.046,
+          "clasificacion_objeto": "Fuente Extragal\u00e1ctica / Lejana"
+        },
+        {
+          "fuente_id": "SRC_004",
+          "ra": 269.4277512312948,
+          "dec": 4.7624938238209085,
+          "ra_err_mas": 166.39494393961286,
+          "dec_err_mas": 166.39494393961286,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.374816966056824,
+          "semieje_b_arcsec": 2.918363440036774,
+          "angulo_deg": -89.90375830888351,
+          "distancia_centro_arcsec": 70.60899795862262,
+          "espectro": [
+            {
+              "mjd": 61276.364458,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 57502.52092988656,
+              "flux_err_ujy": 928.7016374792062,
+              "mag_ab": 12.000848410473813
+            }
+          ],
+          "nombre_oficial": "SPHEREx-IR SRC_004",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)"
+        }
+      ],
+      "bandas": [
+        {
+          "banda_idx": 0,
+          "mjd": 61275.959186,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 269.438616460042,
+              "dec": 4.786476808571792,
+              "ra_err_mas": 405.43518561776284,
+              "dec_err_mas": 405.43518561776284,
+              "flux_ujy": 21155.547629479828,
+              "flux_err_ujy": 680.3932182506012,
+              "mag_ab": 13.086504942538086,
+              "semieje_a_arcsec": 5.352970135211945,
+              "semieje_b_arcsec": 4.995689618587494,
+              "angulo_deg": 48.5408601104329,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.44547074380245,
+              "dec": 4.76979557761225,
+              "ra_err_mas": 9.337896857484825,
+              "dec_err_mas": 9.337896857484825,
+              "flux_ujy": 2012628.5709847624,
+              "flux_err_ujy": 1017.824216638775,
+              "mag_ab": 8.140656538333817,
+              "semieje_a_arcsec": 7.8405948877334595,
+              "semieje_b_arcsec": 7.74692165851593,
+              "angulo_deg": -37.48065965535039,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 1,
+          "mjd": 61275.960678,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 269.43886984332306,
+              "dec": 4.786088461000166,
+              "ra_err_mas": 410.0907899769579,
+              "dec_err_mas": 410.0907899769579,
+              "flux_ujy": 20905.5490683166,
+              "flux_err_ujy": 797.1501861504923,
+              "mag_ab": 13.09941167615756,
+              "semieje_a_arcsec": 4.566784632205963,
+              "semieje_b_arcsec": 4.096130609512329,
+              "angulo_deg": -36.85536266702489,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.4459476735522,
+              "dec": 4.769895538759288,
+              "ra_err_mas": 15.483501563966383,
+              "dec_err_mas": 15.483501563966383,
+              "flux_ujy": 2120165.4130710787,
+              "flux_err_ujy": 1561.113572278569,
+              "mag_ab": 8.084141258661331,
+              "semieje_a_arcsec": 8.92921986579895,
+              "semieje_b_arcsec": 8.453109455108644,
+              "angulo_deg": -7.732738904674698,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 2,
+          "mjd": 61275.962171,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 269.4386190475949,
+              "dec": 4.786115224916515,
+              "ra_err_mas": 492.7192974054612,
+              "dec_err_mas": 492.7192974054612,
+              "flux_ujy": 20873.30780469692,
+              "flux_err_ujy": 956.966357065422,
+              "mag_ab": 13.10108742876393,
+              "semieje_a_arcsec": 4.5635547757148744,
+              "semieje_b_arcsec": 4.501777303218842,
+              "angulo_deg": 55.421773680316754,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.4465618300156,
+              "dec": 4.770334954790309,
+              "ra_err_mas": 12.830641288257778,
+              "dec_err_mas": 12.830641288257778,
+              "flux_ujy": 2563081.825889103,
+              "flux_err_ujy": 1685.7833207396627,
+              "mag_ab": 7.87815944435102,
+              "semieje_a_arcsec": 8.28358190059662,
+              "semieje_b_arcsec": 7.895211982727051,
+              "angulo_deg": -5.410086973634965,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 3,
+          "mjd": 61276.233175,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 269.43894887227646,
+              "dec": 4.7866068214939546,
+              "ra_err_mas": 526.9869004811575,
+              "dec_err_mas": 526.9869004811575,
+              "flux_ujy": 20760.844044149104,
+              "flux_err_ujy": 935.5591941965203,
+              "mag_ab": 13.106953107209087,
+              "semieje_a_arcsec": 4.965724754333496,
+              "semieje_b_arcsec": 4.081407785415649,
+              "angulo_deg": 69.23439010675267,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.44601671995923,
+              "dec": 4.769882263194227,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 5179419.757810209,
+              "flux_err_ujy": 1435.37347422658,
+              "mag_ab": 7.114362849413367,
+              "semieje_a_arcsec": 7.528457713127136,
+              "semieje_b_arcsec": 7.334031438827515,
+              "angulo_deg": -2.064501302821105,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 4,
+          "mjd": 61276.364458,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 3,
+          "fuentes": [
+            {
+              "ra": 269.43881948883904,
+              "dec": 4.786594756703979,
+              "ra_err_mas": 533.3435199256364,
+              "dec_err_mas": 533.3435199256364,
+              "flux_ujy": 21176.119076870094,
+              "flux_err_ujy": 1046.2765875321593,
+              "mag_ab": 13.085449696255012,
+              "semieje_a_arcsec": 4.5836977720260625,
+              "semieje_b_arcsec": 4.046206784248352,
+              "angulo_deg": 46.90994754041726,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.4277512312948,
+              "dec": 4.7624938238209085,
+              "ra_err_mas": 166.39494393961286,
+              "dec_err_mas": 166.39494393961286,
+              "flux_ujy": 57502.52092988656,
+              "flux_err_ujy": 928.7016374792062,
+              "mag_ab": 12.000848410473813,
+              "semieje_a_arcsec": 4.374816966056824,
+              "semieje_b_arcsec": 2.918363440036774,
+              "angulo_deg": -89.90375830888351,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.4459107342399,
+              "dec": 4.769914570437877,
+              "ra_err_mas": 6.126346468855609,
+              "dec_err_mas": 6.126346468855609,
+              "flux_ujy": 5027945.4148775935,
+              "flux_err_ujy": 1684.6653567384415,
+              "mag_ab": 7.146589236812932,
+              "semieje_a_arcsec": 7.7640362024307255,
+              "semieje_b_arcsec": 7.586674213409424,
+              "angulo_deg": 3.651133116117322,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 5,
+          "mjd": 61276.36595,
+          "lambda_um": 0.9311,
+          "banda": "SPHEREx-D1",
+          "color_hex": "#affa37",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 269.4386566207826,
+              "dec": 4.786619389925567,
+              "ra_err_mas": 481.4462631034542,
+              "dec_err_mas": 481.4462631034542,
+              "flux_ujy": 23726.160029265546,
+              "flux_err_ujy": 1074.683401198744,
+              "mag_ab": 12.961996983970911,
+              "semieje_a_arcsec": 4.513399982452393,
+              "semieje_b_arcsec": 4.494293940067291,
+              "angulo_deg": 29.946247246058054,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.4461737097119,
+              "dec": 4.770233055191692,
+              "ra_err_mas": 6.363949209816019,
+              "dec_err_mas": 6.363949209816019,
+              "flux_ujy": 4467838.630927415,
+              "flux_err_ujy": 1643.2060176074472,
+              "mag_ab": 7.274821925006875,
+              "semieje_a_arcsec": 7.347528100013733,
+              "semieje_b_arcsec": 7.166361975669861,
+              "angulo_deg": 20.507702747118522,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        }
+      ],
+      "es_interpolado": false
+    },
+    {
+      "epoch_id": 2,
+      "mjd_promedio": 61304.67745433332,
+      "objeto_objetivo": {
+        "fuente_id": "SRC_002",
+        "ra": 269.4463939613019,
+        "dec": 4.770051495143727,
+        "ra_err_mas": 8.63501213379167,
+        "dec_err_mas": 8.63501213379167,
+        "tipo_morfologia": "puntual",
+        "semieje_a_arcsec": 9.002063846588134,
+        "semieje_b_arcsec": 8.514923882484437,
+        "angulo_deg": -56.88519635150535,
+        "distancia_centro_arcsec": 2.493026584695826,
+        "espectro": [
+          {
+            "mjd": 61305.628021,
+            "lambda_um": 1.3766,
+            "color_hex": "#7a0403",
+            "flux_ujy": 7209008.843783414,
+            "flux_err_ujy": 2936.334380763547,
+            "mag_ab": 6.755376726525766
+          },
+          {
+            "mjd": 61303.185466,
+            "lambda_um": 2.0324,
+            "color_hex": "#7a0403",
+            "flux_ujy": 11884732.659393035,
+            "flux_err_ujy": 1984.1738486171205,
+            "mag_ab": 6.212592079893344
+          },
+          {
+            "mjd": 61305.628021,
+            "lambda_um": 4.1206,
+            "color_hex": "#7a0403",
+            "flux_ujy": 5451898.197891802,
+            "flux_err_ujy": 1550.1326035468865,
+            "mag_ab": 7.058696277902152
+          }
+        ],
+        "nombre_oficial": "Barnard's Star",
+        "clasificacion_objeto": "Objetivo Principal (Barnard's Star)"
+      },
+      "catalogo_campo": [
+        {
+          "fuente_id": "SRC_002",
+          "ra": 269.4463939613019,
+          "dec": 4.770051495143727,
+          "ra_err_mas": 8.63501213379167,
+          "dec_err_mas": 8.63501213379167,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 9.002063846588134,
+          "semieje_b_arcsec": 8.514923882484437,
+          "angulo_deg": -56.88519635150535,
+          "distancia_centro_arcsec": 2.493026584695826,
+          "espectro": [
+            {
+              "mjd": 61305.628021,
+              "lambda_um": 1.3766,
+              "color_hex": "#7a0403",
+              "flux_ujy": 7209008.843783414,
+              "flux_err_ujy": 2936.334380763547,
+              "mag_ab": 6.755376726525766
+            },
+            {
+              "mjd": 61303.185466,
+              "lambda_um": 2.0324,
+              "color_hex": "#7a0403",
+              "flux_ujy": 11884732.659393035,
+              "flux_err_ujy": 1984.1738486171205,
+              "mag_ab": 6.212592079893344
+            },
+            {
+              "mjd": 61305.628021,
+              "lambda_um": 4.1206,
+              "color_hex": "#7a0403",
+              "flux_ujy": 5451898.197891802,
+              "flux_err_ujy": 1550.1326035468865,
+              "mag_ab": 7.058696277902152
+            }
+          ],
+          "nombre_oficial": "Barnard's Star",
+          "clasificacion_objeto": "Objetivo Principal (Barnard's Star)"
+        },
+        {
+          "fuente_id": "SRC_001",
+          "ra": 269.4384817839796,
+          "dec": 4.786491908726749,
+          "ra_err_mas": 497.1691065072311,
+          "dec_err_mas": 497.1691065072311,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.499507904052734,
+          "semieje_b_arcsec": 4.4751982450485235,
+          "angulo_deg": 54.05159333658259,
+          "distancia_centro_arcsec": 67.45486130101794,
+          "espectro": [
+            {
+              "mjd": 61305.628021,
+              "lambda_um": 1.3766,
+              "color_hex": "#7a0403",
+              "flux_ujy": 34482.61097501871,
+              "flux_err_ujy": 1617.887599500225,
+              "mag_ab": 12.556065265862834
+            }
+          ],
+          "nombre_oficial": "Gaia #582592",
+          "distancia_match_arcsec": 0.734,
+          "gaia_mag_g": 13.6,
+          "paralaje_mas": 0.453,
+          "pmra_mas_yr": -0.7,
+          "pmdec_mas_yr": -6.046,
+          "clasificacion_objeto": "Fuente Extragal\u00e1ctica / Lejana"
+        }
+      ],
+      "bandas": [
+        {
+          "banda_idx": 0,
+          "mjd": 61305.628021,
+          "lambda_um": 1.3766,
+          "banda": "SPHEREx-D2",
+          "color_hex": "#7a0403",
+          "total_fuentes": 2,
+          "fuentes": [
+            {
+              "ra": 269.4384817839796,
+              "dec": 4.786491908726749,
+              "ra_err_mas": 497.1691065072311,
+              "dec_err_mas": 497.1691065072311,
+              "flux_ujy": 34482.61097501871,
+              "flux_err_ujy": 1617.887599500225,
+              "mag_ab": 12.556065265862834,
+              "semieje_a_arcsec": 4.499507904052734,
+              "semieje_b_arcsec": 4.4751982450485235,
+              "angulo_deg": 54.05159333658259,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 269.4463939613019,
+              "dec": 4.770051495143727,
+              "ra_err_mas": 8.63501213379167,
+              "dec_err_mas": 8.63501213379167,
+              "flux_ujy": 7209008.843783414,
+              "flux_err_ujy": 2936.334380763547,
+              "mag_ab": 6.755376726525766,
+              "semieje_a_arcsec": 9.002063846588134,
+              "semieje_b_arcsec": 8.514923882484437,
+              "angulo_deg": -56.88519635150535,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 1,
+          "mjd": 61303.185466,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 269.44598487091434,
+              "dec": 4.769407340875973,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 11884732.659393035,
+              "flux_err_ujy": 1984.1738486171205,
+              "mag_ab": 6.212592079893344,
+              "semieje_a_arcsec": 6.114272439479828,
+              "semieje_b_arcsec": 5.328264319896698,
+              "angulo_deg": -6.813587114574566,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 2,
+          "mjd": 61305.218876,
+          "lambda_um": 2.0324,
+          "banda": "SPHEREx-D3",
+          "color_hex": "#7a0403",
+          "total_fuentes": 0,
+          "fuentes": []
+        },
+        {
+          "banda_idx": 3,
+          "mjd": 61305.628021,
+          "lambda_um": 4.1206,
+          "banda": "SPHEREx-D5",
+          "color_hex": "#7a0403",
+          "total_fuentes": 1,
+          "fuentes": [
+            {
+              "ra": 269.44589515617525,
+              "dec": 4.770068391864892,
+              "ra_err_mas": 5.0653629727238085,
+              "dec_err_mas": 5.0653629727238085,
+              "flux_ujy": 5451898.197891802,
+              "flux_err_ujy": 1550.1326035468865,
+              "mag_ab": 7.058696277902152,
+              "semieje_a_arcsec": 7.564819097518921,
+              "semieje_b_arcsec": 7.370604205131531,
+              "angulo_deg": -37.16267336835127,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 4,
+          "mjd": 61303.185466,
+          "lambda_um": 4.7106,
+          "banda": "SPHEREx-D6",
+          "color_hex": "#7a0403",
+          "total_fuentes": 0,
+          "fuentes": []
+        },
+        {
+          "banda_idx": 5,
+          "mjd": 61305.218876,
+          "lambda_um": 4.7106,
+          "banda": "SPHEREx-D6",
+          "color_hex": "#7a0403",
+          "total_fuentes": 0,
+          "fuentes": []
+        }
+      ],
+      "es_interpolado": false
+    },
+    {
+      "epoch_id": 3,
+      "mjd_promedio": 61334.67745433332,
+      "es_interpolado": true,
+      "objeto_objetivo": {
+        "fuente_id": "PRED_001",
+        "nombre_oficial": "Barnard's Star",
+        "clasificacion_objeto": "Objetivo Principal (Barnard's Star)",
+        "ra": 269.4468741905743,
+        "dec": 4.770078140756741,
+        "ra_err_mas": 35.0,
+        "dec_err_mas": 35.0,
+        "tipo_morfologia": "puntual",
+        "semieje_a_arcsec": 7.8405948877334595,
+        "semieje_b_arcsec": 7.74692165851593,
+        "angulo_deg": -37.48065965535039,
+        "es_interpolado": true,
+        "espectro": [
+          {
+            "mjd": 61334.67745433332,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 12385011.851654053,
+            "flux_err_ujy": 2631.9728951329266,
+            "mag_ab": 8.140656538333817
+          },
+          {
+            "mjd": 61334.67745433332,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 20920347.292028427,
+            "flux_err_ujy": 2421.2969379681304,
+            "mag_ab": 8.084141258661331
+          },
+          {
+            "mjd": 61334.67745433332,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 5738350.567534685,
+            "flux_err_ujy": 2089.8542544414263,
+            "mag_ab": 7.114362849413367
+          },
+          {
+            "mjd": 61334.67745433332,
+            "lambda_um": 0.9311,
+            "color_hex": "#affa37",
+            "flux_ujy": 5027945.4148775935,
+            "flux_err_ujy": 2190.064963759974,
+            "mag_ab": 7.146589236812932
+          }
+        ]
+      },
+      "catalogo_campo": [
+        {
+          "fuente_id": "PRED_001",
+          "nombre_oficial": "Barnard's Star",
+          "clasificacion_objeto": "Objetivo Principal (Barnard's Star)",
+          "ra": 269.4468741905743,
+          "dec": 4.770078140756741,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 7.8405948877334595,
+          "semieje_b_arcsec": 7.74692165851593,
+          "angulo_deg": -37.48065965535039,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 12385011.851654053,
+              "flux_err_ujy": 2631.9728951329266,
+              "mag_ab": 8.140656538333817
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20920347.292028427,
+              "flux_err_ujy": 2421.2969379681304,
+              "mag_ab": 8.084141258661331
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 5738350.567534685,
+              "flux_err_ujy": 2089.8542544414263,
+              "mag_ab": 7.114362849413367
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 5027945.4148775935,
+              "flux_err_ujy": 2190.064963759974,
+              "mag_ab": 7.146589236812932
+            }
+          ]
+        },
+        {
+          "fuente_id": "PRED_002",
+          "nombre_oficial": "Gaia #582592",
+          "clasificacion_objeto": "Fuente Extragal\u00e1ctica / Lejana",
+          "ra": 269.4383402011183,
+          "dec": 4.786507783286101,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.352970135211945,
+          "semieje_b_arcsec": 4.995689618587494,
+          "angulo_deg": 48.5408601104329,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 48493.14654094353,
+              "flux_err_ujy": 1608.796572425578,
+              "mag_ab": 13.086504942538086
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20905.5490683166,
+              "flux_err_ujy": 1036.29524199564,
+              "mag_ab": 13.09941167615756
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20873.30780469692,
+              "flux_err_ujy": 1244.0562641850486,
+              "mag_ab": 13.10108742876393
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 20760.844044149104,
+              "flux_err_ujy": 1216.2269524554763,
+              "mag_ab": 13.106953107209087
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 21176.119076870094,
+              "flux_err_ujy": 1360.1595637918072,
+              "mag_ab": 13.085449696255012
+            },
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 23726.160029265546,
+              "flux_err_ujy": 1397.0884215583671,
+              "mag_ab": 12.961996983970911
+            }
+          ]
+        },
+        {
+          "fuente_id": "PRED_003",
+          "nombre_oficial": "SPHEREx-IR SRC_004",
+          "clasificacion_objeto": "Fuente Infrarroja (Sin contraparte \u00f3ptica en Gaia)",
+          "ra": 269.4277512312948,
+          "dec": 4.7624938238209085,
+          "ra_err_mas": 35.0,
+          "dec_err_mas": 35.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.374816966056824,
+          "semieje_b_arcsec": 2.918363440036774,
+          "angulo_deg": -89.90375830888351,
+          "es_interpolado": true,
+          "espectro": [
+            {
+              "mjd": 61334.67745433332,
+              "lambda_um": 0.9311,
+              "color_hex": "#affa37",
+              "flux_ujy": 57502.52092988656,
+              "flux_err_ujy": 1160.877,
+              "mag_ab": 12.000848410473813
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

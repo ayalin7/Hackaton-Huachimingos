@@ -1,0 +1,12 @@
+{
+  "objetivos": [
+    {
+      "nombre": "Barnard's Star",
+      "slug": "barnards_star",
+      "ra": 269.4520769586187,
+      "dec": 4.69336496657667,
+      "archivo_json": "final_barnards_star.json",
+      "epochs_totales": 3
+    }
+  ]
+}
