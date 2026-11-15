@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+astropy
+astroquery
+numpy
+scipy
+sep
+s3fs
+fsspec
+requests
+pillow
+matplotlib

@@ -3,39 +3,12 @@
 MÓDULO: generador_interpolacion.py
 PROYECTO: NASA Space Apps Challenge 2026 - Visor Vectorial SPHEREx + ALeRCE
 ================================================================================
-
-DESCRIPCIÓN GENERAL:
-    Toma el JSON enriquecido ('salida_identificada_gaia_alerce.json'), extrae las
-    series temporales de posición (RA, Dec) y brillo (flux_ujy) en las 6 bandas,
-    ajusta las ecuaciones de movimiento de cada cuerpo y genera una 5ta medición
-    interpolada/extrapolada para el renderizado temporal interactivo.
-
-DETALLE FÍSICO:
-    - Si existen >= 2 Epochs observados en SPHEREx: Ajusta directamente las
-      ecuaciones de movimiento por mínimos cuadrados ponderados:
-        RA(t)  = RA_0  + (mu_ra_cosdec / cos(Dec_0)) * (t - t_0)
-        Dec(t) = Dec_0 + mu_dec * (t - t_0)
-      (Incluye término cuadrático de aceleración si la clase es 'ASTEROID').
-    - Si solo existe 1 Epoch observado en la muestra de prueba: Utiliza los
-      vectores de movimiento propio reales medidos por Gaia DR3 (pmra_mas_yr,
-      pmdec_mas_yr) para construir las ecuaciones de movimiento y proyectar las
-      épocas faltantes hasta la 5ta medición (permitiendo probar el slider con
-      datos reales de movimiento estelar).
-
-USO DESDE TERMINAL:
-    python3 generador_interpolacion.py
-================================================================================
 """
 
 import json
 from pathlib import Path
 
-import astropy.units as u
 import numpy as np
-from astropy.coordinates import SkyCoord, match_coordinates_sky
-
-# Nota: Cuando tengas motion_interpolator.py en esta carpeta, puedes descomentar:
-# from motion_interpolator import quinta_medicion, medidas_desde_filas
 
 DIAS_POR_ANIO = 365.25
 MAS_A_DEG = 1.0 / (3600.0 * 1000.0)
@@ -50,16 +23,11 @@ def ajustar_ecuacion_movimiento_cuerpo(
     pmra_gaia_mas_yr: float = 0.0,
     pmdec_gaia_mas_yr: float = 0.0,
 ) -> dict:
-    """
-    Calcula los parámetros analíticos de la ecuación de trayectoria RA(t), Dec(t)
-    en grados por día (deg/day) y milisegundos de arco por año (mas/yr).
-    """
     t0 = float(tiempos_mjd[0])
     ra0 = float(ras_deg[0])
     dec0 = float(decs_deg[0])
     cos_dec0 = max(float(np.cos(np.radians(dec0))), 1e-6)
 
-    # Caso A: Tenemos múltiples épocas observadas en SPHEREx -> Ajuste directo
     if len(tiempos_mjd) >= 2 and (max(tiempos_mjd) - min(tiempos_mjd)) > 1.0:
         dt_anios = np.array([(t - t0) / DIAS_POR_ANIO for t in tiempos_mjd], dtype=float)
         pesos = 1.0 / np.maximum(np.array(errs_mas, dtype=float), 5.0) ** 2
@@ -67,7 +35,6 @@ def ajustar_ecuacion_movimiento_cuerpo(
         d_ra_mas = (np.array(ras_deg) - ra0) * cos_dec0 / MAS_A_DEG
         d_dec_mas = (np.array(decs_deg) - dec0) / MAS_A_DEG
 
-        # Si es asteroide y hay >= 3 puntos, ajustar aceleración cuadrática
         if clase_objeto.upper() == "ASTEROID" and len(tiempos_mjd) >= 3:
             coef_ra = np.polyfit(dt_anios, d_ra_mas, deg=2, w=pesos)
             coef_dec = np.polyfit(dt_anios, d_dec_mas, deg=2, w=pesos)
@@ -82,7 +49,6 @@ def ajustar_ecuacion_movimiento_cuerpo(
                 "acc_dec_mas_yr2": float(2.0 * coef_dec[0]),
             }
 
-        # Ajuste lineal ponderado de movimiento propio
         coef_ra = np.polyfit(dt_anios, d_ra_mas, deg=1, w=pesos)
         coef_dec = np.polyfit(dt_anios, d_dec_mas, deg=1, w=pesos)
         return {
@@ -96,7 +62,6 @@ def ajustar_ecuacion_movimiento_cuerpo(
             "acc_dec_mas_yr2": 0.0,
         }
 
-    # Caso B: Solo hay 1 Epoch en el JSON -> Usar cinemática real de Gaia DR3
     return {
         "modelo": "cinematica_gaia_dr3",
         "t0_mjd": t0,
@@ -110,7 +75,6 @@ def ajustar_ecuacion_movimiento_cuerpo(
 
 
 def evaluar_posicion_en_tiempo(eq: dict, mjd_objetivo: float) -> tuple[float, float]:
-    """Evalúa las ecuaciones de movimiento RA(t) y Dec(t) en cualquier fecha MJD."""
     dt_yr = (mjd_objetivo - eq["t0_mjd"]) / DIAS_POR_ANIO
     cos_dec0 = max(float(np.cos(np.radians(eq["dec_0_deg"]))), 1e-6)
 
@@ -123,12 +87,7 @@ def evaluar_posicion_en_tiempo(eq: dict, mjd_objetivo: float) -> tuple[float, fl
 
 
 def interpolar_espectro_en_tiempo(historial_espectros: list[tuple[float, list[dict]]], mjd_objetivo: float) -> list[dict]:
-    """
-    Interpola o extrapola el flujo (flux_ujy) en cada una de las 6 bandas
-    para una fecha MJD dada.
-    """
     if len(historial_espectros) == 1:
-        # Si solo hay 1 época, mantiene el espectro base con una ligera incertidumbre propagada
         _, esp_base = historial_espectros[0]
         return [
             {
@@ -139,7 +98,6 @@ def interpolar_espectro_en_tiempo(historial_espectros: list[tuple[float, list[di
             for banda in esp_base
         ]
 
-    # Agrupar flujos históricos por longitud de onda
     n_bandas = len(historial_espectros[0][1])
     espectro_predicho = []
 
@@ -156,7 +114,6 @@ def interpolar_espectro_en_tiempo(historial_espectros: list[tuple[float, list[di
                 errores.append(esp[b_idx]["flux_err_ujy"])
 
         if len(tiempos) >= 2:
-            # Ajuste lineal/polinómico suave de la curva de luz en esa banda
             grado = 2 if len(tiempos) >= 3 else 1
             poly = np.polyfit(tiempos, flujos, deg=grado)
             flujo_pred = float(np.polyval(poly, mjd_objetivo))
@@ -178,25 +135,26 @@ def interpolar_espectro_en_tiempo(historial_espectros: list[tuple[float, list[di
 
 
 def generar_datos_interpolados(datos: dict) -> dict:
-    """
-    Procesa todas las épocas del JSON, calcula las ecuaciones de trayectoria
-    para cada objeto identificado y construye la 5ta medición sintética.
-    """
     epochs = datos.get("epochs", [])
     if not epochs:
         raise ValueError("El JSON de entrada no tiene épocas registradas.")
 
     clase_alerce = datos.get("alerce_info", {}).get("clase", datos.get("clase_alerce", "DEFAULT"))
 
-    # 1. Reunir trayectorias históricas cruzando fuentes entre épocas
+    # 1. Reunir trayectorias históricas cruzando por nombre oficial o celda espacial (10'')
     cuerpos_rastreados = {}
     for ep in epochs:
         mjd_ep = float(ep["mjd_promedio"])
         for fuente in ep.get("catalogo_campo", []):
-            clave = fuente.get("nombre_oficial") or fuente["fuente_id"]
+            nombre_f = fuente.get("nombre_oficial") or ""
+            if nombre_f and not nombre_f.startswith("SPHEREx-IR"):
+                clave = nombre_f
+            else:
+                clave = f"POS_{round(fuente['ra'] * 360)}_{round(fuente['dec'] * 360)}"
+
             if clave not in cuerpos_rastreados:
                 cuerpos_rastreados[clave] = {
-                    "nombre_oficial": clave,
+                    "nombre_oficial": nombre_f or fuente["fuente_id"],
                     "clasificacion_objeto": fuente.get("clasificacion_objeto", "Desconocido"),
                     "tipo_morfologia": fuente.get("tipo_morfologia", "puntual"),
                     "semieje_a_arcsec": fuente.get("semieje_a_arcsec", 6.2),
@@ -217,7 +175,7 @@ def generar_datos_interpolados(datos: dict) -> dict:
 
     # 2. Calcular ecuaciones de movimiento para cada cuerpo
     ecuaciones_cuerpos = []
-    for clave, info in cuerpos_rastreados.items():
+    for _, info in cuerpos_rastreados.items():
         obs = sorted(info["observaciones"], key=lambda x: x["mjd"])
         eq = ajustar_ecuacion_movimiento_cuerpo(
             tiempos_mjd=[o["mjd"] for o in obs],
@@ -239,21 +197,22 @@ def generar_datos_interpolados(datos: dict) -> dict:
             "historial_espectros": [(o["mjd"], o["espectro"]) for o in obs],
         })
 
-    # 3. Definir la fecha MJD de la 5ta medición (6 meses después de la última medición)
+    # 3. Fecha MJD de la 5ta medición (extrapolación analítica +6 meses)
     mjds_existentes = [float(ep["mjd_promedio"]) for ep in epochs]
     paso_dias = 182.6 if len(mjds_existentes) == 1 else float(np.mean(np.diff(mjds_existentes)))
     mjd_5ta = float(mjds_existentes[-1] + max(paso_dias, 30.0))
 
-    # 4. Construir el catálogo sintetizado para el Epoch 5 (Interpolado)
+    # 4. Construir catálogo extrapolado para el Epoch 5
     catalogo_epoch_5 = []
     for idx, cuerpo in enumerate(ecuaciones_cuerpos, start=1):
         ra_5, dec_5 = evaluar_posicion_en_tiempo(cuerpo["ecuacion"], mjd_5ta)
         esp_5 = interpolar_espectro_en_tiempo(cuerpo["historial_espectros"], mjd_5ta)
 
         catalogo_epoch_5.append({
-            "fuente_id": f"PRED_{idx:03d}",
+            "fuente_id": f"EXTRAP_{idx:03d}",
             "nombre_oficial": cuerpo["nombre_oficial"],
             "clasificacion_objeto": cuerpo["clasificacion_objeto"],
+            "tipo_medicion": "extrapolada",
             "ra": ra_5,
             "dec": dec_5,
             "ra_err_mas": 35.0,
@@ -263,29 +222,33 @@ def generar_datos_interpolados(datos: dict) -> dict:
             "semieje_b_arcsec": cuerpo["semieje_b_arcsec"],
             "angulo_deg": cuerpo["angulo_deg"],
             "es_interpolado": True,
+            "es_extrapolado": True,
             "espectro": esp_5,
         })
 
-    # Marcar épocas originales como reales y agregar la 5ta medición
     epochs_salida = []
     for ep in epochs:
         ep_copia = dict(ep)
         ep_copia["es_interpolado"] = False
+        ep_copia["es_extrapolado"] = False
+        ep_copia.setdefault("tipo_medicion", "observada_spherex")
         epochs_salida.append(ep_copia)
 
     epochs_salida.append({
         "epoch_id": len(epochs_salida) + 1,
         "mjd_promedio": mjd_5ta,
+        "tipo_medicion": "extrapolada",
         "es_interpolado": True,
+        "es_extrapolado": True,
         "objeto_objetivo": catalogo_epoch_5[0] if catalogo_epoch_5 else None,
         "catalogo_campo": catalogo_epoch_5,
     })
 
-    # Exportar estructura final lista para el visor temporal
     salida_final = {
         "centro_campo": datos["centro_campo"],
         "clase_alerce": clase_alerce,
         "alerce_info": datos.get("alerce_info", {}),
+        "es_simulado": bool(datos.get("es_simulado", False)),
         "rango_temporal_mjd": {
             "mjd_inicio": float(mjds_existentes[0]),
             "mjd_fin_interpolado": mjd_5ta,
@@ -314,7 +277,7 @@ if __name__ == "__main__":
     ruta_salida = dir_actual / "salida_con_interpolacion.json"
 
     if not ruta_entrada.exists():
-        raise FileNotFoundError(f"No se encontró {ruta_entrada}. Ejecuta primero test_identificacion_gaia_alerce.py")
+        raise FileNotFoundError(f"No se encontró {ruta_entrada}.")
 
     with open(ruta_entrada, "r", encoding="utf-8") as f:
         datos_in = json.load(f)
@@ -323,7 +286,3 @@ if __name__ == "__main__":
 
     with open(ruta_salida, "w", encoding="utf-8") as f:
         json.dump(resultado, f, indent=2)
-
-    print(f"¡Interpolación completada! Guardado en: {ruta_salida}")
-    print(f"Total cuerpos con ecuaciones calculadas: {len(resultado['ecuaciones_trayectoria'])}")
-    print(f"Fecha 5ta medición interpolada (MJD): {resultado['rango_temporal_mjd']['mjd_fin_interpolado']:.2f}")

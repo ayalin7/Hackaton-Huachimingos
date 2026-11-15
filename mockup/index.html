@@ -10,9 +10,9 @@
 <style>
   :root {
     --void: #04070f;
-    --panel: rgba(11, 17, 32, 0.86);
+    --panel: rgba(11, 17, 32, 0.88);
     --panel-solid: #0b1120;
-    --card: rgba(20, 30, 54, 0.72);
+    --card: rgba(20, 30, 54, 0.74);
     --border: rgba(118, 155, 224, 0.22);
     --border-bright: rgba(56, 189, 248, 0.55);
     --text: #eef4ff;
@@ -35,7 +35,6 @@
     font-size: 13.5px;
   }
 
-  /* ---- Lienzo espacial a pantalla completa (Stellarium Viewport) ---- */
   #sky-container {
     position: fixed;
     inset: 0;
@@ -56,7 +55,6 @@
     z-index: 3;
   }
 
-  /* ---- Barra Superior Flotante (Buscador + Coordenadas + Targets Challenge) ---- */
   .top-hud {
     position: fixed;
     top: 14px;
@@ -125,7 +123,7 @@
     letter-spacing: 0.06em;
     color: var(--muted);
   }
-  .search-bar input, .search-bar select {
+  .search-bar input {
     background: rgba(5, 10, 22, 0.85);
     border: 1px solid var(--border);
     color: var(--text);
@@ -134,14 +132,14 @@
     font-family: "JetBrains Mono", monospace;
     font-size: 12.5px;
   }
-  .search-bar input:focus, .search-bar select:focus {
+  .search-bar input:focus {
     outline: none;
     border-color: var(--accent);
     box-shadow: 0 0 0 2px var(--accent-glow);
   }
-  #inp-query { width: 220px; font-family: "Inter", sans-serif; }
-  #inp-ra, #inp-dec { width: 96px; }
-  #inp-fov { width: 68px; }
+  #inp-query { width: 210px; font-family: "Inter", sans-serif; }
+  #inp-ra, #inp-dec { width: 94px; }
+  #inp-fov { width: 66px; }
 
   .btn-primary {
     background: linear-gradient(135deg, #0284c7, #2563eb);
@@ -217,7 +215,23 @@
     color: #fff;
   }
 
-  /* ---- Panel Derecho Flotante: Inspector Astrofísico + Espectrometría ---- */
+  .sim-banner {
+    position: fixed;
+    top: 76px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 26;
+    background: #991b1b;
+    color: #fef2f2;
+    border: 1px solid #f87171;
+    border-radius: 10px;
+    padding: 7px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.65);
+  }
+  .sim-banner[hidden] { display: none; }
+
   .side-inspector {
     position: fixed;
     top: 84px;
@@ -240,7 +254,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
   }
   .section-title {
     font-family: "Space Grotesk", sans-serif;
@@ -254,7 +268,6 @@
     align-items: center;
   }
 
-  /* Selector de 6 Bandas Infrarrojas */
   .band-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -287,7 +300,6 @@
     font-weight: 600;
   }
 
-  /* Canvas de Espectrometría */
   .spec-box {
     background: rgba(4, 8, 18, 0.82);
     border: 1px solid var(--border);
@@ -296,11 +308,10 @@
   }
   #spectrum-canvas {
     width: 100%;
-    height: 155px;
+    height: 150px;
     display: block;
   }
 
-  /* Tarjeta de Datos Físicos del Objeto Seleccionado */
   .obj-header {
     background: var(--card);
     border: 1px solid var(--border);
@@ -312,20 +323,27 @@
     font-size: 17px;
     font-weight: 700;
     color: #fff;
-    margin: 0 0 3px 0;
+    margin: 0 0 4px 0;
   }
   .obj-type-badge {
     display: inline-block;
     background: rgba(52, 211, 153, 0.16);
     border: 1px solid rgba(52, 211, 153, 0.45);
     color: var(--emerald);
-    font-size: 11.5px;
+    font-size: 11px;
     padding: 2px 8px;
     border-radius: 999px;
     font-weight: 500;
   }
+  .obj-origin-tag {
+    display: block;
+    margin-top: 6px;
+    font-size: 11px;
+    color: var(--gold);
+    font-family: "JetBrains Mono", monospace;
+  }
   .obj-desc {
-    margin: 8px 0 0 0;
+    margin: 6px 0 0 0;
     font-size: 12px;
     color: var(--muted);
     line-height: 1.4;
@@ -353,7 +371,7 @@
   }
   .tel-val {
     font-family: "JetBrains Mono", monospace;
-    font-size: 12.5px;
+    font-size: 12px;
     color: #fff;
     font-weight: 600;
   }
@@ -364,7 +382,6 @@
     color: #dbeafe;
   }
 
-  /* ---- Dock Inferior Flotante: Selector de Mediciones (1..4 + 5ta) & Slider Temporal ---- */
   .bottom-timeline {
     position: fixed;
     left: 14px;
@@ -378,7 +395,7 @@
     padding: 10px 16px;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 14px;
     align-items: center;
     box-shadow: 0 -4px 30px rgba(0,0,0,0.65);
   }
@@ -386,7 +403,8 @@
   .epoch-selector {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
+    flex-wrap: wrap;
   }
   .epoch-selector > span {
     font-size: 11.5px;
@@ -399,8 +417,8 @@
     border: 1px solid var(--border);
     color: var(--text);
     border-radius: 8px;
-    padding: 6px 11px;
-    font-size: 12px;
+    padding: 6px 9px;
+    font-size: 11.5px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.15s;
@@ -422,7 +440,7 @@
 
   .slider-zone {
     flex: 1;
-    min-width: 260px;
+    min-width: 240px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -461,7 +479,6 @@
   .ctrl-btn:hover { border-color: var(--accent); }
   .ctrl-btn.active { background: rgba(56, 189, 248, 0.25); border-color: var(--accent); }
 
-  /* ---- Controles Izquierdos de Capa Celeste ---- */
   .sky-tools {
     position: fixed;
     left: 14px;
@@ -485,6 +502,38 @@
     color: var(--accent);
   }
 
+  .fits-modal {
+    position: fixed;
+    left: 14px;
+    top: 124px;
+    z-index: 22;
+    background: var(--panel);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--border-bright);
+    border-radius: 12px;
+    padding: 10px;
+    width: 265px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.75);
+  }
+  .fits-modal[hidden] { display: none; }
+
+  .onboarding-box {
+    position: fixed;
+    bottom: 92px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 24;
+    background: var(--panel-solid);
+    border: 1px solid var(--border-bright);
+    border-radius: 12px;
+    padding: 11px 15px;
+    max-width: 530px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.85);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
   @media (max-width: 960px) {
     .side-inspector {
       width: calc(100vw - 28px);
@@ -496,14 +545,35 @@
 </style>
 </head>
 <body>
+  <div id="object-inspector-card" class="inspector-card" style="display: none; position: fixed; left: 14px; top: 124px; z-index: 25; background: var(--panel); backdrop-filter: blur(14px); border: 1px solid var(--border-bright); border-radius: 12px; padding: 12px; width: 395px; box-shadow: 0 12px 35px rgba(0,0,0,0.8);">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <h3 id="insp-title" style="margin: 0; font-size: 15px; color: var(--gold);">Objeto Seleccionado</h3>
+      <button type="button" onclick="document.getElementById('object-inspector-card').style.display='none'" style="background:none; border:0; color:var(--muted); cursor:pointer; font-size:15px;">✕</button>
+    </div>
+    <p id="insp-subtitle" style="margin: 4px 0 8px 0; font-size: 11.5px; color: var(--muted);">Coordenadas</p>
 
-  <!-- 1. Lienzo Espacial Interactivo (Aladin Lite + Proyección Vectorial 60 FPS) -->
+    <div class="image-comparison-grid" style="display: flex; gap: 10px; margin: 10px 0;">
+      <div class="img-box">
+        <img id="img-optical" width="180" height="180" alt="Vista Óptica DSS2" />
+        <div style="font-size: 12px;">Óptico (Luz Visible)</div>
+      </div>
+
+      <div class="img-box">
+        <img id="img-spherex-blink" width="180" height="180" alt="Píxeles SPHEREx" />
+        <div id="blink-label" style="font-size: 12px;">SPHEREx IR — Epoch 1</div>
+      </div>
+    </div>
+
+    <div class="inspector-controls">
+      <button id="btn-toggle-blink">⏸ Pausar Blink</button>
+      <button id="btn-overlay-aladin">🗺️ Superponer píxeles en mapa</button>
+    </div>
+  </div>    
   <div id="sky-container">
     <div id="aladin-map"></div>
     <canvas id="vector-hud"></canvas>
   </div>
 
-  <!-- 2. HUD Superior: Buscador por ID o Coordenadas + Objetivos del Challenge -->
   <div class="top-hud">
     <div class="brand-pill">
       <div class="brand-dot"></div>
@@ -516,19 +586,19 @@
     <form class="search-bar" id="search-form">
       <div class="input-group">
         <label for="inp-query">ID / Nombre del Objeto</label>
-        <input id="inp-query" type="text" autocomplete="off" placeholder="Ej: WISE 0855, Barnard's Star...">
+        <input id="inp-query" type="text" autocomplete="off" placeholder="Ej: Barnard's Star, WISE 0855...">
       </div>
       <div class="input-group">
         <label for="inp-ra">RA (deg)</label>
-        <input id="inp-ra" type="number" step="any" placeholder="133.7951">
+        <input id="inp-ra" type="number" step="any" placeholder="269.4521">
       </div>
       <div class="input-group">
         <label for="inp-dec">Dec (deg)</label>
-        <input id="inp-dec" type="number" step="any" placeholder="-7.2451">
+        <input id="inp-dec" type="number" step="any" placeholder="4.6934">
       </div>
       <div class="input-group">
         <label for="inp-fov">FoV (°)</label>
-        <input id="inp-fov" type="number" step="0.01" min="0.01" max="0.5" value="0.05">
+        <input id="inp-fov" type="number" step="0.01" min="0.01" max="0.5" value="0.04">
       </div>
       <button class="btn-primary" type="submit">Explorar</button>
       <ul class="suggestions-dropdown" id="suggestions" hidden></ul>
@@ -536,25 +606,52 @@
 
     <div class="challenge-pills" id="challenge-pills">
       <span>Objetivos NASA:</span>
-      <button type="button" class="pill-btn" data-target="Barnard's Star">Barnard's Star</button>
+      <button type="button" class="pill-btn active" data-target="Barnard's Star">Barnard's Star</button>
       <button type="button" class="pill-btn" data-target="Epsilon Indi B">Epsilon Indi B</button>
-      <button type="button" class="pill-btn active" data-target="WISE 0855">WISE 0855</button>
+      <button type="button" class="pill-btn" data-target="WISE 0855">WISE 0855</button>
       <button type="button" class="pill-btn" data-target="RW Aurigae">RW Aurigae</button>
       <button type="button" class="pill-btn" data-target="R Draconis">R Draconis</button>
     </div>
   </div>
 
-  <!-- Indicador de estado y coordenadas del cursor -->
+  <div class="sim-banner" id="sim-banner" hidden>
+    ⚠️ DATOS DE DEMOSTRACIÓN SIMULADOS: Sin conexión en vivo a IRSA/S3; posiciones y flujos generados sintéticamente.
+  </div>
+
   <div class="status-toast" id="status-toast">Iniciando observatorio SPHEREx...</div>
 
-  <!-- Herramientas rápidas de vista celeste -->
+  <!-- Comparador Blink de Píxeles Reales FITS de SPHEREx -->
+  <div class="fits-modal" id="fits-modal" hidden>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+      <strong style="font-size:12px;color:var(--accent);">Píxeles FITS Reales SPHEREx</strong>
+      <button type="button" id="btn-close-fits" style="background:none;border:0;color:var(--muted);cursor:pointer;">✕</button>
+    </div>
+    <img id="fits-real-img" alt="Recorte FITS real de SPHEREx" style="width:100%;border-radius:8px;border:1px solid var(--border);display:block;background:#000;">
+    <p id="fits-status-text" style="font-size:11px;color:var(--muted);margin:6px 0;">Comparador entre primera y última época observada.</p>
+    <div style="display:flex;gap:6px;">
+      <button type="button" class="ctrl-btn active" id="btn-fits-ep1" style="flex:1;">Época Inicial</button>
+      <button type="button" class="ctrl-btn" id="btn-fits-ep2" style="flex:1;">Época Final</button>
+    </div>
+  </div>
+
+  <!-- Guía Onboarding rápida -->
+  <div class="onboarding-box" id="onboarding-box">
+    <div style="font-size:12px;line-height:1.45;color:var(--text);">
+      <strong style="color:var(--gold);">Guía rápida (30s):</strong>
+      1) Elige un objetivo NASA arriba (ej. <b>Barnard's Star</b>, 10.4''/año).
+      2) Usa las <b>Mediciones</b> y el <b>Slider MJD</b> (Fecha Juliana Modificada) para observar su desplazamiento y extrapolación.
+      3) Filtra las <b>6 bandas IR</b> (flujo en <b>µJy</b>) o abre <b>Píxeles Reales SPHEREx</b>.
+    </div>
+    <button type="button" id="btn-close-onboarding" class="btn-primary" style="white-space:nowrap;">Entendido</button>
+  </div>
+
   <div class="sky-tools">
+    <button type="button" class="ctrl-btn" id="btn-real-pixels">🛰️ Píxeles Reales SPHEREx</button>
     <button type="button" class="ctrl-btn active" id="btn-toggle-bg">Fondo Infrarrojo AllWISE</button>
     <button type="button" class="ctrl-btn active" id="btn-toggle-trails">Vectores de Trayectoria</button>
     <button type="button" class="ctrl-btn" id="btn-reset-view">Centrar Objetivo</button>
   </div>
 
-  <!-- 3. Panel Lateral Derecho: Bandas, Espectrometría y Propiedades Físicas -->
   <aside class="side-inspector" aria-label="Análisis Espectral y Astrofísico">
     <div class="inspector-scroll">
       <div>
@@ -568,15 +665,16 @@
       <div class="spec-box">
         <h3 class="section-title">
           <span>Espectrometría (6 Bandas)</span>
-          <span id="spec-unit" style="color:var(--muted)">Flujo [µJy] vs λ [µm]</span>
+          <span id="spec-unit" style="color:var(--muted)" title="MicroJansky: unidad de flujo espectral infrarrojo (10⁻³² W·m⁻²·Hz⁻¹)">Flujo [µJy] vs λ [µm]</span>
         </h3>
-        <canvas id="spectrum-canvas" width="340" height="155"></canvas>
+        <canvas id="spectrum-canvas" width="340" height="150"></canvas>
       </div>
 
       <div class="obj-header">
         <h2 class="obj-name" id="obj-name">Cargando objeto...</h2>
         <span class="obj-type-badge" id="obj-type">Analizando catálogo</span>
-        <p class="obj-desc" id="obj-desc">Selecciona cualquier cuerpo en el mapa celeste para inspeccionar su cinemática, espectro y composición química.</p>
+        <span class="obj-origin-tag" id="obj-origin">Origen de parámetros: —</span>
+        <p class="obj-desc" id="obj-desc">Selecciona cualquier cuerpo en el mapa celeste para inspeccionar su cinemática y espectro.</p>
       </div>
 
       <div class="telemetry-grid">
@@ -588,7 +686,7 @@
           <span class="tel-label">Velocidad Relativa (v_tan)</span>
           <span class="tel-val" id="tel-vel" style="color:var(--emerald)">—</span>
         </div>
-        <div class="tel-item">
+        <div class="tel-item" title="Milisegundos de arco por año (mas/yr): desplazamiento angular aparente en el cielo">
           <span class="tel-label">Mov. Propio (μα*, μδ)</span>
           <span class="tel-val" id="tel-pm">—</span>
         </div>
@@ -597,7 +695,7 @@
           <span class="tel-val" id="tel-dist">—</span>
         </div>
         <div class="tel-item">
-          <span class="tel-label">Masa Estimada</span>
+          <span class="tel-label">Masa</span>
           <span class="tel-val" id="tel-mass" style="color:var(--gold)">—</span>
         </div>
         <div class="tel-item">
@@ -608,33 +706,32 @@
           <span class="tel-label">Temperatura Efectiva</span>
           <span class="tel-val" id="tel-temp">—</span>
         </div>
-        <div class="tel-item">
+        <div class="tel-item" title="MicroJansky (10⁻³² W·m⁻²·Hz⁻¹): flujo calibrado en apertura">
           <span class="tel-label">Brillo Banda Activa</span>
           <span class="tel-val" id="tel-flux">—</span>
         </div>
         <div class="tel-item full">
-          <span class="tel-label">Composición Química y Firmas Espectrales IR</span>
+          <span class="tel-label">Composición Química / Bandas Espectrales</span>
           <span class="tel-val chem" id="tel-chem">—</span>
         </div>
       </div>
     </div>
   </aside>
 
-  <!-- 4. Barra Temporal Inferior: Mediciones 1-4 + 5ta Interpolada + Slider Evolución -->
   <footer class="bottom-timeline">
     <div class="epoch-selector" id="epoch-buttons">
-      <span>Medición Satélite:</span>
-      <button type="button" class="epoch-btn active" data-epoch="0">1ª Medición</button>
-      <button type="button" class="epoch-btn" data-epoch="1">2ª Medición</button>
-      <button type="button" class="epoch-btn" data-epoch="2">3ª Medición</button>
-      <button type="button" class="epoch-btn" data-epoch="3">4ª Medición</button>
-      <button type="button" class="epoch-btn interp" data-epoch="4">5ª Interpolada</button>
+      <span>Épocas:</span>
+      <button type="button" class="epoch-btn active" data-epoch="0">1ª</button>
+      <button type="button" class="epoch-btn" data-epoch="1">2ª</button>
+      <button type="button" class="epoch-btn" data-epoch="2">3ª</button>
+      <button type="button" class="epoch-btn" data-epoch="3">4ª</button>
+      <button type="button" class="epoch-btn interp" data-epoch="4">5ª Extrap.</button>
     </div>
 
     <div class="slider-zone">
       <div class="slider-header">
-        <span>Evolución Temporal (Interpolador Analítico): <strong id="epoch-mode-tag" style="color:var(--emerald)">Medición 1 (Observada)</strong></span>
-        <span class="mjd-readout" id="mjd-readout">MJD 60810.50 · 2025-05-15</span>
+        <span>Estado: <strong id="epoch-mode-tag" style="color:var(--emerald)">Medición 1 · Observada (SPHEREx)</strong></span>
+        <span class="mjd-readout" id="mjd-readout" title="Fecha Juliana Modificada (MJD): conteo continuo de días usado en astronomía">MJD 60810.50 · 2025-05-15</span>
       </div>
       <input id="time-slider" type="range" min="0" max="1000" step="1" value="0">
     </div>
@@ -657,30 +754,25 @@ const STATE = {
   data: null,
   aladin: null,
   aladinReady: false,
-  // Cámara de respaldo si Aladin Lite está offline
-  cam: { ra: 133.795129, dec: -7.245147, fov: 0.05 },
+  cam: { ra: 269.452076, dec: 4.693365, fov: 0.04 },
   drag: { active: false, x: 0, y: 0 },
-  // Estado temporal y espectral
   mjdMin: 60810.5,
   mjdMaxBase: 61540.9,
   mjdCurrent: 60810.5,
-  horizonYears: 0,       // 0 = hasta 5ta medición; 100 = +100 años en el futuro
-  vectorScale: 1,        // 1x real, 100x, 1000x
-  activeEpochIdx: 0,     // 0..4 o -1 si se mueve libremente con slider
-  selectedBandIdx: -1,   // -1 = Compuesto 6 bandas, 0..5 = banda específica
+  horizonYears: 0,
+  vectorScale: 1,
+  activeEpochIdx: 0,
+  selectedBandIdx: -1,
   selectedObjectName: null,
   hoveredObjectName: null,
   showBg: true,
   showTrails: true,
   playing: false,
-  screenBodies: [],      // Caché de posiciones en pantalla para clics y hover
+  screenBodies: [],
 };
 
 const $ = id => document.getElementById(id);
 
-/* ============================================================================
-   1. EVALUACIÓN ANALÍTICA EN TIEMPO REAL (ESPEJO DE generador_interpolacion.py)
-   ============================================================================ */
 function evaluarPosicionEnTiempo(eq, mjdObjetivo, scaleFactor = 1) {
   const dtYr = ((mjdObjetivo - eq.t0_mjd) / DIAS_POR_ANIO) * scaleFactor;
   const cosDec0 = Math.max(Math.cos((eq.dec_0_deg * Math.PI) / 180), 1e-6);
@@ -699,7 +791,6 @@ function interpolarEspectroEnTiempo(itemEq, mjdObjetivo) {
   const refEsp = itemEq.espectro_referencia || [];
   if (!epochs.length || !refEsp.length) return refEsp;
 
-  // Buscar los 2 epochs más cercanos al mjdObjetivo para interpolar linealmente
   let e0 = epochs[0];
   let e1 = epochs[epochs.length - 1];
   for (let i = 0; i < epochs.length - 1; i++) {
@@ -740,9 +831,6 @@ function mjdToDateString(mjd) {
   return date.toISOString().slice(0, 10);
 }
 
-/* ============================================================================
-   2. PROYECCIÓN CELESTE (ALADIN LITE + PROYECCIÓN GNOMÓNICA DE RESPALDO)
-   ============================================================================ */
 function worldToScreen(ra, dec) {
   const canvas = $("vector-hud");
   if (STATE.aladinReady && STATE.aladin) {
@@ -753,7 +841,6 @@ function worldToScreen(ra, dec) {
       }
     } catch (_) {}
   }
-  // Proyección tangencial (Gnomonic TAN) autónoma si Aladin está offline
   const W = canvas.width;
   const H = canvas.height;
   const ra0 = (STATE.cam.ra * Math.PI) / 180;
@@ -769,7 +856,6 @@ function worldToScreen(ra, dec) {
 
   const fovRad = (STATE.cam.fov * Math.PI) / 180;
   const scale = Math.min(W, H) / fovRad;
-  // En astronomía el Este (RA creciente) apunta hacia la izquierda
   return {
     x: W / 2 - xRad * scale,
     y: H / 2 - yRad * scale,
@@ -786,9 +872,6 @@ function getPixelsPerArcsec() {
   return 6.0;
 }
 
-/* ============================================================================
-   3. RENDERIZADO VECTORIAL A 60 FPS (EFECTO STELLARIUM)
-   ============================================================================ */
 function renderLoop() {
   const canvas = $("vector-hud");
   const ctx = canvas.getContext("2d");
@@ -798,8 +881,6 @@ function renderLoop() {
   }
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Grilla ecuatorial sutil estilo Stellarium
   drawEquatorialGrid(ctx, canvas.width, canvas.height);
 
   if (STATE.data && STATE.data.ecuaciones_trayectoria) {
@@ -817,7 +898,6 @@ function renderLoop() {
       const isHovered = item.nombre_oficial === STATE.hoveredObjectName;
       const isTarget = item.es_objetivo;
 
-      // 1. Dibujar trayectoria histórica y predicha (Epoch 1 -> Epoch 5 / Futuro)
       if (STATE.showTrails && (Math.abs(item.ecuacion.mu_ra_cosdec_mas_yr) > 1 || Math.abs(item.ecuacion.mu_dec_mas_yr) > 1)) {
         const posStart = evaluarPosicionEnTiempo(item.ecuacion, mjdStart, STATE.vectorScale);
         const posEnd = evaluarPosicionEnTiempo(item.ecuacion, mjdEndMax, STATE.vectorScale);
@@ -834,7 +914,6 @@ function renderLoop() {
           ctx.setLineDash([5, 4]);
           ctx.stroke();
 
-          // Marcar los 4 puntos reales + 5to interpolado sobre la línea
           STATE.data.epochs.forEach((ep, idxEp) => {
             const pEp = evaluarPosicionEnTiempo(item.ecuacion, ep.mjd_promedio, STATE.vectorScale);
             const sEp = worldToScreen(pEp.ra, pEp.dec);
@@ -849,7 +928,6 @@ function renderLoop() {
         }
       }
 
-      // 2. Determinar color y flujo según la banda infrarroja seleccionada
       const espAhora = interpolarEspectroEnTiempo(item, STATE.mjdCurrent);
       let bandColor = "#38bdf8";
       let fluxActual = 100.0;
@@ -858,18 +936,15 @@ function renderLoop() {
         bandColor = espAhora[STATE.selectedBandIdx].color_hex;
         fluxActual = espAhora[STATE.selectedBandIdx].flux_ujy;
       } else if (espAhora.length) {
-        // Color compuesto ponderado por flujo
         const maxPt = espAhora.reduce((a, b) => (b.flux_ujy > a.flux_ujy ? b : a), espAhora[0]);
         bandColor = maxPt.color_hex;
         fluxActual = espAhora.reduce((acc, b) => acc + b.flux_ujy, 0) / espAhora.length;
       }
 
-      // Radio visual proporcional a morfología y flujo logarítmico
       const logScale = Math.max(0.65, Math.min(2.4, Math.log10(Math.max(fluxActual, 1)) * 0.65));
       const rx = Math.max(5, Math.min(42, (item.semieje_a_arcsec * 0.45 * pxPerArcsec) * 0.35 + 4.5 * logScale));
       const ry = Math.max(4, Math.min(36, (item.semieje_b_arcsec * 0.45 * pxPerArcsec) * 0.35 + 4.5 * logScale));
 
-      // 3. Halo atmosférico/PSF tipo Stellarium
       ctx.save();
       ctx.translate(scrNow.x, scrNow.y);
       ctx.rotate((-item.angulo_deg * Math.PI) / 180);
@@ -884,7 +959,6 @@ function renderLoop() {
       ctx.ellipse(0, 0, rx * 2.4, ry * 2.4, 0, 0, Math.PI * 2);
       ctx.fill();
 
-      // Núcleo estelar o elipse galáctica
       ctx.beginPath();
       ctx.ellipse(0, 0, rx * 0.55, ry * 0.55, 0, 0, Math.PI * 2);
       ctx.fillStyle = "#ffffff";
@@ -897,12 +971,10 @@ function renderLoop() {
       }
       ctx.restore();
 
-      // 4. Retícula de selección estilo Stellarium
       if (isSelected || isHovered) {
         drawStellariumReticle(ctx, scrNow.x, scrNow.y, rx + 9, isSelected ? "#fbbf24" : "#38bdf8");
       }
 
-      // 5. Etiqueta de identificación (Gaia DR3 / Nombre oficial)
       if (isSelected || isHovered || isTarget || rx > 7.5) {
         ctx.font = isSelected ? "600 12px 'Space Grotesk', sans-serif" : "11px 'Inter', sans-serif";
         ctx.fillStyle = isSelected ? "#fbbf24" : (isTarget ? "#e0f2fe" : "rgba(219, 234, 254, 0.78)");
@@ -951,9 +1023,7 @@ function drawStellariumReticle(ctx, x, y, r, color) {
   ctx.strokeStyle = color;
   ctx.lineWidth = 1.6;
   const len = 6;
-  const corners = [
-    [-1, -1], [1, -1], [1, 1], [-1, 1]
-  ];
+  const corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
   for (const [sx, sy] of corners) {
     ctx.beginPath();
     ctx.moveTo(x + sx * r, y + sy * (r - len));
@@ -964,9 +1034,6 @@ function drawStellariumReticle(ctx, x, y, r, color) {
   ctx.restore();
 }
 
-/* ============================================================================
-   4. ACTUALIZACIÓN DE INSPECTOR ASTROFÍSICO Y ESPECTROMETRÍA
-   ============================================================================ */
 function updateInspectorPanel() {
   if (!STATE.data) return;
   const bodyEntry = STATE.screenBodies.find(b => b.nombre === STATE.selectedObjectName)
@@ -979,15 +1046,16 @@ function updateInspectorPanel() {
 
   $("obj-name").textContent = item.nombre_oficial;
   $("obj-type").textContent = af.tipo_cuerpo || item.clasificacion_objeto || "Objeto Celeste";
+  $("obj-origin").textContent = `Origen: ${af.origen_parametros || "Catálogo SPHEREx"}`;
   $("obj-desc").textContent = af.descripcion_cientifica || "";
 
   $("tel-coords").textContent = `${posNow.ra.toFixed(5)}°, ${posNow.dec.toFixed(5)}°`;
-  $("tel-vel").textContent = af.velocidad_relativa_kms != null ? `${af.velocidad_relativa_kms} km/s` : "Cosmológica / N/A";
+  $("tel-vel").textContent = af.velocidad_relativa_kms != null ? `${af.velocidad_relativa_kms} km/s` : "No determinada";
   $("tel-pm").textContent = `${item.ecuacion.mu_ra_cosdec_mas_yr.toFixed(1)}, ${item.ecuacion.mu_dec_mas_yr.toFixed(1)} mas/yr`;
-  $("tel-dist").textContent = af.distancia_pc != null ? `${af.distancia_pc} pc (${af.distancia_ly} ly)` : "Extragaláctica";
-  $("tel-mass").textContent = af.masa || "—";
-  $("tel-density").textContent = af.densidad || "—";
-  $("tel-temp").textContent = af.temperatura_eff_k ? `${af.temperatura_eff_k} K` : "—";
+  $("tel-dist").textContent = af.distancia_pc != null ? `${af.distancia_pc} pc (${af.distancia_ly} ly)` : "Sin paralaje Gaia > 0.5 mas";
+  $("tel-mass").textContent = af.masa || "No determinada";
+  $("tel-density").textContent = af.densidad || "No determinada";
+  $("tel-temp").textContent = af.temperatura_eff_k ? `${af.temperatura_eff_k} K` : "No determinada";
   $("tel-chem").textContent = af.composicion_quimica || "—";
 
   if (STATE.selectedBandIdx >= 0 && espAhora[STATE.selectedBandIdx]) {
@@ -1001,6 +1069,78 @@ function updateInspectorPanel() {
   drawSpectrumChart(espAhora);
 }
 
+let blinkInterval = null;
+let blinkPausado = false;
+
+function obtenerUrlImagenOptica(ra, dec, fovDeg = 0.04) {
+  const params = new URLSearchParams({
+    hips: "CDS/P/DSS2/color",
+    ra: ra,
+    dec: dec,
+    fov: fovDeg,
+    width: 180,
+    height: 180,
+    format: "jpg"
+  });
+  return `https://alasky.cds.unistra.fr/hips-image-services/hips2fits?${params.toString()}`;
+}
+
+async function inspeccionarObjetoSeleccionado(objData) {
+  const card = document.getElementById("object-inspector-card");
+  card.style.display = "block";
+  document.getElementById("insp-title").textContent = objData.nombre_oficial || "Fuente SPHEREx";
+  document.getElementById("insp-subtitle").textContent = `RA: ${objData.ra.toFixed(5)}° | Dec: ${objData.dec.toFixed(5)}°`;
+  document.getElementById("blink-label").textContent = "Cargando píxeles S3...";
+
+  const fovActual = STATE.data?.centro_campo?.fov_deg || 0.04;
+
+  // 1. Cargar foto óptica desde CDS (DSS2)
+  document.getElementById("img-optical").src = obtenerUrlImagenOptica(objData.ra, objData.dec, fovActual);
+
+  // 2. Pedir recortes reales de SPHEREx a tu backend
+  const url = `/api/inspect_pixels?ra=${objData.ra}&dec=${objData.dec}&fov_deg=${fovActual}`;
+  const resp = await fetch(url);
+  if (!resp.ok) {
+    document.getElementById("blink-label").textContent = "Sin FITS en S3 para este punto";
+    return;
+  }
+  const recortes = await resp.json();
+  if (!recortes.epoch_1) return;
+
+  // 3. Iniciar Blink Comparator entre época inicial y final
+  const imgBlink = document.getElementById("img-spherex-blink");
+  const labelBlink = document.getElementById("blink-label");
+  let mostrandoEpoch1 = true;
+  blinkPausado = false;
+
+  if (blinkInterval) clearInterval(blinkInterval);
+  imgBlink.src = recortes.epoch_1.png_base64;
+  labelBlink.textContent = `SPHEREx IR — Época 1 (MJD ${recortes.epoch_1.mjd || ""})`;
+
+  blinkInterval = setInterval(() => {
+    if (blinkPausado) return;
+    mostrandoEpoch1 = !mostrandoEpoch1;
+    imgBlink.src = mostrandoEpoch1 ? recortes.epoch_1.png_base64 : recortes.epoch_last.png_base64;
+    labelBlink.textContent = mostrandoEpoch1
+      ? `SPHEREx IR — Época 1 (MJD ${recortes.epoch_1.mjd || ""})`
+      : `SPHEREx IR — Última Época (MJD ${recortes.epoch_last.mjd || ""})`;
+  }, 550);
+
+  document.getElementById("btn-toggle-blink").onclick = () => {
+    blinkPausado = !blinkPausado;
+    document.getElementById("btn-toggle-blink").textContent = blinkPausado ? "▶️ Reanudar Blink" : "⏸ Pausar Blink";
+  };
+
+  // 4. Superponer píxeles reales sobre el mapa de Aladin Lite
+  document.getElementById("btn-overlay-aladin").onclick = () => {
+    if (!STATE.aladinReady || !STATE.aladin) return;
+    const overlay = A.imageOverlay(recortes.epoch_last.png_base64, {
+      bounds: recortes.epoch_last.bounds,
+      opacity: 0.7
+    });
+    STATE.aladin.addImageOverlay(overlay);
+  };
+}
 function drawSpectrumChart(espectro) {
   const canvas = $("spectrum-canvas");
   const ctx = canvas.getContext("2d");
@@ -1022,7 +1162,6 @@ function drawSpectrumChart(espectro) {
   const toX = v => pad.l + ((v - xMin) / (xMax - xMin || 1)) * (W - pad.l - pad.r);
   const toY = v => H - pad.b - ((v - yMin) / (yMax - yMin || 1)) * (H - pad.t - pad.b);
 
-  // Ejes y guías horizontales
   ctx.strokeStyle = "rgba(142, 163, 199, 0.2)";
   ctx.lineWidth = 1;
   for (let i = 0; i <= 3; i++) {
@@ -1033,7 +1172,6 @@ function drawSpectrumChart(espectro) {
     ctx.stroke();
   }
 
-  // Área bajo la curva espectral
   ctx.beginPath();
   espectro.forEach((p, idx) => {
     const x = toX(p.lambda_um);
@@ -1045,13 +1183,11 @@ function drawSpectrumChart(espectro) {
   ctx.lineWidth = 2;
   ctx.stroke();
 
-  // Puntos de cada banda con barras de error
   espectro.forEach((p, idx) => {
     const x = toX(p.lambda_um);
     const y = toY(p.flux_ujy);
     const isSel = STATE.selectedBandIdx === idx;
 
-    // Barra de error
     const errPx = ((p.flux_err_ujy || 0) / (yMax - yMin)) * (H - pad.t - pad.b);
     ctx.strokeStyle = "rgba(255,255,255,0.45)";
     ctx.beginPath();
@@ -1068,7 +1204,6 @@ function drawSpectrumChart(espectro) {
     ctx.stroke();
   });
 
-  // Etiquetas de ejes
   ctx.fillStyle = "#8ea3c7";
   ctx.font = "10.5px 'JetBrains Mono', monospace";
   ctx.textAlign = "left";
@@ -1079,9 +1214,6 @@ function drawSpectrumChart(espectro) {
   ctx.fillText("0", pad.l - 5, H - pad.b);
 }
 
-/* ============================================================================
-   5. CONTROLES DE BANDAS, MEDICIONES (1-5) Y SLIDER TEMPORAL
-   ============================================================================ */
 function buildBandButtons(bandas) {
   const grid = $("band-grid");
   let html = `<button type="button" class="band-btn ${STATE.selectedBandIdx === -1 ? "active" : ""}" data-band="-1">
@@ -1124,10 +1256,17 @@ function selectMeasurementEpoch(idx) {
     b.classList.toggle("active", i === idx);
   });
 
-  $("epoch-mode-tag").textContent = ep.es_interpolado
-    ? "5ª Medición (Predicción Interpolador)"
-    : `Medición ${idx + 1} (Satélite SPHEREx)`;
-  $("epoch-mode-tag").style.color = ep.es_interpolado ? "var(--gold)" : "var(--emerald)";
+  const tipo = ep.tipo_medicion || (ep.es_extrapolado ? "extrapolada" : "observada_spherex");
+  const etiquetas = {
+    observada_spherex: `Medición ${idx + 1} · Observada (SPHEREx)`,
+    proyectada_gaia: `Medición ${idx + 1} · Proyectada (Cinemática Gaia DR3)`,
+    extrapolada: `5ª Medición · Extrapolación Analítica`,
+    simulada: `Medición ${idx + 1} · Simulada (Modo Offline)`,
+  };
+  $("epoch-mode-tag").textContent = etiquetas[tipo] || `Medición ${idx + 1}`;
+  $("epoch-mode-tag").style.color = tipo === "observada_spherex"
+    ? "var(--emerald)"
+    : (tipo === "proyectada_gaia" ? "var(--accent)" : (tipo === "simulada" ? "var(--rose)" : "var(--gold)"));
   updateInspectorPanel();
 }
 
@@ -1190,6 +1329,38 @@ $("btn-reset-view").onclick = () => {
   centerCamera(STATE.data.centro_campo.ra, STATE.data.centro_campo.dec, STATE.data.centro_campo.fov_deg);
 };
 
+$("btn-close-onboarding").onclick = () => {
+  $("onboarding-box").style.display = "none";
+};
+
+$("btn-close-fits").onclick = () => {
+  $("fits-modal").hidden = true;
+};
+
+function loadRealFitsCutout(epIdx) {
+  if (!STATE.data) return;
+  const { ra, dec, fov_deg } = STATE.data.centro_campo;
+  $("fits-status-text").textContent = "Descargando recorte FITS en streaming desde AWS S3...";
+  $("btn-fits-ep1").classList.toggle("active", epIdx === 0);
+  $("btn-fits-ep2").classList.toggle("active", epIdx === 1);
+
+  const imgEl = $("fits-real-img");
+  imgEl.onload = () => {
+    $("fits-status-text").textContent = `Recorte FITS real SPHEREx (${epIdx === 0 ? "Época inicial" : "Época final"}).`;
+  };
+  imgEl.onerror = () => {
+    $("fits-status-text").textContent = "No hay recorte FITS real disponible en S3 para esta coordenada/sesión.";
+  };
+  imgEl.src = `/api/cutout-png?ra=${ra}&dec=${dec}&fov=${fov_deg}&epoch_idx=${epIdx}`;
+}
+
+$("btn-real-pixels").onclick = () => {
+  $("fits-modal").hidden = false;
+  loadRealFitsCutout(0);
+};
+$("btn-fits-ep1").onclick = () => loadRealFitsCutout(0);
+$("btn-fits-ep2").onclick = () => loadRealFitsCutout(1);
+
 setInterval(() => {
   if (!STATE.playing || !STATE.data) return;
   const mjdEnd = STATE.mjdMaxBase + STATE.horizonYears * DIAS_POR_ANIO;
@@ -1200,9 +1371,6 @@ setInterval(() => {
   updateInspectorPanel();
 }, 40);
 
-/* ============================================================================
-   6. INTERACCIÓN CON EL MAPA CELESTE (CLIC EN OBJETOS, ZOOM Y PAN)
-   ============================================================================ */
 const hudCanvas = $("vector-hud");
 
 hudCanvas.addEventListener("mousemove", e => {
@@ -1240,21 +1408,19 @@ hudCanvas.addEventListener("mousedown", e => {
   const mx = e.clientX - rect.left;
   const my = e.clientY - rect.top;
 
-  // Verificar si hizo clic sobre un objeto celeste
   for (const b of STATE.screenBodies) {
     if (Math.hypot(mx - b.x, my - b.y) <= b.hitRadius) {
       STATE.selectedObjectName = b.nombre;
       updateInspectorPanel();
+      inspeccionarObjetoSeleccionado({
+        nombre_oficial: b.nombre,
+        ra: b.posNow.ra,
+        dec: b.posNow.dec
+      });
       return;
     }
   }
-
-  if (!STATE.aladinReady) {
-    STATE.drag = { active: true, x: mx, y: my };
-  } else if (STATE.aladin) {
-    // Reenviar arrastre a Aladin Lite si el usuario arrastra el cielo vacío
-    STATE.drag = { active: true, x: mx, y: my };
-  }
+  STATE.drag = { active: true, x: mx, y: my };
 });
 
 window.addEventListener("mouseup", () => {
@@ -1280,11 +1446,8 @@ function centerCamera(ra, dec, fov) {
   }
 }
 
-/* ============================================================================
-   7. CARGA DE DATOS DESDE EL BACKEND (/api/timeline) Y BUSCADOR
-   ============================================================================ */
 async function cargarRegionEspacial({ q = null, ra = null, dec = null, fov = null }) {
-  $("status-toast").textContent = `Procesando catálogo SPHEREx + Gaia DR3 + Interpolador...`;
+  $("status-toast").textContent = `Procesando catálogo SPHEREx + Gaia DR3 + Extrapolador...`;
 
   const params = new URLSearchParams();
   if (q) params.set("q", q);
@@ -1303,11 +1466,23 @@ async function cargarRegionEspacial({ q = null, ra = null, dec = null, fov = nul
     STATE.mjdCurrent = STATE.mjdMin;
     STATE.selectedBandIdx = -1;
 
+    const esSimulado = Boolean(data.es_simulado || (data.meta?.origen_datos || "").includes("SIMULADO"));
+    $("sim-banner").hidden = !esSimulado;
+
+    document.querySelectorAll(".epoch-btn").forEach((btn, idx) => {
+      const ep = data.epochs[idx];
+      if (!ep) return;
+      const tipo = ep.tipo_medicion || (ep.es_extrapolado ? "extrapolada" : "observada_spherex");
+      const badge = tipo === "observada_spherex"
+        ? "Obs. SPHEREx"
+        : (tipo === "proyectada_gaia" ? "Proy. Gaia" : (tipo === "simulada" ? "Simulada" : "Extrapolada"));
+      btn.textContent = `${idx + 1}ª (${badge})`;
+    });
+
     $("inp-ra").value = data.centro_campo.ra.toFixed(6);
     $("inp-dec").value = data.centro_campo.dec.toFixed(6);
     $("inp-fov").value = data.centro_campo.fov_deg;
 
-    // Seleccionar el objeto principal por defecto
     const objCentral = data.ecuaciones_trayectoria.find(x => x.es_objetivo) || data.ecuaciones_trayectoria[0];
     STATE.selectedObjectName = objCentral ? objCentral.nombre_oficial : null;
 
@@ -1315,12 +1490,11 @@ async function cargarRegionEspacial({ q = null, ra = null, dec = null, fov = nul
     buildBandButtons(data.meta?.bandas_disponibles || []);
     selectMeasurementEpoch(0);
 
-    // Resaltar pill si coincide con objetivo del Challenge
     document.querySelectorAll(".pill-btn").forEach(btn => {
       btn.classList.toggle("active", btn.dataset.target.toLowerCase() === (data.meta?.nombre_objetivo || "").toLowerCase());
     });
 
-    $("status-toast").textContent = `${data.meta?.nombre_objetivo} · ${data.ecuaciones_trayectoria.length} cuerpos vectorizados (${data.meta?.origen_datos})`;
+    $("status-toast").textContent = `${data.meta?.nombre_objetivo} · ${data.ecuaciones_trayectoria.length} cuerpos (${data.meta?.origen_datos})`;
   } catch (err) {
     $("status-toast").textContent = `Error: ${err.message}`;
   }
@@ -1332,7 +1506,7 @@ $("search-form").addEventListener("submit", e => {
   const qVal = $("inp-query").value.trim();
   const raVal = $("inp-ra").value.trim() ? Number($("inp-ra").value) : null;
   const decVal = $("inp-dec").value.trim() ? Number($("inp-dec").value) : null;
-  const fovVal = $("inp-fov").value.trim() ? Number($("inp-fov").value) : 0.05;
+  const fovVal = $("inp-fov").value.trim() ? Number($("inp-fov").value) : 0.04;
 
   if (qVal) {
     cargarRegionEspacial({ q: qVal, fov: fovVal });
@@ -1349,7 +1523,6 @@ document.querySelectorAll(".pill-btn").forEach(btn => {
   };
 });
 
-// Autocompletado de búsqueda
 let suggestTimer = null;
 $("inp-query").addEventListener("input", () => {
   clearTimeout(suggestTimer);
@@ -1384,22 +1557,18 @@ $("inp-query").addEventListener("blur", () => {
   setTimeout(() => { $("suggestions").hidden = true; }, 150);
 });
 
-/* ============================================================================
-   8. ARRANQUE DEL OBSERVATORIO
-   ============================================================================ */
 function startApp() {
   requestAnimationFrame(renderLoop);
-  // Cargar WISE 0855 como vista inicial
-  $("inp-query").value = "WISE 0855";
-  cargarRegionEspacial({ q: "WISE 0855" });
+  $("inp-query").value = "Barnard's Star";
+  cargarRegionEspacial({ q: "Barnard's Star" });
 }
 
 if (typeof A !== "undefined" && A.init) {
   A.init.then(() => {
     STATE.aladin = A.aladin("#aladin-map", {
       survey: "P/allWISE/color",
-      fov: 0.11,
-      target: "133.795129 -7.245147",
+      fov: 0.09,
+      target: "269.452076 4.693365",
       showCooGrid: false,
       showControls: false,
       showFrame: false,

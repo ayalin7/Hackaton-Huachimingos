@@ -3,46 +3,22 @@
 MÓDULO: test_identificacion_gaia_alerce.py
 PROYECTO: NASA Space Apps Challenge 2026 - Visor Vectorial SPHEREx + ALeRCE
 ================================================================================
-
-DESCRIPCIÓN GENERAL:
-    Script independiente de validación para enriquecer el catálogo vectorizado
-    de SPHEREx con identidad astrofísica real mediante dos APIs externas:
-      1. ALeRCE (API REST ZTF): Se consulta ANTES del pipeline para clasificar
-         el objeto central (AGN, SN, YSO, etc.) y seleccionar las 6 bandas
-         infrarrojas óptimas.
-      2. Gaia DR3 (Servicio TAP ESA/VizieR): Se consulta DESPUÉS de extraer las
-         fuentes con SEP para bautizar cada estrella del campo con su ID
-         oficial ('Gaia DR3 ...'), paralaje y movimiento propio.
-
-USO DESDE TERMINAL:
-    python3 test_identificacion_gaia_alerce.py
-================================================================================
 """
 
 import json
 from pathlib import Path
 
-import numpy as np
 import astropy.units as u
+import numpy as np
 import requests
 from astropy.coordinates import SkyCoord, match_coordinates_sky
+from astropy.time import Time
 from astroquery.gaia import Gaia
 
-# Importamos tu pipeline principal
-from pipeline_spherex_vectorizado import (
-    ejecutar_pipeline_completo,
-    renderizar_control_local,
-)
+from pipeline_spherex_vectorizado import ejecutar_pipeline_completo
 
 
-# =====================================================================
-# PASO PREVIO: CONSULTA A ALERCE (ANTES DE PROCESAR FITS)
-# =====================================================================
 def consultar_clasificacion_alerce(ra: float, dec: float, radio_arcsec: float = 5.0) -> dict:
-    """
-    Consulta la API pública de ALeRCE por cono de búsqueda para obtener el ID
-    de ZTF y la clase astrofísica dominante que guiará la selección de bandas.
-    """
     url_alerce = "https://api.alerce.online/ztf/v1/objects/"
     params = {
         "ra": ra,
@@ -61,12 +37,10 @@ def consultar_clasificacion_alerce(ra: float, dec: float, radio_arcsec: float = 
             print("[ALeRCE] Sin coincidencias en ZTF. Usando perfil espectral 'DEFAULT'.")
             return {"oid": None, "clase": "DEFAULT", "probabilidad": 0.0}
 
-        # Tomar el objeto más cercano / con mayor probabilidad de clasificación
         mejor = items[0]
         oid = mejor.get("oid")
         clase_raw = str(mejor.get("classrf") or mejor.get("classearly") or "DEFAULT").upper()
 
-        # Mapear clases detalladas de ALeRCE a los perfiles infrarrojos de SPHEREx
         mapa_clases = {
             "AGN": "AGN",
             "QSO": "AGN",
@@ -89,15 +63,8 @@ def consultar_clasificacion_alerce(ra: float, dec: float, radio_arcsec: float = 
         return {"oid": None, "clase": "DEFAULT", "probabilidad": 0.0}
 
 
-# =====================================================================
-# PASO POSTERIOR: COTEJO Y NOMBRAMIENTO CON GAIA DR3
-# =====================================================================
 def consultar_catalogo_gaia_campo(ra_centro: float, dec_centro: float, fov_deg: float):
-    """
-    Descarga en una sola consulta TAP todas las estrellas de Gaia DR3 dentro del
-    campo de visión (fov_deg) para cruzarlas localmente con las detecciones de SEP.
-    """
-    radio_deg = (fov_deg * 0.75)  # Cubre toda la diagonal del recorte cuadrado
+    radio_deg = fov_deg * 0.75
     print(f"[Gaia DR3] Consultando estrellas de referencia en radio={radio_deg:.3f}°...")
 
     query = f"""
@@ -114,11 +81,8 @@ def consultar_catalogo_gaia_campo(ra_centro: float, dec_centro: float, fov_deg: 
     print(f"[Gaia DR3] Recibidas {len(tabla_gaia)} fuentes catalogadas.")
     return tabla_gaia
 
-def bautizar_fuentes_con_gaia(resultado_pipeline: dict, radio_match_arcsec: float = 3.5) -> dict:
-    """
-    Toma el JSON generado por pipeline_spherex_vectorizado.py y asigna nombre oficial
-    ('Gaia DR3 ...'), paralaje y movimiento propio a cada fuente detectada.
-    """
+
+def bautizar_fuentes_con_gaia(resultado_pipeline: dict, radio_match_arcsec: float = 4.5) -> dict:
     centro = resultado_pipeline["centro_campo"]
     tabla_gaia = consultar_catalogo_gaia_campo(centro["ra"], centro["dec"], centro["fov_deg"])
 
@@ -126,22 +90,30 @@ def bautizar_fuentes_con_gaia(resultado_pipeline: dict, radio_match_arcsec: floa
         print("[Gaia DR3] No se encontraron contrapartes en el catálogo.")
         return resultado_pipeline
 
-    coords_gaia = SkyCoord(ra=tabla_gaia["ra"], dec=tabla_gaia["dec"], unit="deg", frame="icrs")
-
     def valor_seguro(val, default=0.0) -> float:
-        """Convierte valores enmascarados (MaskedConstant) o NaN de Astropy a float limpio."""
         if val is None or np.ma.is_masked(val):
             return default
         v = float(val)
         return v if np.isfinite(v) else default
 
+    pmra_arr = np.array([valor_seguro(v, 0.0) for v in tabla_gaia["pmra"]])
+    pmdec_arr = np.array([valor_seguro(v, 0.0) for v in tabla_gaia["pmdec"]])
+    dec_rad = np.radians(np.array(tabla_gaia["dec"], dtype=float))
+
     for epoch in resultado_pipeline["epochs"]:
         emparejados = 0
+        t_obs = Time(float(epoch["mjd_promedio"]), format="mjd")
+        dt_yr = (t_obs - Time("J2016.0")).to(u.yr).value
+
+        # Propagar posiciones de Gaia DR3 (época J2016.0) a la época real de observación de SPHEREx
+        ra_prop = np.array(tabla_gaia["ra"], dtype=float) + ((pmra_arr * dt_yr) / (3600.0 * 1000.0)) / np.maximum(np.cos(dec_rad), 1e-6)
+        dec_prop = np.array(tabla_gaia["dec"], dtype=float) + ((pmdec_arr * dt_yr) / (3600.0 * 1000.0))
+        coords_gaia_ep = SkyCoord(ra=ra_prop * u.deg, dec=dec_prop * u.deg, frame="icrs")
+
         for fuente in epoch["catalogo_campo"]:
             c_sep = SkyCoord(ra=fuente["ra"] * u.deg, dec=fuente["dec"] * u.deg, frame="icrs")
-            idx, sep2d, _ = match_coordinates_sky(c_sep, coords_gaia)
+            idx, sep2d, _ = match_coordinates_sky(c_sep, coords_gaia_ep)
 
-            # Extraer escalar puro sin importar si sep2d.arcsec es array 0D o 1D
             dist_arcsec = float(np.asarray(sep2d.arcsec).item())
             idx_escalar = int(np.asarray(idx).item())
 
@@ -156,7 +128,7 @@ def bautizar_fuentes_con_gaia(resultado_pipeline: dict, radio_match_arcsec: floa
                 fuente["paralaje_mas"] = round(plx, 3)
                 fuente["pmra_mas_yr"] = round(valor_seguro(fila_gaia["pmra"], 0.0), 3)
                 fuente["pmdec_mas_yr"] = round(valor_seguro(fila_gaia["pmdec"], 0.0), 3)
-                fuente["clasificacion_objeto"] = "Estrella (Gaia)" if plx > 0.5 else "Fuente Extragaláctica / Lejana"
+                fuente["clasificacion_objeto"] = "Estrella (Gaia DR3)" if plx > 0.5 else "Fuente Extragaláctica / Lejana"
                 emparejados += 1
             else:
                 fuente["nombre_oficial"] = f"SPHEREx-IR {fuente['fuente_id']}"
@@ -166,13 +138,9 @@ def bautizar_fuentes_con_gaia(resultado_pipeline: dict, radio_match_arcsec: floa
 
     return resultado_pipeline
 
-# =====================================================================
-# EJECUCIÓN DE PRUEBA
-# =====================================================================
+
 if __name__ == "__main__":
     dir_actual = Path(__file__).resolve().parent
-
-    # Puedes usar input_s3_real_grande.json (si ya corriste el test en vivo) o spherex.json
     ruta_entrada = dir_actual / "input_s3_real_grande.json"
     if not ruta_entrada.exists():
         ruta_entrada = dir_actual / "spherex.json"
@@ -180,18 +148,11 @@ if __name__ == "__main__":
     with open(ruta_entrada, "r", encoding="utf-8") as f:
         datos_in = json.load(f)
 
-    # 1. ANTES del pipeline: Consultar ALeRCE para saber qué objeto es y elegir las 6 bandas
     info_alerce = consultar_clasificacion_alerce(datos_in["ra"], datos_in["dec"])
-
-    # 2. DURANTE el pipeline: Ejecutar extracción de fuentes desde S3 con las bandas de ALeRCE
     resultado = ejecutar_pipeline_completo(str(ruta_entrada), clase_alerce=info_alerce["clase"])
     resultado["alerce_info"] = info_alerce
-
-    # 3. DESPUÉS del pipeline: Cotejar contra Gaia DR3 para bautizar todas las estrellas/galaxias
     resultado_identificado = bautizar_fuentes_con_gaia(resultado)
 
     ruta_salida = dir_actual / "salida_identificada_gaia_alerce.json"
     with open(ruta_salida, "w", encoding="utf-8") as f:
         json.dump(resultado_identificado, f, indent=2)
-
-    print(f"\n¡Listo! Catálogo completo con nombres oficiales guardado en:\n{ruta_salida}")
