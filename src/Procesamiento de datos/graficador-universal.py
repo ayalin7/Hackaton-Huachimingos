@@ -192,7 +192,7 @@ def graficar_json(
 
     # Etiquetar fuentes identificadas con Gaia DR3 (máximo 15 más brillantes para no saturar)
     if mostrar_nombres:
-        gaia_objs = [f_obj for f_obj in fuentes_norm if f_obj["es_gaia"]]
+        gaia_objs = [f_obj for f_obj in fuentes_norm if f_obj["nombre"] and not f_obj["nombre"].startswith("SPHEREx-IR")]
         gaia_objs.sort(key=lambda x: x["flujo"], reverse=True)
         for g_obj in gaia_objs[:15]:
             # Mostrar solo los últimos dígitos del ID de Gaia para legibilidad limpia

@@ -75,6 +75,7 @@ from astropy.io import fits
 from astropy.nddata import Cutout2D
 from astropy.wcs import WCS
 from matplotlib.patches import Ellipse
+from astropy.nddata.utils import NoOverlapError
 
 # =====================================================================
 # CONFIGURACIÓN DE BANDAS POR TIPO DE OBJETO (ALeRCE -> SPHEREx)
@@ -184,14 +185,18 @@ def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov
         wcs_completo = WCS(hdul["IMAGE"].header)
 
     centro = SkyCoord(ra=ra_centro * u.deg, dec=dec_centro * u.deg, frame="icrs")
-    cutout = Cutout2D(
-        imagen_completa,
-        position=centro,
-        size=(fov_deg * u.deg, fov_deg * u.deg),
-        wcs=wcs_completo,
-        mode="partial",
-        fill_value=np.nan
-    )
+    try:
+        cutout = Cutout2D(
+            imagen_completa,
+            position=centro,
+            size=(fov_deg * u.deg, fov_deg * u.deg),
+            wcs=wcs_completo,
+            mode="partial",
+            fill_value=np.nan
+        )
+    except NoOverlapError:
+        # El cuadro FITS está cerca en el catálogo pero su sensor no cubre exactamente (ra, dec)
+        return []
 
     sub_img = np.ascontiguousarray(cutout.data, dtype=np.float64)
     mascara_invalida = np.isnan(sub_img)
@@ -211,7 +216,6 @@ def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov
     if len(objetos) == 0:
         return []
 
-    # Fotometría de apertura circular para obtener flujo y error calibrado
     radios_apertura = np.maximum(2.5 * objetos["a"], 2.0)
     flujo_ap, flujo_err_ap, _ = sep.sum_circle(
         sub_img_limpia,
@@ -228,8 +232,6 @@ def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov
     for i, obj in enumerate(objetos):
         flux_ujy, flux_err_ujy, mag_ab = calibrar_fotometria(flujo_ap[i], flujo_err_ap[i])
         snr = max(flux_ujy / max(flux_err_ujy, 1e-6), 1.0)
-
-        # Error astrométrico en milisegundos de arco: FWHM_mas / SNR
         fwhm_mas = (2.355 * obj["a"]) * ESCALA_PIXEL_ARCSEC * 1000.0
         pos_err_mas = float(np.clip(fwhm_mas / snr, 5.0, 2000.0))
 
@@ -249,8 +251,6 @@ def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov
         })
 
     return fuentes
-
-
 # =====================================================================
 # FASE 3: EMPAREJAMIENTO MULTI-BANDA Y CONSTRUCCIÓN DE ESPECTROS
 # =====================================================================
