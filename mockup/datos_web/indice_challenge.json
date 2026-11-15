@@ -1,0 +1,44 @@
+{
+  "objetivos": [
+    {
+      "nombre": "Barnard's Star",
+      "slug": "barnards_star",
+      "ra": 269.4520769586187,
+      "dec": 4.69336496657667,
+      "descripcion": "Estrella individual más cercana al Sol (5.96 años luz) y poseedora del mayor movimiento propio conocido (~10.36''/año).",
+      "archivo": "definitivo_barnards_star.json"
+    },
+    {
+      "nombre": "Epsilon Indi B",
+      "slug": "epsilon_indi_b",
+      "ra": 331.04414658852124,
+      "dec": -56.78284419511611,
+      "descripcion": "Par binario de enanas marrones tipo T orbitando alrededor de la estrella naranja Epsilon Indi a 11.87 años luz.",
+      "archivo": "definitivo_epsilon_indi_b.json"
+    },
+    {
+      "nombre": "WISE 0855",
+      "slug": "wise_0855",
+      "ra": 133.79512916666664,
+      "dec": -7.245147222222222,
+      "descripcion": "El objeto subestelar más frío conocido fuera del Sistema Solar (~250 K / -23 °C), ubicado a 7.43 años luz con desplazamiento ultrarrápido.",
+      "archivo": "definitivo_wise_0855.json"
+    },
+    {
+      "nombre": "RW Aurigae",
+      "slug": "rw_aurigae",
+      "ra": 76.95652603458,
+      "dec": 30.40143817389,
+      "descripcion": "Estrella joven en formación (~5 millones de años) con dramáticos episodios de oscurecimiento provocados por nubes de polvo en su disco.",
+      "archivo": "definitivo_rw_aurigae.json"
+    },
+    {
+      "nombre": "R Draconis",
+      "slug": "r_draconis",
+      "ra": 248.16761083295,
+      "dec": 66.75497941722,
+      "descripcion": "Gigante roja en etapa tardía (rama asintótica gigante) que pulsa radialmente cada ~245 días cambiando drásticamente su brillo infrarrojo.",
+      "archivo": "definitivo_r_draconis.json"
+    }
+  ]
+}
