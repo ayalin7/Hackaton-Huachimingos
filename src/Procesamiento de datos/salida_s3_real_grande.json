@@ -1,0 +1,4357 @@
+{
+  "centro_campo": {
+    "ra": 178.566294716,
+    "dec": 27.0003686174,
+    "fov_deg": 0.25
+  },
+  "clase_alerce": "DEFAULT",
+  "epochs": [
+    {
+      "epoch_id": 1,
+      "mjd_promedio": 61178.0057217825,
+      "objeto_objetivo": null,
+      "catalogo_campo": [
+        {
+          "fuente_id": "SRC_065",
+          "ra": 178.54817771610342,
+          "dec": 26.978744222120557,
+          "ra_err_mas": 764.8122218020033,
+          "dec_err_mas": 764.8122218020033,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.564124989509582,
+          "semieje_b_arcsec": 3.908525836467743,
+          "angulo_deg": -47.84273281498756,
+          "distancia_centro_arcsec": 97.14924083783549,
+          "espectro": [
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 842.7936601461437,
+              "flux_err_ujy": 59.9691148683557,
+              "mag_ab": 16.58576247228279
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_018",
+          "ra": 178.51871825350395,
+          "dec": 27.005408166335656,
+          "ra_err_mas": 443.2063619441333,
+          "dec_err_mas": 443.2063619441333,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.389023315906525,
+          "semieje_b_arcsec": 4.963104653358459,
+          "angulo_deg": -44.97756749591018,
+          "distancia_centro_arcsec": 153.6781085214513,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1791.7279305398495,
+              "flux_err_ujy": 62.57157337079633,
+              "mag_ab": 15.766885462811558
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1874.3767614189173,
+              "flux_err_ujy": 64.99303049494216,
+              "mag_ab": 15.717923394217582
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1892.0126589626302,
+              "flux_err_ujy": 63.45108864466654,
+              "mag_ab": 15.707755527716072
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2058.279945257262,
+              "flux_err_ujy": 64.46054305519661,
+              "mag_ab": 15.6163045159293
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_059",
+          "ra": 178.54085553639376,
+          "dec": 27.037269438918557,
+          "ra_err_mas": 581.8413325089873,
+          "dec_err_mas": 581.8413325089873,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.442250752449036,
+          "semieje_b_arcsec": 4.425029039382935,
+          "angulo_deg": 86.1661285308908,
+          "distancia_centro_arcsec": 155.89569948782747,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1056.0509352629654,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 16.340853458487167
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_013",
+          "ra": 178.60759346733113,
+          "dec": 27.030195552359835,
+          "ra_err_mas": 426.0021550407297,
+          "dec_err_mas": 426.0021550407297,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.448439955711365,
+          "semieje_b_arcsec": 4.360831761360169,
+          "angulo_deg": 44.18817179768054,
+          "distancia_centro_arcsec": 170.50972395028342,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1417.1731302819471,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.021508348581165
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_058",
+          "ra": 178.54239899868006,
+          "dec": 27.04412803290133,
+          "ra_err_mas": 5.0,
+          "dec_err_mas": 5.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.383965516090393,
+          "semieje_b_arcsec": 4.383549404144287,
+          "angulo_deg": -77.73177381165218,
+          "distancia_centro_arcsec": 175.18444406052325,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 186993.65886634885,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 10.720498423668888
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_026",
+          "ra": 178.55066901885064,
+          "dec": 26.951665036292884,
+          "ra_err_mas": 5.896651602200503,
+          "dec_err_mas": 5.896651602200503,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.384139573574067,
+          "semieje_b_arcsec": 4.3837504386901855,
+          "angulo_deg": -58.04237383087808,
+          "distancia_centro_arcsec": 182.3591073689877,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 100580.52580109793,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 11.393780868192088
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_062",
+          "ra": 178.56518813206546,
+          "dec": 26.948047312674166,
+          "ra_err_mas": 393.2398282676103,
+          "dec_err_mas": 393.2398282676103,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.395406007766724,
+          "semieje_b_arcsec": 4.3582552671432495,
+          "angulo_deg": -52.4815070162205,
+          "distancia_centro_arcsec": 188.39015385308596,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1546.0654133215048,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 15.926995960351714
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_017",
+          "ra": 178.61820865270877,
+          "dec": 26.969611109657983,
+          "ra_err_mas": 183.16437303985842,
+          "dec_err_mas": 183.16437303985842,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.3811371445655825,
+          "semieje_b_arcsec": 5.213729691505432,
+          "angulo_deg": -66.3524122770333,
+          "distancia_centro_arcsec": 199.99226397559812,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 4317.386139867415,
+              "flux_err_ujy": 62.40177231591169,
+              "mag_ab": 14.812013389850442
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 4583.077599695408,
+              "flux_err_ujy": 63.86263069023999,
+              "mag_ab": 14.747172595560073
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 4650.222174668976,
+              "flux_err_ujy": 64.86128504272045,
+              "mag_ab": 14.73138136536502
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 4360.305257904128,
+              "flux_err_ujy": 66.48068278095562,
+              "mag_ab": 14.801273385817966
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_061",
+          "ra": 178.60256247649397,
+          "dec": 26.953868521591655,
+          "ra_err_mas": 898.0847187069145,
+          "dec_err_mas": 898.0847187069145,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.218914306163788,
+          "semieje_b_arcsec": 3.3944875240325927,
+          "angulo_deg": 38.436015290033,
+          "distancia_centro_arcsec": 203.86716637069603,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 653.9239215803194,
+              "flux_err_ujy": 59.108905258369205,
+              "mag_ab": 16.86124756018628
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_060",
+          "ra": 178.506300898308,
+          "dec": 27.028272331746066,
+          "ra_err_mas": 240.05851901710395,
+          "dec_err_mas": 240.05851901710395,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.42529548406601,
+          "semieje_b_arcsec": 4.333963716030121,
+          "angulo_deg": -47.771172923053335,
+          "distancia_centro_arcsec": 217.05682600981834,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2541.6722239700625,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 15.387266765096399
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_020",
+          "ra": 178.61240803928632,
+          "dec": 26.955771044740217,
+          "ra_err_mas": 301.84952266469946,
+          "dec_err_mas": 301.84952266469946,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.5771523237228395,
+          "semieje_b_arcsec": 4.314131140708923,
+          "angulo_deg": 42.417960934637065,
+          "distancia_centro_arcsec": 218.32050055922676,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 2061.220723183133,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 15.614754371936797
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_022",
+          "ra": 178.60036877818587,
+          "dec": 26.947433008784834,
+          "ra_err_mas": 5.0,
+          "dec_err_mas": 5.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.362975299358368,
+          "semieje_b_arcsec": 4.762493979930878,
+          "angulo_deg": -0.22801140464974232,
+          "distancia_centro_arcsec": 219.6987924342424,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 429222.6137346913,
+              "flux_err_ujy": 62.2315079540647,
+              "mag_ab": 9.818359135171193
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_027",
+          "ra": 178.5711945562046,
+          "dec": 26.93448025878546,
+          "ra_err_mas": 398.20289530069755,
+          "dec_err_mas": 398.20289530069755,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.438299167156219,
+          "semieje_b_arcsec": 4.342696154117585,
+          "angulo_deg": 42.300942718681824,
+          "distancia_centro_arcsec": 237.7185237412653,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1507.8118697871025,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 15.95419772768233
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_032",
+          "ra": 178.53209897369246,
+          "dec": 26.932488145126637,
+          "ra_err_mas": 6.1941196772748,
+          "dec_err_mas": 6.1941196772748,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.0446234226226805,
+          "semieje_b_arcsec": 4.746059036254883,
+          "angulo_deg": 84.33408055019662,
+          "distancia_centro_arcsec": 267.87120236489767,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 112454.40417823785,
+              "flux_err_ujy": 58.63222800363713,
+              "mag_ab": 11.27262445011298
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_067",
+          "ra": 178.55752062517956,
+          "dec": 26.925112206171818,
+          "ra_err_mas": 5.0,
+          "dec_err_mas": 5.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.384399735927582,
+          "semieje_b_arcsec": 4.383728265762329,
+          "angulo_deg": 40.06925695455561,
+          "distancia_centro_arcsec": 272.3819442615519,
+          "espectro": [
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 214979.9324195298,
+              "flux_err_ujy": 59.305404622548316,
+              "mag_ab": 10.569070817216685
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_016",
+          "ra": 178.64998010756256,
+          "dec": 26.982300740244593,
+          "ra_err_mas": 508.6016999220841,
+          "dec_err_mas": 508.6016999220841,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.439309513568879,
+          "semieje_b_arcsec": 4.302314817905426,
+          "angulo_deg": -38.40834960879986,
+          "distancia_centro_arcsec": 276.2194645412414,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1182.6867166882416,
+              "flux_err_ujy": 57.53620186534823,
+              "mag_ab": 16.21789132460116
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_023",
+          "ra": 178.62036549265184,
+          "dec": 26.938421232395992,
+          "ra_err_mas": 673.1778475632519,
+          "dec_err_mas": 673.1778475632519,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.872623157501221,
+          "semieje_b_arcsec": 4.027066004276276,
+          "angulo_deg": 55.932350811342715,
+          "distancia_centro_arcsec": 282.54391495370305,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1927.8970155244494,
+              "flux_err_ujy": 80.18630554408665,
+              "mag_ab": 15.687356044713761
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1885.9086011601014,
+              "flux_err_ujy": 74.32237380264449,
+              "mag_ab": 15.711264019218607
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2113.9272780100564,
+              "flux_err_ujy": 84.87578323136738,
+              "mag_ab": 15.58734051502186
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1972.6776820015614,
+              "flux_err_ujy": 86.12531373683889,
+              "mag_ab": 15.6624252943055
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_053",
+          "ra": 178.5318881716992,
+          "dec": 26.927557308525735,
+          "ra_err_mas": 717.98017746748,
+          "dec_err_mas": 717.98017746748,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.216699969768524,
+          "semieje_b_arcsec": 3.973577880859375,
+          "angulo_deg": -86.4307505499046,
+          "distancia_centro_arcsec": 284.4206611637437,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 820.3743909856449,
+              "flux_err_ujy": 59.31450858373446,
+              "mag_ab": 16.61503538512823
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 879.5624862367117,
+              "flux_err_ujy": 59.10890525836922,
+              "mag_ab": 16.53939887674446
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_024",
+          "ra": 178.47463554937943,
+          "dec": 26.988268701052,
+          "ra_err_mas": 5.0,
+          "dec_err_mas": 5.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.384705352783203,
+          "semieje_b_arcsec": 4.383938908576965,
+          "angulo_deg": 35.25197917445898,
+          "distancia_centro_arcsec": 297.23212691463226,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 153005.3393308673,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 10.938299156325282
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_049",
+          "ra": 178.64148909042987,
+          "dec": 26.942867393159837,
+          "ra_err_mas": 841.8477227089313,
+          "dec_err_mas": 841.8477227089313,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.6689473509788515,
+          "semieje_b_arcsec": 3.6565611839294436,
+          "angulo_deg": 5.794198029536265,
+          "distancia_centro_arcsec": 317.8919860297985,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 607.8090064999004,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 16.940647794389072
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 536.2240263292487,
+              "flux_err_ujy": 58.64089389381386,
+              "mag_ab": 17.076699949020902
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_034",
+          "ra": 178.53607838180253,
+          "dec": 26.91597359468895,
+          "ra_err_mas": 64.40131642391435,
+          "dec_err_mas": 64.40131642391435,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.2637795329093935,
+          "semieje_b_arcsec": 5.18978625535965,
+          "angulo_deg": -51.971688036192404,
+          "distancia_centro_arcsec": 318.9182250194171,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 11829.945643413443,
+              "flux_err_ujy": 61.45948141297263,
+              "mag_ab": 13.717608749473992
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 12117.931882936637,
+              "flux_err_ujy": 64.03783713933433,
+              "mag_ab": 13.691494354981277
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 12177.7278538856,
+              "flux_err_ujy": 65.72729514359192,
+              "mag_ab": 13.686149961591738
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 11872.505152742095,
+              "flux_err_ujy": 64.4605430551966,
+              "mag_ab": 13.713709705430631
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_008",
+          "ra": 178.61934712466382,
+          "dec": 27.075902273750604,
+          "ra_err_mas": 671.4491125428052,
+          "dec_err_mas": 671.4491125428052,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.3504200935363775,
+          "semieje_b_arcsec": 4.316912364959717,
+          "angulo_deg": 52.884600875372556,
+          "distancia_centro_arcsec": 320.74915599194776,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 877.9103980910373,
+              "flux_err_ujy": 57.53620186534825,
+              "mag_ab": 16.54144014003513
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_010",
+          "ra": 178.65828616213713,
+          "dec": 27.038918326697754,
+          "ra_err_mas": 537.9206901903857,
+          "dec_err_mas": 537.9206901903857,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.831681644916535,
+          "semieje_b_arcsec": 4.1631050467491155,
+          "angulo_deg": -23.615110970394163,
+          "distancia_centro_arcsec": 326.03340511054057,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1220.955091424191,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 16.18331639670615
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1131.239359953415,
+              "flux_err_ujy": 59.40888335874417,
+              "mag_ab": 16.266179353760684
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1184.4329479590865,
+              "flux_err_ujy": 59.59075705421201,
+              "mag_ab": 16.216289422606188
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1150.026513091925,
+              "flux_err_ujy": 58.640893893813875,
+              "mag_ab": 16.248295990187785
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_052",
+          "ra": 178.48185155560066,
+          "dec": 26.94647659823607,
+          "ra_err_mas": 800.8713912432584,
+          "dec_err_mas": 800.8713912432584,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.26488174200058,
+          "semieje_b_arcsec": 3.419394373893738,
+          "angulo_deg": -44.82174697528009,
+          "distancia_centro_arcsec": 333.22841766154943,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 743.8683168975989,
+              "flux_err_ujy": 59.31450858373446,
+              "mag_ab": 16.721325468586855
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_009",
+          "ra": 178.544609887728,
+          "dec": 27.091314889497465,
+          "ra_err_mas": 1332.7062652366437,
+          "dec_err_mas": 1332.7062652366437,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 9.763845086097717,
+          "semieje_b_arcsec": 4.225529229640961,
+          "angulo_deg": -5.184640358379415,
+          "distancia_centro_arcsec": 334.70772774609765,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1959.7832081159552,
+              "flux_err_ujy": 113.58753631221768,
+              "mag_ab": 15.669545541756227
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 2241.386640796309,
+              "flux_err_ujy": 112.72043079654341,
+              "mag_ab": 15.523773674518127
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2126.596572896844,
+              "flux_err_ujy": 113.74363179878935,
+              "mag_ab": 15.580852848139521
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2276.8917031111673,
+              "flux_err_ujy": 112.38687452476186,
+              "mag_ab": 15.506709685906571
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_025",
+          "ra": 178.63158892073903,
+          "dec": 26.92424302938786,
+          "ra_err_mas": 791.2152947201611,
+          "dec_err_mas": 791.2152947201611,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.6622947335243228,
+          "semieje_b_arcsec": 3.4861204743385317,
+          "angulo_deg": 0.016098000484146318,
+          "distancia_centro_arcsec": 344.9619297005604,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 626.1719614245878,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 16.908331579822594
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_035",
+          "ra": 178.4954261095134,
+          "dec": 26.92826202579719,
+          "ra_err_mas": 509.7139477724888,
+          "dec_err_mas": 509.7139477724888,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.495497560501099,
+          "semieje_b_arcsec": 4.458421099185943,
+          "angulo_deg": 49.76006253765852,
+          "distancia_centro_arcsec": 345.0953137792844,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1198.8666426078787,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 16.20313843100842
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1261.9770230541424,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 16.14743700294308
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1221.7129480516319,
+              "flux_err_ujy": 59.9691148683557,
+              "mag_ab": 16.182642680596118
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1120.6890748724686,
+              "flux_err_ujy": 58.35828553135481,
+              "mag_ab": 16.276352776783416
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_028",
+          "ra": 178.61505739388764,
+          "dec": 26.910112432073806,
+          "ra_err_mas": 218.1025841142152,
+          "dec_err_mas": 218.1025841142152,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.015769791603089,
+          "semieje_b_arcsec": 4.301296710968018,
+          "angulo_deg": -10.682278404342895,
+          "distancia_centro_arcsec": 360.6365848884421,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 3170.53717239394,
+              "flux_err_ujy": 58.541676246119366,
+              "mag_ab": 15.147233498880922
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_050",
+          "ra": 178.45311195797535,
+          "dec": 26.983717287539257,
+          "ra_err_mas": 1066.3734139582325,
+          "dec_err_mas": 1066.3734139582325,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.651840198040009,
+          "semieje_b_arcsec": 3.589889407157898,
+          "angulo_deg": 0.02429339205730855,
+          "distancia_centro_arcsec": 367.9886291723669,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 476.06874986635637,
+              "flux_err_ujy": 59.03047897756738,
+              "mag_ab": 17.205891436218458
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 573.2085785471495,
+              "flux_err_ujy": 59.40067441026367,
+              "mag_ab": 17.00428391889442
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_007",
+          "ra": 178.60962224425623,
+          "dec": 27.095689209792837,
+          "ra_err_mas": 327.9309427615573,
+          "dec_err_mas": 327.9309427615573,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.263928091526032,
+          "semieje_b_arcsec": 4.989486372470856,
+          "angulo_deg": 33.74170823575327,
+          "distancia_centro_arcsec": 370.2070177370462,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 2313.501081937381,
+              "flux_err_ujy": 61.19997505437752,
+              "mag_ab": 15.489391354934362
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 2385.5184950314724,
+              "flux_err_ujy": 61.08270052303007,
+              "mag_ab": 15.456108652250933
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2248.9945005786344,
+              "flux_err_ujy": 64.33608380755814,
+              "mag_ab": 15.520094638618975
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2323.8935294294065,
+              "flux_err_ujy": 62.902876976593525,
+              "mag_ab": 15.484525055499972
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_064",
+          "ra": 178.47602394842318,
+          "dec": 27.067926615739257,
+          "ra_err_mas": 462.32230473063163,
+          "dec_err_mas": 462.32230473063163,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.735851669311524,
+          "semieje_b_arcsec": 4.359130358695984,
+          "angulo_deg": 6.593649900658278,
+          "distancia_centro_arcsec": 378.0759712993664,
+          "espectro": [
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2781.2544612377988,
+              "flux_err_ujy": 81.05916859886435,
+              "mag_ab": 15.289463809906202
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_051",
+          "ra": 178.6088097667903,
+          "dec": 26.90159066284884,
+          "ra_err_mas": 1007.2321712569151,
+          "dec_err_mas": 1007.2321712569151,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.586010992527008,
+          "semieje_b_arcsec": 3.5186840057373048,
+          "angulo_deg": 89.57289028510976,
+          "distancia_centro_arcsec": 380.8745280323903,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 496.5251148874898,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 17.16021257086237
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_011",
+          "ra": 178.5092946189476,
+          "dec": 27.094619482957462,
+          "ra_err_mas": 665.4600608761735,
+          "dec_err_mas": 665.4600608761735,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.42705078125,
+          "semieje_b_arcsec": 4.435653567314148,
+          "angulo_deg": -39.534729765205,
+          "distancia_centro_arcsec": 385.391902064296,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1702.399570773986,
+              "flux_err_ujy": 74.84811263844331,
+              "mag_ab": 15.822411869491486
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1876.3155010395978,
+              "flux_err_ujy": 69.8137137694898,
+              "mag_ab": 15.716800956097924
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1778.6989138530516,
+              "flux_err_ujy": 77.49279751331765,
+              "mag_ab": 15.77480952261579
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1828.1719926294618,
+              "flux_err_ujy": 71.20364080799924,
+              "mag_ab": 15.745022993984424
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_048",
+          "ra": 178.47274476943514,
+          "dec": 27.069282078940418,
+          "ra_err_mas": 759.5538054421232,
+          "dec_err_mas": 759.5538054421232,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.346540939807892,
+          "semieje_b_arcsec": 3.976076400279999,
+          "angulo_deg": 70.66559477562632,
+          "distancia_centro_arcsec": 389.27608799807604,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 801.891843477128,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.639776132209672
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 628.9654430084181,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 16.903498660191453
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_054",
+          "ra": 178.5633949168628,
+          "dec": 26.889836245197426,
+          "ra_err_mas": 819.7446285686761,
+          "dec_err_mas": 819.7446285686761,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.241975629329682,
+          "semieje_b_arcsec": 2.8817766308784485,
+          "angulo_deg": 71.34299244694067,
+          "distancia_centro_arcsec": 398.0253438502215,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 720.5330573275338,
+              "flux_err_ujy": 59.125307117375606,
+              "mag_ab": 16.75593084578613
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 769.8831001394801,
+              "flux_err_ujy": 58.640893893813875,
+              "mag_ab": 16.684003656164567
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_056",
+          "ra": 178.5682447233468,
+          "dec": 27.112175213031065,
+          "ra_err_mas": 742.8241181648907,
+          "dec_err_mas": 742.8241181648907,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.5772929668426516,
+          "semieje_b_arcsec": 3.574203169345856,
+          "angulo_deg": 0.015450648294722535,
+          "distancia_centro_arcsec": 402.552292984719,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 663.99208651998,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 16.844658363625683
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_038",
+          "ra": 178.4912083571202,
+          "dec": 26.91017016758302,
+          "ra_err_mas": 158.6331185976681,
+          "dec_err_mas": 158.6331185976681,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.480490708351136,
+          "semieje_b_arcsec": 5.439429402351379,
+          "angulo_deg": 15.757879915264935,
+          "distancia_centro_arcsec": 404.34352179288044,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 5179.788999155181,
+              "flux_err_ujy": 63.66424218226719,
+              "mag_ab": 14.614285449931206
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 5510.900867464027,
+              "flux_err_ujy": 65.07917106355492,
+              "mag_ab": 14.547009125248664
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 5349.178894768298,
+              "flux_err_ujy": 64.599218172847,
+              "mag_ab": 14.579347816219421
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 5581.795566679034,
+              "flux_err_ujy": 65.14088425600767,
+              "mag_ab": 14.533130806272364
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_039",
+          "ra": 178.5765807955651,
+          "dec": 26.88703596872331,
+          "ra_err_mas": 60.56118659851081,
+          "dec_err_mas": 60.56118659851081,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.474245703220368,
+          "semieje_b_arcsec": 5.409245026111603,
+          "angulo_deg": -29.4347343791158,
+          "distancia_centro_arcsec": 409.3307621505633,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 13587.836935647134,
+              "flux_err_ujy": 63.83068492952613,
+              "mag_ab": 13.56718980636732
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 13869.40277548598,
+              "flux_err_ujy": 65.50817485882393,
+              "mag_ab": 13.544921221022081
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 14442.583628733591,
+              "flux_err_ujy": 65.81326940551445,
+              "mag_ab": 13.500953394853612
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 14526.283224392646,
+              "flux_err_ujy": 65.30986219037307,
+              "mag_ab": 13.494679353506386
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_019",
+          "ra": 178.67701714689886,
+          "dec": 26.94347077155639,
+          "ra_err_mas": 563.5434907467109,
+          "dec_err_mas": 563.5434907467109,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.1496092796325685,
+          "semieje_b_arcsec": 4.245582056045532,
+          "angulo_deg": 0.3850174433485014,
+          "distancia_centro_arcsec": 410.0669306269957,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1288.7242328519956,
+              "flux_err_ujy": 59.885577580757655,
+              "mag_ab": 16.12466563487932
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1322.143498851362,
+              "flux_err_ujy": 61.44846846584562,
+              "mag_ab": 16.096869137628314
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1427.03242031236,
+              "flux_err_ujy": 61.274971884071725,
+              "mag_ab": 16.013981022707213
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1350.0394363696457,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 16.07419948484551
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_021",
+          "ra": 178.44007166737092,
+          "dec": 27.021556278714165,
+          "ra_err_mas": 253.34225242026218,
+          "dec_err_mas": 253.34225242026218,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.319105422496796,
+          "semieje_b_arcsec": 5.025726914405823,
+          "angulo_deg": 5.95393267544759,
+          "distancia_centro_arcsec": 411.9594267462583,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 3060.1264685803876,
+              "flux_err_ujy": 61.88957400383919,
+              "mag_ab": 15.185717183960943
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 2913.2400121584765,
+              "flux_err_ujy": 63.42249704689319,
+              "mag_ab": 15.239124956832121
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2870.285989637486,
+              "flux_err_ujy": 63.71787786048179,
+              "mag_ab": 15.255252694442433
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2912.588986496019,
+              "flux_err_ujy": 62.815207419039815,
+              "mag_ab": 15.239367614876176
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_036",
+          "ra": 178.45853962108689,
+          "dec": 26.935992380627,
+          "ra_err_mas": 511.5668336674923,
+          "dec_err_mas": 511.5668336674923,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 7.574705266952515,
+          "semieje_b_arcsec": 4.736486613750458,
+          "angulo_deg": -43.437820875841275,
+          "distancia_centro_arcsec": 416.22487833583835,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 3079.3697010921805,
+              "flux_err_ujy": 88.30952768132552,
+              "mag_ab": 15.178911041542793
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 3513.160809853905,
+              "flux_err_ujy": 85.34002995034024,
+              "mag_ab": 15.035820548660567
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 3351.6606643269884,
+              "flux_err_ujy": 79.79363985205495,
+              "mag_ab": 15.086915516144314
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 3388.755667529363,
+              "flux_err_ujy": 80.63977190521568,
+              "mag_ab": 15.074964979968257
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_015",
+          "ra": 178.69336668134727,
+          "dec": 26.972349743676745,
+          "ra_err_mas": 664.3592059968106,
+          "dec_err_mas": 664.3592059968106,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.300124502182007,
+          "semieje_b_arcsec": 3.9061551809310915,
+          "angulo_deg": -6.815890168985329,
+          "distancia_centro_arcsec": 419.9423580293648,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 885.4141055720141,
+              "flux_err_ujy": 58.08680007437401,
+              "mag_ab": 16.532199531124974
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 923.4663141990887,
+              "flux_err_ujy": 59.597184570571734,
+              "mag_ab": 16.486512977130364
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 915.4580480567222,
+              "flux_err_ujy": 59.87474956226589,
+              "mag_ab": 16.495969504688293
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 900.1670097913784,
+              "flux_err_ujy": 58.640893893813875,
+              "mag_ab": 16.514257891178495
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_041",
+          "ra": 178.54096805681033,
+          "dec": 26.8851004283299,
+          "ra_err_mas": 539.053019795149,
+          "dec_err_mas": 539.053019795149,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.530901443958283,
+          "semieje_b_arcsec": 4.098687517642975,
+          "angulo_deg": 44.85672437401973,
+          "distancia_centro_arcsec": 422.85072853100195,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1140.722754957788,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.2571153601033
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1042.6754312270652,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.354692771551235
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1122.5954610401595,
+              "flux_err_ujy": 59.68557136564999,
+              "mag_ab": 16.274507417492032
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1160.1314119128022,
+              "flux_err_ujy": 59.01559990381698,
+              "mag_ab": 16.238797657326728
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_014",
+          "ra": 178.46025142962563,
+          "dec": 27.071849773877755,
+          "ra_err_mas": 755.5652882191307,
+          "dec_err_mas": 755.5652882191307,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.257467484474183,
+          "semieje_b_arcsec": 4.06003714799881,
+          "angulo_deg": -87.98319107654598,
+          "distancia_centro_arcsec": 426.4333556069806,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 765.9474420903686,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 16.68956819687318
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 872.0035398001702,
+              "flux_err_ujy": 59.69111242171447,
+              "mag_ab": 16.548770002518012
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 806.8209259945125,
+              "flux_err_ujy": 59.40067441026368,
+              "mag_ab": 16.63312273802483
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 849.0562502452909,
+              "flux_err_ujy": 59.01559990381696,
+              "mag_ab": 16.577724463922358
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_006",
+          "ra": 178.66628156099412,
+          "dec": 27.080162912806642,
+          "ra_err_mas": 444.8842593555133,
+          "dec_err_mas": 444.8842593555133,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.557155668735504,
+          "semieje_b_arcsec": 4.472186422348023,
+          "angulo_deg": -51.0287223646642,
+          "distancia_centro_arcsec": 430.4714599633653,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1387.966310572989,
+              "flux_err_ujy": 57.53620186534823,
+              "mag_ab": 16.04411831020887
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1264.0285282745556,
+              "flux_err_ujy": 59.125307117375606,
+              "mag_ab": 16.145673432803175
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1282.678346317756,
+              "flux_err_ujy": 59.40067441026368,
+              "mag_ab": 16.12977121426182
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1340.6726434748034,
+              "flux_err_ujy": 59.108905258369205,
+              "mag_ab": 16.081758753134313
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_040",
+          "ra": 178.56613418085763,
+          "dec": 26.880601031049483,
+          "ra_err_mas": 62.405495425868935,
+          "dec_err_mas": 62.405495425868935,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.449110627174377,
+          "semieje_b_arcsec": 5.205243742465973,
+          "angulo_deg": -65.06502407132345,
+          "distancia_centro_arcsec": 431.16361867977554,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 18215.821280496126,
+              "flux_err_ujy": 74.8481126384433,
+              "mag_ab": 13.248943730613425
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 18322.436622749392,
+              "flux_err_ujy": 76.33044326833152,
+              "mag_ab": 13.242607551921008
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 19066.68148145128,
+              "flux_err_ujy": 77.63859782569503,
+              "mag_ab": 13.199377843483
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 19338.790229319377,
+              "flux_err_ujy": 77.14719937335306,
+              "mag_ab": 13.18399236585223
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_029",
+          "ra": 178.43343934146836,
+          "dec": 26.97177930641621,
+          "ra_err_mas": 994.1275073029174,
+          "dec_err_mas": 994.1275073029174,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.399078583717347,
+          "semieje_b_arcsec": 2.8074119567871096,
+          "angulo_deg": -16.51487148852474,
+          "distancia_centro_arcsec": 438.4536780101599,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 600.546447139728,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.953699117262943
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_043",
+          "ra": 178.52529851629254,
+          "dec": 26.88396599227145,
+          "ra_err_mas": 1094.517685399355,
+          "dec_err_mas": 1094.517685399355,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.748714184761048,
+          "semieje_b_arcsec": 3.5219127535820007,
+          "angulo_deg": -61.69390907438278,
+          "distancia_centro_arcsec": 439.21811573380165,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1081.6927046308858,
+              "flux_err_ujy": 74.4928751674409,
+              "mag_ab": 16.31480587062853
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 842.8930884351471,
+              "flux_err_ujy": 65.89787281220681,
+              "mag_ab": 16.585634390486614
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_063",
+          "ra": 178.46257882468,
+          "dec": 26.918818646187898,
+          "ra_err_mas": 873.358476492294,
+          "dec_err_mas": 873.358476492294,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.5733857274055483,
+          "semieje_b_arcsec": 3.5636240959167482,
+          "angulo_deg": -84.40846814044723,
+          "distancia_centro_arcsec": 443.7855497028438,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 566.8476873087753,
+              "flux_err_ujy": 58.82854523389533,
+              "mag_ab": 17.016399674554496
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_003",
+          "ra": 178.57171471041264,
+          "dec": 27.125782222490393,
+          "ra_err_mas": 316.881872527521,
+          "dec_err_mas": 316.881872527521,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.414471399784088,
+          "semieje_b_arcsec": 4.368571221828461,
+          "angulo_deg": 46.889596991785204,
+          "distancia_centro_arcsec": 451.82320291326727,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1884.5875169984008,
+              "flux_err_ujy": 57.4439224124282,
+              "mag_ab": 15.712024846928083
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_045",
+          "ra": 178.6470846059397,
+          "dec": 27.103754912636244,
+          "ra_err_mas": 5.0,
+          "dec_err_mas": 5.0,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.384142899513245,
+          "semieje_b_arcsec": 2.922930508852005,
+          "angulo_deg": -0.004929637757012128,
+          "distancia_centro_arcsec": 453.45232306401556,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 213605.40920805171,
+              "flux_err_ujy": 51.20401797020415,
+              "mag_ab": 10.576035006547027
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_057",
+          "ra": 178.50711352954391,
+          "dec": 27.11700688820086,
+          "ra_err_mas": 618.5957509380606,
+          "dec_err_mas": 618.5957509380606,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.476165354251862,
+          "semieje_b_arcsec": 4.288684010505676,
+          "angulo_deg": -42.23473769505689,
+          "distancia_centro_arcsec": 460.7735570405163,
+          "espectro": [
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 997.6853146873557,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 16.402581672986265
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_012",
+          "ra": 178.46090191568942,
+          "dec": 27.088067856797178,
+          "ra_err_mas": 391.5511328194414,
+          "dec_err_mas": 391.5511328194414,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.543981623649597,
+          "semieje_b_arcsec": 3.049199789762497,
+          "angulo_deg": -89.3406228721943,
+          "distancia_centro_arcsec": 462.46325400198873,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1393.4324743041445,
+              "flux_err_ujy": 50.985529578821996,
+              "mag_ab": 16.039850803127983
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1311.533084395779,
+              "flux_err_ujy": 53.136920663003195,
+              "mag_ab": 16.105617496118995
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1284.1477898858368,
+              "flux_err_ujy": 53.172133091454185,
+              "mag_ab": 16.128528100648087
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1407.2883299386338,
+              "flux_err_ujy": 53.118189934140396,
+              "mag_ab": 16.029107906640135
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_066",
+          "ra": 178.670989217677,
+          "dec": 26.911051650961927,
+          "ra_err_mas": 240.44026408452228,
+          "dec_err_mas": 240.44026408452228,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.396566021442413,
+          "semieje_b_arcsec": 4.3644152760505674,
+          "angulo_deg": 42.42672748243678,
+          "distancia_centro_arcsec": 465.02993674125,
+          "espectro": [
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2457.5798470411114,
+              "flux_err_ujy": 57.07032196855563,
+              "mag_ab": 15.423796529759322
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_037",
+          "ra": 178.43246508449204,
+          "dec": 26.94271526729636,
+          "ra_err_mas": 571.1173040678402,
+          "dec_err_mas": 571.1173040678402,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.016737425327301,
+          "semieje_b_arcsec": 4.542959451675415,
+          "angulo_deg": -38.655230211444554,
+          "distancia_centro_arcsec": 476.91522937311936,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1740.8026304838647,
+              "flux_err_ujy": 70.16538017979396,
+              "mag_ab": 15.79819178660661
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1802.0515351916963,
+              "flux_err_ujy": 77.35114399400591,
+              "mag_ab": 15.760647605273203
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1982.4765723137227,
+              "flux_err_ujy": 76.24223840031435,
+              "mag_ab": 15.657045462793615
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2159.853432931009,
+              "flux_err_ujy": 70.42543557522316,
+              "mag_ab": 15.564004919669937
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_031",
+          "ra": 178.64612477675618,
+          "dec": 26.887249428850886,
+          "ra_err_mas": 890.706646074188,
+          "dec_err_mas": 890.706646074188,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.3742190361022955,
+          "semieje_b_arcsec": 3.4439863681793215,
+          "angulo_deg": -43.77593573032442,
+          "distancia_centro_arcsec": 481.11343382140467,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 666.4887238128398,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.84058360710216
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 642.6560077558952,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 16.880119192728618
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 713.6018681538418,
+              "flux_err_ujy": 59.780235297245866,
+              "mag_ab": 16.766425676485934
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 849.4725885685333,
+              "flux_err_ujy": 59.108905258369205,
+              "mag_ab": 16.57719219907092
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_001",
+          "ra": 178.6762989457777,
+          "dec": 27.092337787138984,
+          "ra_err_mas": 236.87215913101363,
+          "dec_err_mas": 236.87215913101363,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.377896201610565,
+          "semieje_b_arcsec": 2.9793744683265686,
+          "angulo_deg": -0.07817300915467687,
+          "distancia_centro_arcsec": 483.7580106117918,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 2882.8927252882936,
+              "flux_err_ujy": 53.918670350991334,
+              "mag_ab": 15.250494416660423
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 2825.0163151807515,
+              "flux_err_ujy": 56.8057576311848,
+              "mag_ab": 15.272513221475437
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 2949.96821023499,
+              "flux_err_ujy": 55.3603368797998,
+              "mag_ab": 15.225522282501158
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 2981.040001300725,
+              "flux_err_ujy": 51.64531942183031,
+              "mag_ab": 15.214146113073166
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_033",
+          "ra": 178.41381849892502,
+          "dec": 26.96325857877643,
+          "ra_err_mas": 784.5911531571254,
+          "dec_err_mas": 784.5911531571254,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.3610549688339235,
+          "semieje_b_arcsec": 3.960259711742401,
+          "angulo_deg": 83.10028200871469,
+          "distancia_centro_arcsec": 507.0805102996299,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 754.3538767624424,
+              "flux_err_ujy": 57.62833355264694,
+              "mag_ab": 16.70612780577958
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 704.3634071579593,
+              "flux_err_ujy": 59.40888335874417,
+              "mag_ab": 16.780573658367594
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 705.47049119091,
+              "flux_err_ujy": 59.68557136564999,
+              "mag_ab": 16.778868490879766
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 789.9228117955084,
+              "flux_err_ujy": 59.01559990381696,
+              "mag_ab": 16.656103982818994
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_047",
+          "ra": 178.71885836083544,
+          "dec": 27.039525283878707,
+          "ra_err_mas": 1077.0623148412394,
+          "dec_err_mas": 1077.0623148412394,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 3.6098927140235904,
+          "semieje_b_arcsec": 3.5304153323173524,
+          "angulo_deg": -0.6703610290045077,
+          "distancia_centro_arcsec": 509.1813212436293,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 468.1718663707249,
+              "flux_err_ujy": 59.31450858373446,
+              "mag_ab": 17.22405234154975
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_002",
+          "ra": 178.54594409330838,
+          "dec": 27.142307773061606,
+          "ra_err_mas": 114.18086079476623,
+          "dec_err_mas": 114.18086079476623,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.211901164054871,
+          "semieje_b_arcsec": 3.3953278779983522,
+          "angulo_deg": -3.2379380475130506,
+          "distancia_centro_arcsec": 515.1283635906267,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 5721.544672686292,
+              "flux_err_ujy": 53.225472207051816,
+              "mag_ab": 14.506282389346639
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 5913.277953837994,
+              "flux_err_ujy": 55.50887934208735,
+              "mag_ab": 14.470494888516523
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 5966.098872630889,
+              "flux_err_ujy": 54.847255033365315,
+              "mag_ab": 14.460839506303529
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 5874.141047460362,
+              "flux_err_ujy": 52.28163072433455,
+              "mag_ab": 14.477704696250804
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_005",
+          "ra": 178.52697101880779,
+          "dec": 27.139821322657152,
+          "ra_err_mas": 433.16633602506465,
+          "dec_err_mas": 433.16633602506465,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 5.028471183776856,
+          "semieje_b_arcsec": 5.00070550441742,
+          "angulo_deg": -25.68070360937859,
+          "distancia_centro_arcsec": 517.6139344926561,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1597.9530235574346,
+              "flux_err_ujy": 58.450984206772986,
+              "mag_ab": 15.891155602718502
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1405.7901787866447,
+              "flux_err_ujy": 60.1585519203759,
+              "mag_ab": 16.03026436003783
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 1474.8853508026648,
+              "flux_err_ujy": 61.459257929898094,
+              "mag_ab": 15.978169967172981
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 1575.4459212640875,
+              "flux_err_ujy": 64.5459778747392,
+              "mag_ab": 15.906556871834196
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_030",
+          "ra": 178.40509061668936,
+          "dec": 26.981453439195775,
+          "ra_err_mas": 504.056213756675,
+          "dec_err_mas": 504.056213756675,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.426212334632874,
+          "semieje_b_arcsec": 4.349622237682342,
+          "angulo_deg": 49.59305758226254,
+          "distancia_centro_arcsec": 521.587872314038,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 1149.0913875242845,
+              "flux_err_ujy": 55.56616023106529,
+              "mag_ab": 16.249179198256844
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_055",
+          "ra": 178.6044497788122,
+          "dec": 26.85832614044026,
+          "ra_err_mas": 732.7923624791523,
+          "dec_err_mas": 732.7923624791523,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.691359901428223,
+          "semieje_b_arcsec": 4.010866463184357,
+          "angulo_deg": 47.247089092943675,
+          "distancia_centro_arcsec": 525.8128885220569,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 897.115546080602,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.517944665749255
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_046",
+          "ra": 178.53363738671038,
+          "dec": 27.146060820509096,
+          "ra_err_mas": 587.1928385509672,
+          "dec_err_mas": 587.1928385509672,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.510042262077332,
+          "semieje_b_arcsec": 4.325002157688141,
+          "angulo_deg": -17.506007069174462,
+          "distancia_centro_arcsec": 534.8369301604896,
+          "espectro": [
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 1036.3839902942048,
+              "flux_err_ujy": 57.29674133026867,
+              "mag_ab": 16.36126388345016
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_044",
+          "ra": 178.61190707038062,
+          "dec": 26.85335323706782,
+          "ra_err_mas": 61.08293746585026,
+          "dec_err_mas": 61.08293746585026,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 6.4034499168396,
+          "semieje_b_arcsec": 5.253861212730408,
+          "angulo_deg": 20.661786692152134,
+          "distancia_centro_arcsec": 549.131002981405,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 18373.17275389929,
+              "flux_err_ujy": 74.42162419449673,
+              "mag_ab": 13.239605226001576
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 18380.65743500587,
+              "flux_err_ujy": 81.23697812169235,
+              "mag_ab": 13.239163019606812
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 18097.21805467158,
+              "flux_err_ujy": 78.36353043246473,
+              "mag_ab": 13.256036074109641
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 17597.60197359344,
+              "flux_err_ujy": 77.99968049407309,
+              "mag_ab": 13.286431896012738
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_004",
+          "ra": 178.74217842869788,
+          "dec": 27.059300242265333,
+          "ra_err_mas": 804.9523358111818,
+          "dec_err_mas": 804.9523358111818,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.546544814109803,
+          "semieje_b_arcsec": 3.0862117648124694,
+          "angulo_deg": 1.6340331126926944,
+          "distancia_centro_arcsec": 602.5998273881762,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 770.2108928505837,
+              "flux_err_ujy": 57.903849068522476,
+              "mag_ab": 16.683541481230964
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 769.9347503104726,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.683930818379718
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 615.853381286555,
+              "flux_err_ujy": 59.40067441026368,
+              "mag_ab": 16.926372296730573
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 696.9647755625947,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 16.7920385485055
+            }
+          ]
+        },
+        {
+          "fuente_id": "SRC_042",
+          "ra": 178.38528636858763,
+          "dec": 26.936006730751025,
+          "ra_err_mas": 716.8076565205681,
+          "dec_err_mas": 716.8076565205681,
+          "tipo_morfologia": "puntual",
+          "semieje_a_arcsec": 4.496204137802124,
+          "semieje_b_arcsec": 3.0985931277275087,
+          "angulo_deg": -1.1083976557026745,
+          "distancia_centro_arcsec": 625.2845566960016,
+          "espectro": [
+            {
+              "mjd": 61178.003483403,
+              "lambda_um": 0.75,
+              "color_hex": "#30123b",
+              "flux_ujy": 766.8581678003592,
+              "flux_err_ujy": 51.913552692126785,
+              "mag_ab": 16.68827800327535
+            },
+            {
+              "mjd": 61178.004975648,
+              "lambda_um": 0.81,
+              "color_hex": "#4687fb",
+              "flux_ujy": 861.7544826696198,
+              "flux_err_ujy": 53.03138546317015,
+              "mag_ab": 16.561606744291097
+            },
+            {
+              "mjd": 61178.006467917,
+              "lambda_um": 0.87,
+              "color_hex": "#1de7b2",
+              "flux_ujy": 775.6491298708245,
+              "flux_err_ujy": 53.06568226778334,
+              "mag_ab": 16.67590234819942
+            },
+            {
+              "mjd": 61178.007960162,
+              "lambda_um": 0.9299999999999999,
+              "color_hex": "#acfb38",
+              "flux_ujy": 742.464501665629,
+              "flux_err_ujy": 52.28163072433455,
+              "mag_ab": 16.72337638673428
+            }
+          ]
+        }
+      ],
+      "bandas": [
+        {
+          "banda_idx": 0,
+          "mjd": 61178.003483403,
+          "lambda_um": 0.75,
+          "banda": "1",
+          "color_hex": "#30123b",
+          "total_fuentes": 44,
+          "fuentes": [
+            {
+              "ra": 178.6762989457777,
+              "dec": 27.092337787138984,
+              "ra_err_mas": 236.87215913101363,
+              "dec_err_mas": 236.87215913101363,
+              "flux_ujy": 2882.8927252882936,
+              "flux_err_ujy": 53.918670350991334,
+              "mag_ab": 15.250494416660423,
+              "semieje_a_arcsec": 5.377896201610565,
+              "semieje_b_arcsec": 2.9793744683265686,
+              "angulo_deg": -0.07817300915467687,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54594409330838,
+              "dec": 27.142307773061606,
+              "ra_err_mas": 114.18086079476623,
+              "dec_err_mas": 114.18086079476623,
+              "flux_ujy": 5721.544672686292,
+              "flux_err_ujy": 53.225472207051816,
+              "mag_ab": 14.506282389346639,
+              "semieje_a_arcsec": 5.211901164054871,
+              "semieje_b_arcsec": 3.3953278779983522,
+              "angulo_deg": -3.2379380475130506,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.57171471041264,
+              "dec": 27.125782222490393,
+              "ra_err_mas": 316.881872527521,
+              "dec_err_mas": 316.881872527521,
+              "flux_ujy": 1884.5875169984008,
+              "flux_err_ujy": 57.4439224124282,
+              "mag_ab": 15.712024846928083,
+              "semieje_a_arcsec": 4.414471399784088,
+              "semieje_b_arcsec": 4.368571221828461,
+              "angulo_deg": 46.889596991785204,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.74217842869788,
+              "dec": 27.059300242265333,
+              "ra_err_mas": 804.9523358111818,
+              "dec_err_mas": 804.9523358111818,
+              "flux_ujy": 770.2108928505837,
+              "flux_err_ujy": 57.903849068522476,
+              "mag_ab": 16.683541481230964,
+              "semieje_a_arcsec": 4.546544814109803,
+              "semieje_b_arcsec": 3.0862117648124694,
+              "angulo_deg": 1.6340331126926944,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.52697101880779,
+              "dec": 27.139821322657152,
+              "ra_err_mas": 433.16633602506465,
+              "dec_err_mas": 433.16633602506465,
+              "flux_ujy": 1597.9530235574346,
+              "flux_err_ujy": 58.450984206772986,
+              "mag_ab": 15.891155602718502,
+              "semieje_a_arcsec": 5.028471183776856,
+              "semieje_b_arcsec": 5.00070550441742,
+              "angulo_deg": -25.68070360937859,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.66628156099412,
+              "dec": 27.080162912806642,
+              "ra_err_mas": 444.8842593555133,
+              "dec_err_mas": 444.8842593555133,
+              "flux_ujy": 1387.966310572989,
+              "flux_err_ujy": 57.53620186534823,
+              "mag_ab": 16.04411831020887,
+              "semieje_a_arcsec": 4.557155668735504,
+              "semieje_b_arcsec": 4.472186422348023,
+              "angulo_deg": -51.0287223646642,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60962224425623,
+              "dec": 27.095689209792837,
+              "ra_err_mas": 327.9309427615573,
+              "dec_err_mas": 327.9309427615573,
+              "flux_ujy": 2313.501081937381,
+              "flux_err_ujy": 61.19997505437752,
+              "mag_ab": 15.489391354934362,
+              "semieje_a_arcsec": 5.263928091526032,
+              "semieje_b_arcsec": 4.989486372470856,
+              "angulo_deg": 33.74170823575327,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61934712466382,
+              "dec": 27.075902273750604,
+              "ra_err_mas": 671.4491125428052,
+              "dec_err_mas": 671.4491125428052,
+              "flux_ujy": 877.9103980910373,
+              "flux_err_ujy": 57.53620186534825,
+              "mag_ab": 16.54144014003513,
+              "semieje_a_arcsec": 4.3504200935363775,
+              "semieje_b_arcsec": 4.316912364959717,
+              "angulo_deg": 52.884600875372556,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.544609887728,
+              "dec": 27.091314889497465,
+              "ra_err_mas": 1332.7062652366437,
+              "dec_err_mas": 1332.7062652366437,
+              "flux_ujy": 1959.7832081159552,
+              "flux_err_ujy": 113.58753631221768,
+              "mag_ab": 15.669545541756227,
+              "semieje_a_arcsec": 9.763845086097717,
+              "semieje_b_arcsec": 4.225529229640961,
+              "angulo_deg": -5.184640358379415,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.65828616213713,
+              "dec": 27.038918326697754,
+              "ra_err_mas": 537.9206901903857,
+              "dec_err_mas": 537.9206901903857,
+              "flux_ujy": 1220.955091424191,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 16.18331639670615,
+              "semieje_a_arcsec": 4.831681644916535,
+              "semieje_b_arcsec": 4.1631050467491155,
+              "angulo_deg": -23.615110970394163,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5092946189476,
+              "dec": 27.094619482957462,
+              "ra_err_mas": 665.4600608761735,
+              "dec_err_mas": 665.4600608761735,
+              "flux_ujy": 1702.399570773986,
+              "flux_err_ujy": 74.84811263844331,
+              "mag_ab": 15.822411869491486,
+              "semieje_a_arcsec": 6.42705078125,
+              "semieje_b_arcsec": 4.435653567314148,
+              "angulo_deg": -39.534729765205,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46090191568942,
+              "dec": 27.088067856797178,
+              "ra_err_mas": 391.5511328194414,
+              "dec_err_mas": 391.5511328194414,
+              "flux_ujy": 1393.4324743041445,
+              "flux_err_ujy": 50.985529578821996,
+              "mag_ab": 16.039850803127983,
+              "semieje_a_arcsec": 4.543981623649597,
+              "semieje_b_arcsec": 3.049199789762497,
+              "angulo_deg": -89.3406228721943,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60759346733113,
+              "dec": 27.030195552359835,
+              "ra_err_mas": 426.0021550407297,
+              "dec_err_mas": 426.0021550407297,
+              "flux_ujy": 1417.1731302819471,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.021508348581165,
+              "semieje_a_arcsec": 4.448439955711365,
+              "semieje_b_arcsec": 4.360831761360169,
+              "angulo_deg": 44.18817179768054,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46025142962563,
+              "dec": 27.071849773877755,
+              "ra_err_mas": 755.5652882191307,
+              "dec_err_mas": 755.5652882191307,
+              "flux_ujy": 765.9474420903686,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 16.68956819687318,
+              "semieje_a_arcsec": 4.257467484474183,
+              "semieje_b_arcsec": 4.06003714799881,
+              "angulo_deg": -87.98319107654598,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.69336668134727,
+              "dec": 26.972349743676745,
+              "ra_err_mas": 664.3592059968106,
+              "dec_err_mas": 664.3592059968106,
+              "flux_ujy": 885.4141055720141,
+              "flux_err_ujy": 58.08680007437401,
+              "mag_ab": 16.532199531124974,
+              "semieje_a_arcsec": 4.300124502182007,
+              "semieje_b_arcsec": 3.9061551809310915,
+              "angulo_deg": -6.815890168985329,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.64998010756256,
+              "dec": 26.982300740244593,
+              "ra_err_mas": 508.6016999220841,
+              "dec_err_mas": 508.6016999220841,
+              "flux_ujy": 1182.6867166882416,
+              "flux_err_ujy": 57.53620186534823,
+              "mag_ab": 16.21789132460116,
+              "semieje_a_arcsec": 4.439309513568879,
+              "semieje_b_arcsec": 4.302314817905426,
+              "angulo_deg": -38.40834960879986,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61820865270877,
+              "dec": 26.969611109657983,
+              "ra_err_mas": 183.16437303985842,
+              "dec_err_mas": 183.16437303985842,
+              "flux_ujy": 4317.386139867415,
+              "flux_err_ujy": 62.40177231591169,
+              "mag_ab": 14.812013389850442,
+              "semieje_a_arcsec": 5.3811371445655825,
+              "semieje_b_arcsec": 5.213729691505432,
+              "angulo_deg": -66.3524122770333,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.51871825350395,
+              "dec": 27.005408166335656,
+              "ra_err_mas": 443.2063619441333,
+              "dec_err_mas": 443.2063619441333,
+              "flux_ujy": 1791.7279305398495,
+              "flux_err_ujy": 62.57157337079633,
+              "mag_ab": 15.766885462811558,
+              "semieje_a_arcsec": 5.389023315906525,
+              "semieje_b_arcsec": 4.963104653358459,
+              "angulo_deg": -44.97756749591018,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.67701714689886,
+              "dec": 26.94347077155639,
+              "ra_err_mas": 563.5434907467109,
+              "dec_err_mas": 563.5434907467109,
+              "flux_ujy": 1288.7242328519956,
+              "flux_err_ujy": 59.885577580757655,
+              "mag_ab": 16.12466563487932,
+              "semieje_a_arcsec": 5.1496092796325685,
+              "semieje_b_arcsec": 4.245582056045532,
+              "angulo_deg": 0.3850174433485014,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61240803928632,
+              "dec": 26.955771044740217,
+              "ra_err_mas": 301.84952266469946,
+              "dec_err_mas": 301.84952266469946,
+              "flux_ujy": 2061.220723183133,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 15.614754371936797,
+              "semieje_a_arcsec": 4.5771523237228395,
+              "semieje_b_arcsec": 4.314131140708923,
+              "angulo_deg": 42.417960934637065,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.44007166737092,
+              "dec": 27.021556278714165,
+              "ra_err_mas": 253.34225242026218,
+              "dec_err_mas": 253.34225242026218,
+              "flux_ujy": 3060.1264685803876,
+              "flux_err_ujy": 61.88957400383919,
+              "mag_ab": 15.185717183960943,
+              "semieje_a_arcsec": 5.319105422496796,
+              "semieje_b_arcsec": 5.025726914405823,
+              "angulo_deg": 5.95393267544759,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60036877818587,
+              "dec": 26.947433008784834,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 429222.6137346913,
+              "flux_err_ujy": 62.2315079540647,
+              "mag_ab": 9.818359135171193,
+              "semieje_a_arcsec": 5.362975299358368,
+              "semieje_b_arcsec": 4.762493979930878,
+              "angulo_deg": -0.22801140464974232,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.62036549265184,
+              "dec": 26.938421232395992,
+              "ra_err_mas": 673.1778475632519,
+              "dec_err_mas": 673.1778475632519,
+              "flux_ujy": 1927.8970155244494,
+              "flux_err_ujy": 80.18630554408665,
+              "mag_ab": 15.687356044713761,
+              "semieje_a_arcsec": 6.872623157501221,
+              "semieje_b_arcsec": 4.027066004276276,
+              "angulo_deg": 55.932350811342715,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.47463554937943,
+              "dec": 26.988268701052,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 153005.3393308673,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 10.938299156325282,
+              "semieje_a_arcsec": 4.384705352783203,
+              "semieje_b_arcsec": 4.383938908576965,
+              "angulo_deg": 35.25197917445898,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.63158892073903,
+              "dec": 26.92424302938786,
+              "ra_err_mas": 791.2152947201611,
+              "dec_err_mas": 791.2152947201611,
+              "flux_ujy": 626.1719614245878,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 16.908331579822594,
+              "semieje_a_arcsec": 3.6622947335243228,
+              "semieje_b_arcsec": 3.4861204743385317,
+              "angulo_deg": 0.016098000484146318,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.55066901885064,
+              "dec": 26.951665036292884,
+              "ra_err_mas": 5.896651602200503,
+              "dec_err_mas": 5.896651602200503,
+              "flux_ujy": 100580.52580109793,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 11.393780868192088,
+              "semieje_a_arcsec": 4.384139573574067,
+              "semieje_b_arcsec": 4.3837504386901855,
+              "angulo_deg": -58.04237383087808,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5711945562046,
+              "dec": 26.93448025878546,
+              "ra_err_mas": 398.20289530069755,
+              "dec_err_mas": 398.20289530069755,
+              "flux_ujy": 1507.8118697871025,
+              "flux_err_ujy": 57.443922412428186,
+              "mag_ab": 15.95419772768233,
+              "semieje_a_arcsec": 4.438299167156219,
+              "semieje_b_arcsec": 4.342696154117585,
+              "angulo_deg": 42.300942718681824,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61505739388764,
+              "dec": 26.910112432073806,
+              "ra_err_mas": 218.1025841142152,
+              "dec_err_mas": 218.1025841142152,
+              "flux_ujy": 3170.53717239394,
+              "flux_err_ujy": 58.541676246119366,
+              "mag_ab": 15.147233498880922,
+              "semieje_a_arcsec": 5.015769791603089,
+              "semieje_b_arcsec": 4.301296710968018,
+              "angulo_deg": -10.682278404342895,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.43343934146836,
+              "dec": 26.97177930641621,
+              "ra_err_mas": 994.1275073029174,
+              "dec_err_mas": 994.1275073029174,
+              "flux_ujy": 600.546447139728,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.953699117262943,
+              "semieje_a_arcsec": 4.399078583717347,
+              "semieje_b_arcsec": 2.8074119567871096,
+              "angulo_deg": -16.51487148852474,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.40509061668936,
+              "dec": 26.981453439195775,
+              "ra_err_mas": 504.056213756675,
+              "dec_err_mas": 504.056213756675,
+              "flux_ujy": 1149.0913875242845,
+              "flux_err_ujy": 55.56616023106529,
+              "mag_ab": 16.249179198256844,
+              "semieje_a_arcsec": 4.426212334632874,
+              "semieje_b_arcsec": 4.349622237682342,
+              "angulo_deg": 49.59305758226254,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.64612477675618,
+              "dec": 26.887249428850886,
+              "ra_err_mas": 890.706646074188,
+              "dec_err_mas": 890.706646074188,
+              "flux_ujy": 666.4887238128398,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.84058360710216,
+              "semieje_a_arcsec": 4.3742190361022955,
+              "semieje_b_arcsec": 3.4439863681793215,
+              "angulo_deg": -43.77593573032442,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.53209897369246,
+              "dec": 26.932488145126637,
+              "ra_err_mas": 6.1941196772748,
+              "dec_err_mas": 6.1941196772748,
+              "flux_ujy": 112454.40417823785,
+              "flux_err_ujy": 58.63222800363713,
+              "mag_ab": 11.27262445011298,
+              "semieje_a_arcsec": 5.0446234226226805,
+              "semieje_b_arcsec": 4.746059036254883,
+              "angulo_deg": 84.33408055019662,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.41381849892502,
+              "dec": 26.96325857877643,
+              "ra_err_mas": 784.5911531571254,
+              "dec_err_mas": 784.5911531571254,
+              "flux_ujy": 754.3538767624424,
+              "flux_err_ujy": 57.62833355264694,
+              "mag_ab": 16.70612780577958,
+              "semieje_a_arcsec": 4.3610549688339235,
+              "semieje_b_arcsec": 3.960259711742401,
+              "angulo_deg": 83.10028200871469,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.53607838180253,
+              "dec": 26.91597359468895,
+              "ra_err_mas": 64.40131642391435,
+              "dec_err_mas": 64.40131642391435,
+              "flux_ujy": 11829.945643413443,
+              "flux_err_ujy": 61.45948141297263,
+              "mag_ab": 13.717608749473992,
+              "semieje_a_arcsec": 5.2637795329093935,
+              "semieje_b_arcsec": 5.18978625535965,
+              "angulo_deg": -51.971688036192404,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.4954261095134,
+              "dec": 26.92826202579719,
+              "ra_err_mas": 509.7139477724888,
+              "dec_err_mas": 509.7139477724888,
+              "flux_ujy": 1198.8666426078787,
+              "flux_err_ujy": 57.72031818190339,
+              "mag_ab": 16.20313843100842,
+              "semieje_a_arcsec": 4.495497560501099,
+              "semieje_b_arcsec": 4.458421099185943,
+              "angulo_deg": 49.76006253765852,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.45853962108689,
+              "dec": 26.935992380627,
+              "ra_err_mas": 511.5668336674923,
+              "dec_err_mas": 511.5668336674923,
+              "flux_ujy": 3079.3697010921805,
+              "flux_err_ujy": 88.30952768132552,
+              "mag_ab": 15.178911041542793,
+              "semieje_a_arcsec": 7.574705266952515,
+              "semieje_b_arcsec": 4.736486613750458,
+              "angulo_deg": -43.437820875841275,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.43246508449204,
+              "dec": 26.94271526729636,
+              "ra_err_mas": 571.1173040678402,
+              "dec_err_mas": 571.1173040678402,
+              "flux_ujy": 1740.8026304838647,
+              "flux_err_ujy": 70.16538017979396,
+              "mag_ab": 15.79819178660661,
+              "semieje_a_arcsec": 6.016737425327301,
+              "semieje_b_arcsec": 4.542959451675415,
+              "angulo_deg": -38.655230211444554,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.4912083571202,
+              "dec": 26.91017016758302,
+              "ra_err_mas": 158.6331185976681,
+              "dec_err_mas": 158.6331185976681,
+              "flux_ujy": 5179.788999155181,
+              "flux_err_ujy": 63.66424218226719,
+              "mag_ab": 14.614285449931206,
+              "semieje_a_arcsec": 5.480490708351136,
+              "semieje_b_arcsec": 5.439429402351379,
+              "angulo_deg": 15.757879915264935,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5765807955651,
+              "dec": 26.88703596872331,
+              "ra_err_mas": 60.56118659851081,
+              "dec_err_mas": 60.56118659851081,
+              "flux_ujy": 13587.836935647134,
+              "flux_err_ujy": 63.83068492952613,
+              "mag_ab": 13.56718980636732,
+              "semieje_a_arcsec": 5.474245703220368,
+              "semieje_b_arcsec": 5.409245026111603,
+              "angulo_deg": -29.4347343791158,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.56613418085763,
+              "dec": 26.880601031049483,
+              "ra_err_mas": 62.405495425868935,
+              "dec_err_mas": 62.405495425868935,
+              "flux_ujy": 18215.821280496126,
+              "flux_err_ujy": 74.8481126384433,
+              "mag_ab": 13.248943730613425,
+              "semieje_a_arcsec": 6.449110627174377,
+              "semieje_b_arcsec": 5.205243742465973,
+              "angulo_deg": -65.06502407132345,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54096805681033,
+              "dec": 26.8851004283299,
+              "ra_err_mas": 539.053019795149,
+              "dec_err_mas": 539.053019795149,
+              "flux_ujy": 1140.722754957788,
+              "flux_err_ujy": 57.62833355264696,
+              "mag_ab": 16.2571153601033,
+              "semieje_a_arcsec": 4.530901443958283,
+              "semieje_b_arcsec": 4.098687517642975,
+              "angulo_deg": 44.85672437401973,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.38528636858763,
+              "dec": 26.936006730751025,
+              "ra_err_mas": 716.8076565205681,
+              "dec_err_mas": 716.8076565205681,
+              "flux_ujy": 766.8581678003592,
+              "flux_err_ujy": 51.913552692126785,
+              "mag_ab": 16.68827800327535,
+              "semieje_a_arcsec": 4.496204137802124,
+              "semieje_b_arcsec": 3.0985931277275087,
+              "angulo_deg": -1.1083976557026745,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.52529851629254,
+              "dec": 26.88396599227145,
+              "ra_err_mas": 1094.517685399355,
+              "dec_err_mas": 1094.517685399355,
+              "flux_ujy": 1081.6927046308858,
+              "flux_err_ujy": 74.4928751674409,
+              "mag_ab": 16.31480587062853,
+              "semieje_a_arcsec": 6.748714184761048,
+              "semieje_b_arcsec": 3.5219127535820007,
+              "angulo_deg": -61.69390907438278,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61190707038062,
+              "dec": 26.85335323706782,
+              "ra_err_mas": 61.08293746585026,
+              "dec_err_mas": 61.08293746585026,
+              "flux_ujy": 18373.17275389929,
+              "flux_err_ujy": 74.42162419449673,
+              "mag_ab": 13.239605226001576,
+              "semieje_a_arcsec": 6.4034499168396,
+              "semieje_b_arcsec": 5.253861212730408,
+              "angulo_deg": 20.661786692152134,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 1,
+          "mjd": 61178.004975648,
+          "lambda_um": 0.81,
+          "banda": "1",
+          "color_hex": "#4687fb",
+          "total_fuentes": 40,
+          "fuentes": [
+            {
+              "ra": 178.6470846059397,
+              "dec": 27.103754912636244,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 213605.40920805171,
+              "flux_err_ujy": 51.20401797020415,
+              "mag_ab": 10.576035006547027,
+              "semieje_a_arcsec": 4.384142899513245,
+              "semieje_b_arcsec": 2.922930508852005,
+              "angulo_deg": -0.004929637757012128,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.676237622561,
+              "dec": 27.09243219347897,
+              "ra_err_mas": 260.6331284864752,
+              "dec_err_mas": 260.6331284864752,
+              "flux_ujy": 2825.0163151807515,
+              "flux_err_ujy": 56.8057576311848,
+              "mag_ab": 15.272513221475437,
+              "semieje_a_arcsec": 5.503859126567841,
+              "semieje_b_arcsec": 3.0122715175151824,
+              "angulo_deg": -0.43716673807434214,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.53363738671038,
+              "dec": 27.146060820509096,
+              "ra_err_mas": 587.1928385509672,
+              "dec_err_mas": 587.1928385509672,
+              "flux_ujy": 1036.3839902942048,
+              "flux_err_ujy": 57.29674133026867,
+              "mag_ab": 16.36126388345016,
+              "semieje_a_arcsec": 4.510042262077332,
+              "semieje_b_arcsec": 4.325002157688141,
+              "angulo_deg": -17.506007069174462,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.545946116826,
+              "dec": 27.14245093098467,
+              "ra_err_mas": 117.12744510290221,
+              "dec_err_mas": 117.12744510290221,
+              "flux_ujy": 5913.277953837994,
+              "flux_err_ujy": 55.50887934208735,
+              "mag_ab": 14.470494888516523,
+              "semieje_a_arcsec": 5.29826397895813,
+              "semieje_b_arcsec": 3.3846959590911867,
+              "angulo_deg": -2.5677009757698084,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.74231568408226,
+              "dec": 27.059607177713904,
+              "ra_err_mas": 776.4057243383485,
+              "dec_err_mas": 776.4057243383485,
+              "flux_ujy": 769.9347503104726,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.683930818379718,
+              "semieje_a_arcsec": 4.265913891792297,
+              "semieje_b_arcsec": 3.9673495054244996,
+              "angulo_deg": 1.6383905599397508,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.52672107589373,
+              "dec": 27.13966715349507,
+              "ra_err_mas": 506.2834979999876,
+              "dec_err_mas": 506.2834979999876,
+              "flux_ujy": 1405.7901787866447,
+              "flux_err_ujy": 60.1585519203759,
+              "mag_ab": 16.03026436003783,
+              "semieje_a_arcsec": 5.023726546764374,
+              "semieje_b_arcsec": 4.085191965103149,
+              "angulo_deg": 20.921024814552673,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.66626692716312,
+              "dec": 27.0801907864682,
+              "ra_err_mas": 499.18958941335853,
+              "dec_err_mas": 499.18958941335853,
+              "flux_ujy": 1264.0285282745556,
+              "flux_err_ujy": 59.125307117375606,
+              "mag_ab": 16.145673432803175,
+              "semieje_a_arcsec": 4.53166788816452,
+              "semieje_b_arcsec": 4.405945909023285,
+              "angulo_deg": 28.110406802827224,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60966272565037,
+              "dec": 27.095670997703877,
+              "ra_err_mas": 306.9244949114627,
+              "dec_err_mas": 306.9244949114627,
+              "flux_ujy": 2385.5184950314724,
+              "flux_err_ujy": 61.08270052303007,
+              "mag_ab": 15.456108652250933,
+              "semieje_a_arcsec": 5.089852499961853,
+              "semieje_b_arcsec": 4.961728823184967,
+              "angulo_deg": 1.2612990175145202,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.71885836083544,
+              "dec": 27.039525283878707,
+              "ra_err_mas": 1077.0623148412394,
+              "dec_err_mas": 1077.0623148412394,
+              "flux_ujy": 468.1718663707249,
+              "flux_err_ujy": 59.31450858373446,
+              "mag_ab": 17.22405234154975,
+              "semieje_a_arcsec": 3.6098927140235904,
+              "semieje_b_arcsec": 3.5304153323173524,
+              "angulo_deg": -0.6703610290045077,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54452208941143,
+              "dec": 27.09156074064233,
+              "ra_err_mas": 1113.6248221917447,
+              "dec_err_mas": 1113.6248221917447,
+              "flux_ujy": 2241.386640796309,
+              "flux_err_ujy": 112.72043079654341,
+              "mag_ab": 15.523773674518127,
+              "semieje_a_arcsec": 9.402906775474548,
+              "semieje_b_arcsec": 4.4147589087486265,
+              "angulo_deg": -3.5259500493395635,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.65851546272094,
+              "dec": 27.038928625264397,
+              "ra_err_mas": 555.1455720070095,
+              "dec_err_mas": 555.1455720070095,
+              "flux_ujy": 1131.239359953415,
+              "flux_err_ujy": 59.40888335874417,
+              "mag_ab": 16.266179353760684,
+              "semieje_a_arcsec": 4.488684558868409,
+              "semieje_b_arcsec": 4.08453084230423,
+              "angulo_deg": -54.594490922761054,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.50913900414685,
+              "dec": 27.094574364957268,
+              "ra_err_mas": 514.5717475551878,
+              "dec_err_mas": 514.5717475551878,
+              "flux_ujy": 1876.3155010395978,
+              "flux_err_ujy": 69.8137137694898,
+              "mag_ab": 15.716800956097924,
+              "semieje_a_arcsec": 5.872461140155792,
+              "semieje_b_arcsec": 4.539416217803955,
+              "angulo_deg": -35.480677813533106,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46081779317848,
+              "dec": 27.087945290390326,
+              "ra_err_mas": 487.19293479921424,
+              "dec_err_mas": 487.19293479921424,
+              "flux_ujy": 1311.533084395779,
+              "flux_err_ujy": 53.136920663003195,
+              "mag_ab": 16.105617496118995,
+              "semieje_a_arcsec": 5.106142580509186,
+              "semieje_b_arcsec": 2.9749886631965636,
+              "angulo_deg": -84.30932111445533,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.47274476943514,
+              "dec": 27.069282078940418,
+              "ra_err_mas": 759.5538054421232,
+              "dec_err_mas": 759.5538054421232,
+              "flux_ujy": 801.891843477128,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.639776132209672,
+              "semieje_a_arcsec": 4.346540939807892,
+              "semieje_b_arcsec": 3.976076400279999,
+              "angulo_deg": 70.66559477562632,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.45978424768614,
+              "dec": 27.071941454563827,
+              "ra_err_mas": 772.4947732361696,
+              "dec_err_mas": 772.4947732361696,
+              "flux_ujy": 872.0035398001702,
+              "flux_err_ujy": 59.69111242171447,
+              "mag_ab": 16.548770002518012,
+              "semieje_a_arcsec": 4.791960322856903,
+              "semieje_b_arcsec": 4.037005388736725,
+              "angulo_deg": 40.742962908623575,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.69337055302006,
+              "dec": 26.972457714242836,
+              "ra_err_mas": 662.2957810119198,
+              "dec_err_mas": 662.2957810119198,
+              "flux_ujy": 923.4663141990887,
+              "flux_err_ujy": 59.597184570571734,
+              "mag_ab": 16.486512977130364,
+              "semieje_a_arcsec": 4.357690596580506,
+              "semieje_b_arcsec": 3.8735875844955445,
+              "angulo_deg": -5.30066179360266,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6180907397515,
+              "dec": 26.96958954535453,
+              "ra_err_mas": 174.76783850299483,
+              "dec_err_mas": 174.76783850299483,
+              "flux_ujy": 4583.077599695408,
+              "flux_err_ujy": 63.86263069023999,
+              "mag_ab": 14.747172595560073,
+              "semieje_a_arcsec": 5.325752866268158,
+              "semieje_b_arcsec": 5.1467445373535154,
+              "angulo_deg": -89.5181258283446,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.51883914788397,
+              "dec": 27.0052314773919,
+              "ra_err_mas": 441.0451390453395,
+              "dec_err_mas": 441.0451390453395,
+              "flux_ujy": 1874.3767614189173,
+              "flux_err_ujy": 64.99303049494216,
+              "mag_ab": 15.717923394217582,
+              "semieje_a_arcsec": 5.401100170612335,
+              "semieje_b_arcsec": 4.315181028842926,
+              "angulo_deg": 14.621495239273017,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.67696533408346,
+              "dec": 26.943634326754577,
+              "ra_err_mas": 563.6994559873286,
+              "dec_err_mas": 563.6994559873286,
+              "flux_ujy": 1322.143498851362,
+              "flux_err_ujy": 61.44846846584562,
+              "mag_ab": 16.096869137628314,
+              "semieje_a_arcsec": 5.150201666355133,
+              "semieje_b_arcsec": 4.312703943252564,
+              "angulo_deg": 3.337992634890921,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.4399737653093,
+              "dec": 27.021565823092494,
+              "ra_err_mas": 271.56110897337305,
+              "dec_err_mas": 271.56110897337305,
+              "flux_ujy": 2913.2400121584765,
+              "flux_err_ujy": 63.42249704689319,
+              "mag_ab": 15.239124956832121,
+              "semieje_a_arcsec": 5.296751415729523,
+              "semieje_b_arcsec": 4.919803142547607,
+              "angulo_deg": 46.26204945612819,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.64148909042987,
+              "dec": 26.942867393159837,
+              "ra_err_mas": 841.8477227089313,
+              "dec_err_mas": 841.8477227089313,
+              "flux_ujy": 607.8090064999004,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 16.940647794389072,
+              "semieje_a_arcsec": 3.6689473509788515,
+              "semieje_b_arcsec": 3.6565611839294436,
+              "angulo_deg": 5.794198029536265,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.62028575755073,
+              "dec": 26.938614079295803,
+              "ra_err_mas": 577.860874845446,
+              "dec_err_mas": 577.860874845446,
+              "flux_ujy": 1885.9086011601014,
+              "flux_err_ujy": 74.32237380264449,
+              "mag_ab": 15.711264019218607,
+              "semieje_a_arcsec": 6.226348829269409,
+              "semieje_b_arcsec": 4.435049724578858,
+              "angulo_deg": 53.73282157782893,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.45311195797535,
+              "dec": 26.983717287539257,
+              "ra_err_mas": 1066.3734139582325,
+              "dec_err_mas": 1066.3734139582325,
+              "flux_ujy": 476.06874986635637,
+              "flux_err_ujy": 59.03047897756738,
+              "mag_ab": 17.205891436218458,
+              "semieje_a_arcsec": 3.651840198040009,
+              "semieje_b_arcsec": 3.589889407157898,
+              "angulo_deg": 0.02429339205730855,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6088097667903,
+              "dec": 26.90159066284884,
+              "ra_err_mas": 1007.2321712569151,
+              "dec_err_mas": 1007.2321712569151,
+              "flux_ujy": 496.5251148874898,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 17.16021257086237,
+              "semieje_a_arcsec": 3.586010992527008,
+              "semieje_b_arcsec": 3.5186840057373048,
+              "angulo_deg": 89.57289028510976,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.64595664434918,
+              "dec": 26.886924994437894,
+              "ra_err_mas": 932.7757283806658,
+              "dec_err_mas": 932.7757283806658,
+              "flux_ujy": 642.6560077558952,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 16.880119192728618,
+              "semieje_a_arcsec": 4.298298931121827,
+              "semieje_b_arcsec": 3.4114941596984862,
+              "angulo_deg": 40.336604219048255,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.48185155560066,
+              "dec": 26.94647659823607,
+              "ra_err_mas": 800.8713912432584,
+              "dec_err_mas": 800.8713912432584,
+              "flux_ujy": 743.8683168975989,
+              "flux_err_ujy": 59.31450858373446,
+              "mag_ab": 16.721325468586855,
+              "semieje_a_arcsec": 4.26488174200058,
+              "semieje_b_arcsec": 3.419394373893738,
+              "angulo_deg": -44.82174697528009,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5318881716992,
+              "dec": 26.927557308525735,
+              "ra_err_mas": 717.98017746748,
+              "dec_err_mas": 717.98017746748,
+              "flux_ujy": 820.3743909856449,
+              "flux_err_ujy": 59.31450858373446,
+              "mag_ab": 16.61503538512823,
+              "semieje_a_arcsec": 4.216699969768524,
+              "semieje_b_arcsec": 3.973577880859375,
+              "angulo_deg": -86.4307505499046,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.41396599659853,
+              "dec": 26.963311825075547,
+              "ra_err_mas": 867.0940167363981,
+              "dec_err_mas": 867.0940167363981,
+              "flux_ujy": 704.3634071579593,
+              "flux_err_ujy": 59.40888335874417,
+              "mag_ab": 16.780573658367594,
+              "semieje_a_arcsec": 4.365366125106812,
+              "semieje_b_arcsec": 3.929038751125336,
+              "angulo_deg": -83.28535964465452,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5360871893386,
+              "dec": 26.915948424113648,
+              "ra_err_mas": 66.49442910515258,
+              "dec_err_mas": 66.49442910515258,
+              "flux_ujy": 12117.931882936637,
+              "flux_err_ujy": 64.03783713933433,
+              "mag_ab": 13.691494354981277,
+              "semieje_a_arcsec": 5.343012642860413,
+              "semieje_b_arcsec": 5.3130237579345705,
+              "angulo_deg": 89.83104411497956,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.4956033060955,
+              "dec": 26.928366300053643,
+              "ra_err_mas": 505.0574002629497,
+              "dec_err_mas": 505.0574002629497,
+              "flux_ujy": 1261.9770230541424,
+              "flux_err_ujy": 59.21998341039068,
+              "mag_ab": 16.14743700294308,
+              "semieje_a_arcsec": 4.570176720619202,
+              "semieje_b_arcsec": 4.479224848747253,
+              "angulo_deg": 45.173262660914794,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.45849855951946,
+              "dec": 26.935940879460357,
+              "ra_err_mas": 406.4740574976275,
+              "dec_err_mas": 406.4740574976275,
+              "flux_ujy": 3513.160809853905,
+              "flux_err_ujy": 85.34002995034024,
+              "mag_ab": 15.035820548660567,
+              "semieje_a_arcsec": 7.105377554893494,
+              "semieje_b_arcsec": 5.068163311481476,
+              "angulo_deg": -37.65855876247254,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.43240712787969,
+              "dec": 26.94268104578659,
+              "ra_err_mas": 653.5716643344743,
+              "dec_err_mas": 653.5716643344743,
+              "flux_ujy": 1802.0515351916963,
+              "flux_err_ujy": 77.35114399400591,
+              "mag_ab": 15.760647605273203,
+              "semieje_a_arcsec": 6.465509724617005,
+              "semieje_b_arcsec": 4.690174758434296,
+              "angulo_deg": -47.513688451722196,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5633949168628,
+              "dec": 26.889836245197426,
+              "ra_err_mas": 819.7446285686761,
+              "dec_err_mas": 819.7446285686761,
+              "flux_ujy": 720.5330573275338,
+              "flux_err_ujy": 59.125307117375606,
+              "mag_ab": 16.75593084578613,
+              "semieje_a_arcsec": 4.241975629329682,
+              "semieje_b_arcsec": 2.8817766308784485,
+              "angulo_deg": 71.34299244694067,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.49116447346304,
+              "dec": 26.910180843794766,
+              "ra_err_mas": 151.4422298236256,
+              "dec_err_mas": 151.4422298236256,
+              "flux_ujy": 5510.900867464027,
+              "flux_err_ujy": 65.07917106355492,
+              "mag_ab": 14.547009125248664,
+              "semieje_a_arcsec": 5.445486307144165,
+              "semieje_b_arcsec": 5.298953557014466,
+              "angulo_deg": 0.34136194242282114,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.57656799940128,
+              "dec": 26.887032287761205,
+              "ra_err_mas": 60.767022424428546,
+              "dec_err_mas": 60.767022424428546,
+              "flux_ujy": 13869.40277548598,
+              "flux_err_ujy": 65.50817485882393,
+              "mag_ab": 13.544921221022081,
+              "semieje_a_arcsec": 5.463101959228516,
+              "semieje_b_arcsec": 5.451368045806885,
+              "angulo_deg": 12.194820380947634,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.566071602143,
+              "dec": 26.880667092049187,
+              "ra_err_mas": 62.69818023923728,
+              "dec_err_mas": 62.69818023923728,
+              "flux_ujy": 18322.436622749392,
+              "flux_err_ujy": 76.33044326833152,
+              "mag_ab": 13.242607551921008,
+              "semieje_a_arcsec": 6.390715265274048,
+              "semieje_b_arcsec": 5.314730703830719,
+              "angulo_deg": -67.03429055244318,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54112721556564,
+              "dec": 26.885063988531957,
+              "ra_err_mas": 567.9716305489865,
+              "dec_err_mas": 567.9716305489865,
+              "flux_ujy": 1042.6754312270652,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.354692771551235,
+              "semieje_a_arcsec": 4.226153028011322,
+              "semieje_b_arcsec": 3.931686568260193,
+              "angulo_deg": -69.95469502643304,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6044497788122,
+              "dec": 26.85832614044026,
+              "ra_err_mas": 732.7923624791523,
+              "dec_err_mas": 732.7923624791523,
+              "flux_ujy": 897.115546080602,
+              "flux_err_ujy": 59.50310845103668,
+              "mag_ab": 16.517944665749255,
+              "semieje_a_arcsec": 4.691359901428223,
+              "semieje_b_arcsec": 4.010866463184357,
+              "angulo_deg": 47.247089092943675,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.3853598653101,
+              "dec": 26.936192087682528,
+              "ra_err_mas": 662.6407185331814,
+              "dec_err_mas": 662.6407185331814,
+              "flux_ujy": 861.7544826696198,
+              "flux_err_ujy": 53.03138546317015,
+              "mag_ab": 16.561606744291097,
+              "semieje_a_arcsec": 4.572332298755646,
+              "semieje_b_arcsec": 3.0890792787075045,
+              "angulo_deg": -0.3971864658915105,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61194862563482,
+              "dec": 26.853365736259068,
+              "ra_err_mas": 70.69399869570064,
+              "dec_err_mas": 70.69399869570064,
+              "flux_ujy": 18380.65743500587,
+              "flux_err_ujy": 81.23697812169235,
+              "mag_ab": 13.239163019606812,
+              "semieje_a_arcsec": 6.792019391059876,
+              "semieje_b_arcsec": 5.360461258888245,
+              "angulo_deg": 21.737509043030585,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 2,
+          "mjd": 61178.007960162,
+          "lambda_um": 0.9299999999999999,
+          "banda": "1",
+          "color_hex": "#acfb38",
+          "total_fuentes": 42,
+          "fuentes": [
+            {
+              "ra": 178.5458511565848,
+              "dec": 27.14239935567101,
+              "ra_err_mas": 106.31704848896996,
+              "dec_err_mas": 106.31704848896996,
+              "flux_ujy": 5874.141047460362,
+              "flux_err_ujy": 52.28163072433455,
+              "mag_ab": 14.477704696250804,
+              "semieje_a_arcsec": 5.072327017784119,
+              "semieje_b_arcsec": 2.9767275750637054,
+              "angulo_deg": -0.9258569014309697,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6762447424386,
+              "dec": 27.092222631661482,
+              "ra_err_mas": 200.1934508583471,
+              "dec_err_mas": 200.1934508583471,
+              "flux_ujy": 2981.040001300725,
+              "flux_err_ujy": 51.64531942183031,
+              "mag_ab": 15.214146113073166,
+              "semieje_a_arcsec": 4.906771004199982,
+              "semieje_b_arcsec": 2.9549290001392365,
+              "angulo_deg": 2.6063348735929277,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.7421548905014,
+              "dec": 27.059619370512944,
+              "ra_err_mas": 856.4968432110168,
+              "dec_err_mas": 856.4968432110168,
+              "flux_ujy": 696.9647755625947,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 16.7920385485055,
+              "semieje_a_arcsec": 4.315689897537232,
+              "semieje_b_arcsec": 3.4219209790229796,
+              "angulo_deg": 47.67676263325084,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.526867869183,
+              "dec": 27.13949418137863,
+              "ra_err_mas": 523.7832124332385,
+              "dec_err_mas": 523.7832124332385,
+              "flux_ujy": 1575.4459212640875,
+              "flux_err_ujy": 64.5459778747392,
+              "mag_ab": 15.906556871834196,
+              "semieje_a_arcsec": 5.428689205646515,
+              "semieje_b_arcsec": 4.335762310028076,
+              "angulo_deg": 15.503588557370776,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.66599907772505,
+              "dec": 27.080158315054337,
+              "ra_err_mas": 474.25072780271404,
+              "dec_err_mas": 474.25072780271404,
+              "flux_ujy": 1340.6726434748034,
+              "flux_err_ujy": 59.108905258369205,
+              "mag_ab": 16.081758753134313,
+              "semieje_a_arcsec": 4.567588031291962,
+              "semieje_b_arcsec": 4.411751520633698,
+              "angulo_deg": 33.56943378941263,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5682447233468,
+              "dec": 27.112175213031065,
+              "ra_err_mas": 742.8241181648907,
+              "dec_err_mas": 742.8241181648907,
+              "flux_ujy": 663.99208651998,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 16.844658363625683,
+              "semieje_a_arcsec": 3.5772929668426516,
+              "semieje_b_arcsec": 3.574203169345856,
+              "angulo_deg": 0.015450648294722535,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60966026365946,
+              "dec": 27.095725735284958,
+              "ra_err_mas": 338.6496105499006,
+              "dec_err_mas": 338.6496105499006,
+              "flux_ujy": 2323.8935294294065,
+              "flux_err_ujy": 62.902876976593525,
+              "mag_ab": 15.484525055499972,
+              "semieje_a_arcsec": 5.312578821182251,
+              "semieje_b_arcsec": 4.88178174495697,
+              "angulo_deg": -39.99541236434402,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.50711352954391,
+              "dec": 27.11700688820086,
+              "ra_err_mas": 618.5957509380606,
+              "dec_err_mas": 618.5957509380606,
+              "flux_ujy": 997.6853146873557,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 16.402581672986265,
+              "semieje_a_arcsec": 4.476165354251862,
+              "semieje_b_arcsec": 4.288684010505676,
+              "angulo_deg": -42.23473769505689,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54419238967458,
+              "dec": 27.09160673862,
+              "ra_err_mas": 1101.701724138974,
+              "dec_err_mas": 1101.701724138974,
+              "flux_ujy": 2276.8917031111673,
+              "flux_err_ujy": 112.38687452476186,
+              "mag_ab": 15.506709685906571,
+              "semieje_a_arcsec": 9.477633237838745,
+              "semieje_b_arcsec": 4.420302879810333,
+              "angulo_deg": -3.042580336542111,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.65822021074598,
+              "dec": 27.03892057376146,
+              "ra_err_mas": 547.2904846143366,
+              "dec_err_mas": 547.2904846143366,
+              "flux_ujy": 1150.026513091925,
+              "flux_err_ujy": 58.640893893813875,
+              "mag_ab": 16.248295990187785,
+              "semieje_a_arcsec": 4.55757954120636,
+              "semieje_b_arcsec": 4.095329427719117,
+              "angulo_deg": -43.25033218312443,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.50940921696548,
+              "dec": 27.09468605363791,
+              "ra_err_mas": 549.2975177240971,
+              "dec_err_mas": 549.2975177240971,
+              "flux_ujy": 1828.1719926294618,
+              "flux_err_ujy": 71.20364080799924,
+              "mag_ab": 15.745022993984424,
+              "semieje_a_arcsec": 5.988686454296112,
+              "semieje_b_arcsec": 4.539300179481507,
+              "angulo_deg": -54.547844145824456,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46062284562348,
+              "dec": 27.088022620300215,
+              "ra_err_mas": 450.13139522560516,
+              "dec_err_mas": 450.13139522560516,
+              "flux_ujy": 1407.2883299386338,
+              "flux_err_ujy": 53.118189934140396,
+              "mag_ab": 16.029107906640135,
+              "semieje_a_arcsec": 5.063936042785644,
+              "semieje_b_arcsec": 3.0359315097332003,
+              "angulo_deg": -84.43831606712018,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54239899868006,
+              "dec": 27.04412803290133,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 186993.65886634885,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 10.720498423668888,
+              "semieje_a_arcsec": 4.383965516090393,
+              "semieje_b_arcsec": 4.383549404144287,
+              "angulo_deg": -77.73177381165218,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.47242568419338,
+              "dec": 27.06956725082856,
+              "ra_err_mas": 935.7125097719077,
+              "dec_err_mas": 935.7125097719077,
+              "flux_ujy": 628.9654430084181,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 16.903498660191453,
+              "semieje_a_arcsec": 4.254836297035218,
+              "semieje_b_arcsec": 2.84471310377121,
+              "angulo_deg": 72.89826750208759,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46005212194063,
+              "dec": 27.072133748942214,
+              "ra_err_mas": 802.8222399592757,
+              "dec_err_mas": 802.8222399592757,
+              "flux_ujy": 849.0562502452909,
+              "flux_err_ujy": 59.01559990381696,
+              "mag_ab": 16.577724463922358,
+              "semieje_a_arcsec": 4.904538190364838,
+              "semieje_b_arcsec": 4.01790599822998,
+              "angulo_deg": 47.819619454836236,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54085553639376,
+              "dec": 27.037269438918557,
+              "ra_err_mas": 581.8413325089873,
+              "dec_err_mas": 581.8413325089873,
+              "flux_ujy": 1056.0509352629654,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 16.340853458487167,
+              "semieje_a_arcsec": 4.442250752449036,
+              "semieje_b_arcsec": 4.425029039382935,
+              "angulo_deg": 86.1661285308908,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.69297059363373,
+              "dec": 26.972548215013134,
+              "ra_err_mas": 653.1471447270883,
+              "dec_err_mas": 653.1471447270883,
+              "flux_ujy": 900.1670097913784,
+              "flux_err_ujy": 58.640893893813875,
+              "mag_ab": 16.514257891178495,
+              "semieje_a_arcsec": 4.257382118701935,
+              "semieje_b_arcsec": 3.9704005002975467,
+              "angulo_deg": 11.41373275406967,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.506300898308,
+              "dec": 27.028272331746066,
+              "ra_err_mas": 240.05851901710395,
+              "dec_err_mas": 240.05851901710395,
+              "flux_ujy": 2541.6722239700625,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 15.387266765096399,
+              "semieje_a_arcsec": 4.42529548406601,
+              "semieje_b_arcsec": 4.333963716030121,
+              "angulo_deg": -47.771172923053335,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61816360502655,
+              "dec": 26.969660133661737,
+              "ra_err_mas": 200.3665090137327,
+              "dec_err_mas": 200.3665090137327,
+              "flux_ujy": 4360.305257904128,
+              "flux_err_ujy": 66.48068278095562,
+              "mag_ab": 14.801273385817966,
+              "semieje_a_arcsec": 5.580275535583496,
+              "semieje_b_arcsec": 5.138738632202148,
+              "angulo_deg": -36.926587879689784,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.51882456813348,
+              "dec": 27.005376161282793,
+              "ra_err_mas": 400.63635248885663,
+              "dec_err_mas": 400.63635248885663,
+              "flux_ujy": 2058.279945257262,
+              "flux_err_ujy": 64.46054305519661,
+              "mag_ab": 15.6163045159293,
+              "semieje_a_arcsec": 5.432127118110657,
+              "semieje_b_arcsec": 4.792337262630463,
+              "angulo_deg": 39.90887045246537,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6770605980974,
+              "dec": 26.943508300970368,
+              "ra_err_mas": 468.48906523909307,
+              "dec_err_mas": 468.48906523909307,
+              "flux_ujy": 1350.0394363696457,
+              "flux_err_ujy": 58.546842680285245,
+              "mag_ab": 16.07419948484551,
+              "semieje_a_arcsec": 4.587240636348724,
+              "semieje_b_arcsec": 4.0565511941909795,
+              "angulo_deg": 42.90753523396524,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.44000464017074,
+              "dec": 27.02154405474505,
+              "ra_err_mas": 269.63447873316136,
+              "dec_err_mas": 269.63447873316136,
+              "flux_ujy": 2912.588986496019,
+              "flux_err_ujy": 62.815207419039815,
+              "mag_ab": 15.239367614876176,
+              "semieje_a_arcsec": 5.308831226825714,
+              "semieje_b_arcsec": 5.134238636493683,
+              "angulo_deg": -4.617363265732237,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.64110545618954,
+              "dec": 26.942946000306947,
+              "ra_err_mas": 981.8698047552978,
+              "dec_err_mas": 981.8698047552978,
+              "flux_ujy": 536.2240263292487,
+              "flux_err_ujy": 58.64089389381386,
+              "mag_ab": 17.076699949020902,
+              "semieje_a_arcsec": 3.8124897122383117,
+              "semieje_b_arcsec": 3.5431344628334047,
+              "angulo_deg": 0.977998565554847,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60256247649397,
+              "dec": 26.953868521591655,
+              "ra_err_mas": 898.0847187069145,
+              "dec_err_mas": 898.0847187069145,
+              "flux_ujy": 653.9239215803194,
+              "flux_err_ujy": 59.108905258369205,
+              "mag_ab": 16.86124756018628,
+              "semieje_a_arcsec": 4.218914306163788,
+              "semieje_b_arcsec": 3.3944875240325927,
+              "angulo_deg": 38.436015290033,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6203414372625,
+              "dec": 26.9385828009685,
+              "ra_err_mas": 746.098724228106,
+              "dec_err_mas": 746.098724228106,
+              "flux_ujy": 1972.6776820015614,
+              "flux_err_ujy": 86.12531373683889,
+              "mag_ab": 15.6624252943055,
+              "semieje_a_arcsec": 7.2565584897995,
+              "semieje_b_arcsec": 4.417683517932892,
+              "angulo_deg": 51.05538059299476,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.56518813206546,
+              "dec": 26.948047312674166,
+              "ra_err_mas": 393.2398282676103,
+              "dec_err_mas": 393.2398282676103,
+              "flux_ujy": 1546.0654133215048,
+              "flux_err_ujy": 58.73479450462904,
+              "mag_ab": 15.926995960351714,
+              "semieje_a_arcsec": 4.395406007766724,
+              "semieje_b_arcsec": 4.3582552671432495,
+              "angulo_deg": -52.4815070162205,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6463796877572,
+              "dec": 26.886900053976632,
+              "ra_err_mas": 692.65538858821,
+              "dec_err_mas": 692.65538858821,
+              "flux_ujy": 849.4725885685333,
+              "flux_err_ujy": 59.108905258369205,
+              "mag_ab": 16.57719219907092,
+              "semieje_a_arcsec": 4.226907646656037,
+              "semieje_b_arcsec": 4.002193892002106,
+              "angulo_deg": -74.34462153054032,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5319413905331,
+              "dec": 26.92758280821495,
+              "ra_err_mas": 732.9544191322402,
+              "dec_err_mas": 732.9544191322402,
+              "flux_ujy": 879.5624862367117,
+              "flux_err_ujy": 59.10890525836922,
+              "mag_ab": 16.53939887674446,
+              "semieje_a_arcsec": 4.631267201900482,
+              "semieje_b_arcsec": 4.075878965854645,
+              "angulo_deg": 1.1801660818499948,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.41378184587424,
+              "dec": 26.96339654101649,
+              "ra_err_mas": 762.4668852811176,
+              "dec_err_mas": 762.4668852811176,
+              "flux_ujy": 789.9228117955084,
+              "flux_err_ujy": 59.01559990381696,
+              "mag_ab": 16.656103982818994,
+              "semieje_a_arcsec": 4.3335908412933355,
+              "semieje_b_arcsec": 4.004963660240174,
+              "angulo_deg": -80.09718443444348,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5360805618631,
+              "dec": 26.915960118041234,
+              "ra_err_mas": 69.14000205581723,
+              "dec_err_mas": 69.14000205581723,
+              "flux_ujy": 11872.505152742095,
+              "flux_err_ujy": 64.4605430551966,
+              "mag_ab": 13.713709705430631,
+              "semieje_a_arcsec": 5.407379913330078,
+              "semieje_b_arcsec": 5.327233278751374,
+              "angulo_deg": -2.337907158550957,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.49533034478938,
+              "dec": 26.928430521198205,
+              "ra_err_mas": 551.241175360992,
+              "dec_err_mas": 551.241175360992,
+              "flux_ujy": 1120.6890748724686,
+              "flux_err_ujy": 58.35828553135481,
+              "mag_ab": 16.276352776783416,
+              "semieje_a_arcsec": 4.495037841796875,
+              "semieje_b_arcsec": 4.433693850040436,
+              "angulo_deg": 30.969877451684113,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.4583615794041,
+              "dec": 26.935873655095516,
+              "ra_err_mas": 379.48136809761235,
+              "dec_err_mas": 379.48136809761235,
+              "flux_ujy": 3388.755667529363,
+              "flux_err_ujy": 80.63977190521568,
+              "mag_ab": 15.074964979968257,
+              "semieje_a_arcsec": 6.771587777137756,
+              "semieje_b_arcsec": 4.952229201793671,
+              "angulo_deg": -32.530575677032026,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.43233299797788,
+              "dec": 26.942801589381325,
+              "ra_err_mas": 454.61729831535894,
+              "dec_err_mas": 454.61729831535894,
+              "flux_ujy": 2159.853432931009,
+              "flux_err_ujy": 70.42543557522316,
+              "mag_ab": 15.564004919669937,
+              "semieje_a_arcsec": 5.9203827500343325,
+              "semieje_b_arcsec": 4.881136512756348,
+              "angulo_deg": -50.16978509540007,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.56333438260657,
+              "dec": 26.88970353307457,
+              "ra_err_mas": 788.602297363703,
+              "dec_err_mas": 788.602297363703,
+              "flux_ujy": 769.8831001394801,
+              "flux_err_ujy": 58.640893893813875,
+              "mag_ab": 16.684003656164567,
+              "semieje_a_arcsec": 4.396340596675873,
+              "semieje_b_arcsec": 3.445893979072571,
+              "angulo_deg": 45.704989472705705,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.49116819215106,
+              "dec": 26.910169771422982,
+              "ra_err_mas": 150.4899765897908,
+              "dec_err_mas": 150.4899765897908,
+              "flux_ujy": 5581.795566679034,
+              "flux_err_ujy": 65.14088425600767,
+              "mag_ab": 14.533130806272364,
+              "semieje_a_arcsec": 5.475665879249573,
+              "semieje_b_arcsec": 5.224041211605072,
+              "angulo_deg": 29.16301237845977,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46257882468,
+              "dec": 26.918818646187898,
+              "ra_err_mas": 873.358476492294,
+              "dec_err_mas": 873.358476492294,
+              "flux_ujy": 566.8476873087753,
+              "flux_err_ujy": 58.82854523389533,
+              "mag_ab": 17.016399674554496,
+              "semieje_a_arcsec": 3.5733857274055483,
+              "semieje_b_arcsec": 3.5636240959167482,
+              "angulo_deg": -84.40846814044723,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.57650811184897,
+              "dec": 26.887049582332498,
+              "ra_err_mas": 58.15555339607486,
+              "dec_err_mas": 58.15555339607486,
+              "flux_ujy": 14526.283224392646,
+              "flux_err_ujy": 65.30986219037307,
+              "mag_ab": 13.494679353506386,
+              "semieje_a_arcsec": 5.492575323581696,
+              "semieje_b_arcsec": 5.3408275008201604,
+              "angulo_deg": 58.89252747686957,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.56601982498964,
+              "dec": 26.88066156888681,
+              "ra_err_mas": 61.14539058685333,
+              "dec_err_mas": 61.14539058685333,
+              "flux_ujy": 19338.790229319377,
+              "flux_err_ujy": 77.14719937335306,
+              "mag_ab": 13.18399236585223,
+              "semieje_a_arcsec": 6.5085155963897705,
+              "semieje_b_arcsec": 5.488293731212616,
+              "angulo_deg": -61.29712289492923,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5415330355952,
+              "dec": 26.885006886517658,
+              "ra_err_mas": 558.7180631864846,
+              "dec_err_mas": 558.7180631864846,
+              "flux_ujy": 1160.1314119128022,
+              "flux_err_ujy": 59.01559990381698,
+              "mag_ab": 16.238797657326728,
+              "semieje_a_arcsec": 4.663824081420898,
+              "semieje_b_arcsec": 4.04828771352768,
+              "angulo_deg": -49.997899969842116,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.3851972133788,
+              "dec": 26.936294617015196,
+              "ra_err_mas": 752.3294298614794,
+              "dec_err_mas": 752.3294298614794,
+              "flux_ujy": 742.464501665629,
+              "flux_err_ujy": 52.28163072433455,
+              "mag_ab": 16.72337638673428,
+              "semieje_a_arcsec": 4.536738097667694,
+              "semieje_b_arcsec": 3.08028364777565,
+              "angulo_deg": 0.49057129350358425,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5250942566341,
+              "dec": 26.883855144499915,
+              "ra_err_mas": 1075.229443058412,
+              "dec_err_mas": 1075.229443058412,
+              "flux_ujy": 842.8930884351471,
+              "flux_err_ujy": 65.89787281220681,
+              "mag_ab": 16.585634390486614,
+              "semieje_a_arcsec": 5.839979648590088,
+              "semieje_b_arcsec": 2.88798246383667,
+              "angulo_deg": -52.07478291152458,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61187995413823,
+              "dec": 26.85343113122768,
+              "ra_err_mas": 68.51863789169039,
+              "dec_err_mas": 68.51863789169039,
+              "flux_ujy": 17597.60197359344,
+              "flux_err_ujy": 77.99968049407309,
+              "mag_ab": 13.286431896012738,
+              "semieje_a_arcsec": 6.564149689674378,
+              "semieje_b_arcsec": 5.228758502006531,
+              "angulo_deg": 24.233222599712807,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        },
+        {
+          "banda_idx": 3,
+          "mjd": 61178.006467917,
+          "lambda_um": 0.87,
+          "banda": "1",
+          "color_hex": "#1de7b2",
+          "total_fuentes": 34,
+          "fuentes": [
+            {
+              "ra": 178.67630993503514,
+              "dec": 27.09237772492031,
+              "ra_err_mas": 234.08719037989619,
+              "dec_err_mas": 234.08719037989619,
+              "flux_ujy": 2949.96821023499,
+              "flux_err_ujy": 55.3603368797998,
+              "mag_ab": 15.225522282501158,
+              "semieje_a_arcsec": 5.296699678897858,
+              "semieje_b_arcsec": 2.9887388348579407,
+              "angulo_deg": -0.3950898379401546,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5459426349121,
+              "dec": 27.142438150856663,
+              "ra_err_mas": 112.67274659702426,
+              "dec_err_mas": 112.67274659702426,
+              "flux_ujy": 5966.098872630889,
+              "flux_err_ujy": 54.847255033365315,
+              "mag_ab": 14.460839506303529,
+              "semieje_a_arcsec": 5.204314327239991,
+              "semieje_b_arcsec": 3.374837875366211,
+              "angulo_deg": -2.6701442083664793,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.7422050830885,
+              "dec": 27.059655517459504,
+              "ra_err_mas": 973.6604305886353,
+              "dec_err_mas": 973.6604305886353,
+              "flux_ujy": 615.853381286555,
+              "flux_err_ujy": 59.40067441026368,
+              "mag_ab": 16.926372296730573,
+              "semieje_a_arcsec": 4.286497390270234,
+              "semieje_b_arcsec": 3.87137953042984,
+              "angulo_deg": -3.7486272363300843,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.52695726629437,
+              "dec": 27.139639894319966,
+              "ra_err_mas": 503.7570891638646,
+              "dec_err_mas": 503.7570891638646,
+              "flux_ujy": 1474.8853508026648,
+              "flux_err_ujy": 61.459257929898094,
+              "mag_ab": 15.978169967172981,
+              "semieje_a_arcsec": 5.1333539366722105,
+              "semieje_b_arcsec": 4.2510162711143495,
+              "angulo_deg": 0.29678084414289835,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6662103509881,
+              "dec": 27.080190156465594,
+              "ra_err_mas": 494.46985514553774,
+              "dec_err_mas": 494.46985514553774,
+              "flux_ujy": 1282.678346317756,
+              "flux_err_ujy": 59.40067441026368,
+              "mag_ab": 16.12977121426182,
+              "semieje_a_arcsec": 4.533935070037842,
+              "semieje_b_arcsec": 4.468634688854218,
+              "angulo_deg": 23.898148886957614,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.60959326785826,
+              "dec": 27.09572198229796,
+              "ra_err_mas": 362.610525323616,
+              "dec_err_mas": 362.610525323616,
+              "flux_ujy": 2248.9945005786344,
+              "flux_err_ujy": 64.33608380755814,
+              "mag_ab": 15.520094638618975,
+              "semieje_a_arcsec": 5.382490432262421,
+              "semieje_b_arcsec": 4.95516859292984,
+              "angulo_deg": 43.812050355560864,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54444134832863,
+              "dec": 27.091584243932765,
+              "ra_err_mas": 1191.4502304149914,
+              "dec_err_mas": 1191.4502304149914,
+              "flux_ujy": 2126.596572896844,
+              "flux_err_ujy": 113.74363179878935,
+              "mag_ab": 15.580852848139521,
+              "semieje_a_arcsec": 9.458951807022094,
+              "semieje_b_arcsec": 4.426963627338409,
+              "angulo_deg": -2.467488440267381,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.65852986462934,
+              "dec": 27.03898690693622,
+              "ra_err_mas": 543.9964946725166,
+              "dec_err_mas": 543.9964946725166,
+              "flux_ujy": 1184.4329479590865,
+              "flux_err_ujy": 59.59075705421201,
+              "mag_ab": 16.216289422606188,
+              "semieje_a_arcsec": 4.591311585903168,
+              "semieje_b_arcsec": 4.080549323558808,
+              "angulo_deg": -43.74958486050651,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5092839542812,
+              "dec": 27.094664273421188,
+              "ra_err_mas": 658.5058875297602,
+              "dec_err_mas": 658.5058875297602,
+              "flux_ujy": 1778.6989138530516,
+              "flux_err_ujy": 77.49279751331765,
+              "mag_ab": 15.77480952261579,
+              "semieje_a_arcsec": 6.418149828910828,
+              "semieje_b_arcsec": 4.489252185821534,
+              "angulo_deg": -39.58298505169114,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.46072860248768,
+              "dec": 27.087927122531607,
+              "ra_err_mas": 492.85683605693106,
+              "dec_err_mas": 492.85683605693106,
+              "flux_ujy": 1284.1477898858368,
+              "flux_err_ujy": 53.172133091454185,
+              "mag_ab": 16.128528100648087,
+              "semieje_a_arcsec": 5.054297471046448,
+              "semieje_b_arcsec": 2.982048523426056,
+              "angulo_deg": -84.34761115494241,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.47602394842318,
+              "dec": 27.067926615739257,
+              "ra_err_mas": 462.32230473063163,
+              "dec_err_mas": 462.32230473063163,
+              "flux_ujy": 2781.2544612377988,
+              "flux_err_ujy": 81.05916859886435,
+              "mag_ab": 15.289463809906202,
+              "semieje_a_arcsec": 6.735851669311524,
+              "semieje_b_arcsec": 4.359130358695984,
+              "angulo_deg": 6.593649900658278,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.45985282291733,
+              "dec": 27.071820388496743,
+              "ra_err_mas": 742.2220698386473,
+              "dec_err_mas": 742.2220698386473,
+              "flux_ujy": 806.8209259945125,
+              "flux_err_ujy": 59.40067441026368,
+              "mag_ab": 16.63312273802483,
+              "semieje_a_arcsec": 4.280837380886078,
+              "semieje_b_arcsec": 4.015084493160248,
+              "angulo_deg": 7.655274314202999,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.6931923898892,
+              "dec": 26.972496812889435,
+              "ra_err_mas": 664.5780952447899,
+              "dec_err_mas": 664.5780952447899,
+              "flux_ujy": 915.4580480567222,
+              "flux_err_ujy": 59.87474956226589,
+              "mag_ab": 16.495969504688293,
+              "semieje_a_arcsec": 4.314692485332489,
+              "semieje_b_arcsec": 3.9476137518882752,
+              "angulo_deg": 0.034223619996647615,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61823174888173,
+              "dec": 26.969523506153205,
+              "ra_err_mas": 178.34768310405954,
+              "dec_err_mas": 178.34768310405954,
+              "flux_ujy": 4650.222174668976,
+              "flux_err_ujy": 64.86128504272045,
+              "mag_ab": 14.73138136536502,
+              "semieje_a_arcsec": 5.429560971260071,
+              "semieje_b_arcsec": 5.384689617156982,
+              "angulo_deg": -41.053142289401364,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.51888771644272,
+              "dec": 27.005193820440386,
+              "ra_err_mas": 415.7280360357107,
+              "dec_err_mas": 415.7280360357107,
+              "flux_ujy": 1892.0126589626302,
+              "flux_err_ujy": 63.45108864466654,
+              "mag_ab": 15.707755527716072,
+              "semieje_a_arcsec": 5.263848268985749,
+              "semieje_b_arcsec": 4.367066419124604,
+              "angulo_deg": 12.776311951031255,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.67708520762918,
+              "dec": 26.943439706616413,
+              "ra_err_mas": 516.6450057497295,
+              "dec_err_mas": 516.6450057497295,
+              "flux_ujy": 1427.03242031236,
+              "flux_err_ujy": 61.274971884071725,
+              "mag_ab": 16.013981022707213,
+              "semieje_a_arcsec": 5.109189879894257,
+              "semieje_b_arcsec": 4.3121965527534485,
+              "angulo_deg": 43.991643349597176,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.44003802324855,
+              "dec": 27.02149463605002,
+              "ra_err_mas": 277.8525822734978,
+              "dec_err_mas": 277.8525822734978,
+              "flux_ujy": 2870.285989637486,
+              "flux_err_ujy": 63.71787786048179,
+              "mag_ab": 15.255252694442433,
+              "semieje_a_arcsec": 5.314805722236634,
+              "semieje_b_arcsec": 4.970813071727753,
+              "angulo_deg": 44.70587623110541,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54817771610342,
+              "dec": 26.978744222120557,
+              "ra_err_mas": 764.8122218020033,
+              "dec_err_mas": 764.8122218020033,
+              "flux_ujy": 842.7936601461437,
+              "flux_err_ujy": 59.9691148683557,
+              "mag_ab": 16.58576247228279,
+              "semieje_a_arcsec": 4.564124989509582,
+              "semieje_b_arcsec": 3.908525836467743,
+              "angulo_deg": -47.84273281498756,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.62035060428533,
+              "dec": 26.938101584600375,
+              "ra_err_mas": 667.58181711837,
+              "dec_err_mas": 667.58181711837,
+              "flux_ujy": 2113.9272780100564,
+              "flux_err_ujy": 84.87578323136738,
+              "mag_ab": 15.58734051502186,
+              "semieje_a_arcsec": 7.0602460384368895,
+              "semieje_b_arcsec": 4.575859272480011,
+              "angulo_deg": 49.91257041654115,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.670989217677,
+              "dec": 26.911051650961927,
+              "ra_err_mas": 240.44026408452228,
+              "dec_err_mas": 240.44026408452228,
+              "flux_ujy": 2457.5798470411114,
+              "flux_err_ujy": 57.07032196855563,
+              "mag_ab": 15.423796529759322,
+              "semieje_a_arcsec": 4.396566021442413,
+              "semieje_b_arcsec": 4.3644152760505674,
+              "angulo_deg": 42.42672748243678,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.453158469667,
+              "dec": 26.983817936080246,
+              "ra_err_mas": 905.2161423292468,
+              "dec_err_mas": 905.2161423292468,
+              "flux_ujy": 573.2085785471495,
+              "flux_err_ujy": 59.40067441026367,
+              "mag_ab": 17.00428391889442,
+              "semieje_a_arcsec": 3.7092207789421083,
+              "semieje_b_arcsec": 3.591443359851837,
+              "angulo_deg": 2.2241650855197923,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.55752062517956,
+              "dec": 26.925112206171818,
+              "ra_err_mas": 5.0,
+              "dec_err_mas": 5.0,
+              "flux_ujy": 214979.9324195298,
+              "flux_err_ujy": 59.305404622548316,
+              "mag_ab": 10.569070817216685,
+              "semieje_a_arcsec": 4.384399735927582,
+              "semieje_b_arcsec": 4.383728265762329,
+              "angulo_deg": 40.06925695455561,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.646388821471,
+              "dec": 26.887036811736355,
+              "ra_err_mas": 884.080613364008,
+              "dec_err_mas": 884.080613364008,
+              "flux_ujy": 713.6018681538418,
+              "flux_err_ujy": 59.780235297245866,
+              "mag_ab": 16.766425676485934,
+              "semieje_a_arcsec": 4.481251454353333,
+              "semieje_b_arcsec": 3.098582410812378,
+              "angulo_deg": -89.98779695643135,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.41363960063848,
+              "dec": 26.963555493551688,
+              "ra_err_mas": 918.3035872707251,
+              "dec_err_mas": 918.3035872707251,
+              "flux_ujy": 705.47049119091,
+              "flux_err_ujy": 59.68557136564999,
+              "mag_ab": 16.778868490879766,
+              "semieje_a_arcsec": 4.608980453014374,
+              "semieje_b_arcsec": 3.0918595790863037,
+              "angulo_deg": 88.22089532004075,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.53608395495758,
+              "dec": 26.915913620928762,
+              "ra_err_mas": 69.8801873911996,
+              "dec_err_mas": 69.8801873911996,
+              "flux_ujy": 12177.7278538856,
+              "flux_err_ujy": 65.72729514359192,
+              "mag_ab": 13.686149961591738,
+              "semieje_a_arcsec": 5.497733116149902,
+              "semieje_b_arcsec": 5.394204020500183,
+              "angulo_deg": 4.716112860091813,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.49531516889607,
+              "dec": 26.928381663002185,
+              "ra_err_mas": 533.1656960822324,
+              "dec_err_mas": 533.1656960822324,
+              "flux_ujy": 1221.7129480516319,
+              "flux_err_ujy": 59.9691148683557,
+              "mag_ab": 16.182642680596118,
+              "semieje_a_arcsec": 4.612249851226807,
+              "semieje_b_arcsec": 3.9742700457572937,
+              "angulo_deg": 44.61743211154291,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.45835055266565,
+              "dec": 26.935770679168993,
+              "ra_err_mas": 371.59092893483535,
+              "dec_err_mas": 371.59092893483535,
+              "flux_ujy": 3351.6606643269884,
+              "flux_err_ujy": 79.79363985205495,
+              "mag_ab": 15.086915516144314,
+              "semieje_a_arcsec": 6.627747559547425,
+              "semieje_b_arcsec": 4.79165655374527,
+              "angulo_deg": -34.152632906788746,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.43227178042363,
+              "dec": 26.942668265653047,
+              "ra_err_mas": 575.258160970747,
+              "dec_err_mas": 575.258160970747,
+              "flux_ujy": 1982.4765723137227,
+              "flux_err_ujy": 76.24223840031435,
+              "mag_ab": 15.657045462793615,
+              "semieje_a_arcsec": 6.351617002487183,
+              "semieje_b_arcsec": 4.856167578697205,
+              "angulo_deg": -48.88067568201938,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.49118312430082,
+              "dec": 26.91008132331278,
+              "ra_err_mas": 153.30924718401585,
+              "dec_err_mas": 153.30924718401585,
+              "flux_ujy": 5349.178894768298,
+              "flux_err_ujy": 64.599218172847,
+              "mag_ab": 14.579347816219421,
+              "semieje_a_arcsec": 5.390602397918701,
+              "semieje_b_arcsec": 5.005642676353455,
+              "angulo_deg": 2.303971790546572,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.57657882634228,
+              "dec": 26.88699650941304,
+              "ra_err_mas": 58.769535562732045,
+              "dec_err_mas": 58.769535562732045,
+              "flux_ujy": 14442.583628733591,
+              "flux_err_ujy": 65.81326940551445,
+              "mag_ab": 13.500953394853612,
+              "semieje_a_arcsec": 5.476369869709015,
+              "semieje_b_arcsec": 5.4151947617530825,
+              "angulo_deg": 39.04969071148572,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.5660923031437,
+              "dec": 26.88061512219259,
+              "ra_err_mas": 61.987022088996426,
+              "dec_err_mas": 61.987022088996426,
+              "flux_ujy": 19066.68148145128,
+              "flux_err_ujy": 77.63859782569503,
+              "mag_ab": 13.199377843483,
+              "semieje_a_arcsec": 6.464088439941406,
+              "semieje_b_arcsec": 5.42046674489975,
+              "angulo_deg": -68.56145254896633,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.54127672442377,
+              "dec": 26.884976905967335,
+              "ra_err_mas": 566.6538680755133,
+              "dec_err_mas": 566.6538680755133,
+              "flux_ujy": 1122.5954610401595,
+              "flux_err_ujy": 59.68557136564999,
+              "mag_ab": 16.274507417492032,
+              "semieje_a_arcsec": 4.525649046897889,
+              "semieje_b_arcsec": 4.175184857845307,
+              "angulo_deg": -2.748989137380756,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.38532539046713,
+              "dec": 26.93628290330048,
+              "ra_err_mas": 729.8966573337644,
+              "dec_err_mas": 729.8966573337644,
+              "flux_ujy": 775.6491298708245,
+              "flux_err_ujy": 53.06568226778334,
+              "mag_ab": 16.67590234819942,
+              "semieje_a_arcsec": 4.53024845123291,
+              "semieje_b_arcsec": 3.0750635862350464,
+              "angulo_deg": 1.4062054294594548,
+              "tipo_morfologia": "puntual"
+            },
+            {
+              "ra": 178.61193617437152,
+              "dec": 26.85337833001138,
+              "ra_err_mas": 66.28848991729278,
+              "dec_err_mas": 66.28848991729278,
+              "flux_ujy": 18097.21805467158,
+              "flux_err_ujy": 78.36353043246473,
+              "mag_ab": 13.256036074109641,
+              "semieje_a_arcsec": 6.500474214553833,
+              "semieje_b_arcsec": 5.354731404781342,
+              "angulo_deg": 26.54522626583649,
+              "tipo_morfologia": "puntual"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

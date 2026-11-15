@@ -1,0 +1,35 @@
+{
+  "ra": 178.566294716,
+  "dec": 27.0003686174,
+  "fov_deg": 0.25,
+  "cuadros": [
+    {
+      "fecha_utc": "2026-05-18T00:05:00.966",
+      "mjd": 61178.003483403,
+      "lambda_um": 0.75,
+      "banda": "1",
+      "url": "s3://nasa-irsa-spherex/qr3/level2/2026W21_1A/l2b-v27-2026-268/1/level2_2026W21_1A_0001_1D1_spx_l2b-v27-2026-268.fits"
+    },
+    {
+      "fecha_utc": "2026-05-18T00:07:09.896",
+      "mjd": 61178.004975648,
+      "lambda_um": 0.81,
+      "banda": "1",
+      "url": "s3://nasa-irsa-spherex/qr3/level2/2026W21_1A/l2b-v27-2026-268/1/level2_2026W21_1A_0001_2D1_spx_l2b-v27-2026-268.fits"
+    },
+    {
+      "fecha_utc": "2026-05-18T00:09:18.828",
+      "mjd": 61178.006467917,
+      "lambda_um": 0.87,
+      "banda": "1",
+      "url": "s3://nasa-irsa-spherex/qr3/level2/2026W21_1A/l2b-v27-2026-268/1/level2_2026W21_1A_0001_3D1_spx_l2b-v27-2026-268.fits"
+    },
+    {
+      "fecha_utc": "2026-05-18T00:11:27.758",
+      "mjd": 61178.007960162,
+      "lambda_um": 0.9299999999999999,
+      "banda": "1",
+      "url": "s3://nasa-irsa-spherex/qr3/level2/2026W21_1A/l2b-v27-2026-268/1/level2_2026W21_1A_0001_4D1_spx_l2b-v27-2026-268.fits"
+    }
+  ]
+}

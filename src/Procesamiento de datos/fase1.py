@@ -6,6 +6,9 @@ from astropy.coordinates import SkyCoord
 from astropy.io import fits
 from astropy.nddata import Cutout2D
 from astropy.wcs import WCS
+from pathlib import Path
+from astropy.visualization import ZScaleInterval
+import matplotlib.pyplot as plt
 
 # =====================================================================
 # CONFIGURACIÓN DE BANDAS POR TIPO DE OBJETO (ALeRCE -> SPHEREx)
@@ -98,7 +101,7 @@ def seleccionar_cuadros_fase1(datos_json: dict, clase_alerce: str = "DEFAULT") -
 # =====================================================================
 # FASE 2: RECORTE ASTROMÉTRICO (Cutout2D) Y EXTRACCIÓN DE FUENTES
 # =====================================================================
-def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov_deg: float, umbral_sigma: float = 3.0) -> list:
+def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov_deg: float, lambda_um: float = 0.0, umbral_sigma: float = 3.0) -> list:
     """
     Lee el FITS en streaming desde AWS S3, recorta exactamente alrededor de (RA, Dec)
     y extrae todas las fuentes astronómicas vectorizadas con coordenadas celestes reales.
@@ -134,9 +137,24 @@ def procesar_fits_s3_fase2(s3_uri: str, ra_centro: float, dec_centro: float, fov
         err=bkg.globalrms,
         mask=mascara_invalida
     )
-
-    if len(objetos) == 0:
+    
+# 1. Validación ANTES de graficar
+    if len(objetos) == 0 or np.all(mascara_invalida):
         return []
+
+    # 2. Renderizado de control (PNG)
+    zscale = ZScaleInterval()
+    vmin, vmax = zscale.get_limits(sub_img_limpia[~mascara_invalida])
+
+    fig, ax = plt.subplots(figsize=(6, 6))
+    ax.imshow(sub_img_limpia, origin="lower", cmap="inferno", vmin=vmin, vmax=vmax)
+    ax.scatter(objetos["x"], objetos["y"], s=40, edgecolor="cyan", facecolor="none", lw=1)
+    ax.set_title(f"λ = {lambda_um:.3f} µm | Fuentes: {len(objetos)}")
+
+    carpeta_salida = Path(__file__).resolve().parent
+    nombre_png = carpeta_salida / f"recorte_lam_{lambda_um:.3f}.png"
+    plt.savefig(nombre_png, dpi=150, bbox_inches="tight")
+    plt.close(fig)
 
     # Transformar coordenadas de píxel (x, y) del recorte a coordenadas celestes (RA, Dec)
     coords_sky = cutout.wcs.pixel_to_world(objetos["x"], objetos["y"])
@@ -188,7 +206,8 @@ def ejecutar_pipeline_fases_1_y_2(ruta_json: str, clase_alerce: str = "DEFAULT")
                 s3_uri=cuadro["s3_uri"],
                 ra_centro=ra,
                 dec_centro=dec,
-                fov_deg=fov_deg
+                fov_deg=fov_deg,
+                lambda_um=cuadro["lambda_real_um"]
             )
             bandas_procesadas.append({
                 "mjd": cuadro["mjd"],
@@ -206,9 +225,15 @@ def ejecutar_pipeline_fases_1_y_2(ruta_json: str, clase_alerce: str = "DEFAULT")
 
     return resultado
 
-
 if __name__ == "__main__":
-    salida = ejecutar_pipeline_fases_1_y_2("spherex.json", clase_alerce="DEFAULT")
-    with open("salida_fase2_vectorizada.json", "w", encoding="utf-8") as f:
+    # Obtiene la carpeta exacta donde vive fase1.py
+    directorio_script = Path(__file__).resolve().parent
+    
+    ruta_entrada = directorio_script / "spherex.json"
+    ruta_salida = directorio_script / "salida_fase2_vectorizada.json"
+
+    salida = ejecutar_pipeline_fases_1_y_2(str(ruta_entrada), clase_alerce="DEFAULT")
+    
+    with open(ruta_salida, "w", encoding="utf-8") as f:
         json.dump(salida, f, indent=2)
-    print("Listo. Guardado en salida_fase2_vectorizada.json")
+    print(f"Listo. Guardado en {ruta_salida}")
