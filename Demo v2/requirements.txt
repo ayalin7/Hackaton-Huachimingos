@@ -1,0 +1,13 @@
+# Solo GIF: motor SPHEREx + API mínima
+numpy
+scipy
+astropy
+astroquery
+reproject
+imageio
+pillow
+matplotlib
+alerce
+requests
+fastapi
+uvicorn

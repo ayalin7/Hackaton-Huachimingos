@@ -1,0 +1,1999 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>SPHEREx Stellarium Explorer · NASA Space Apps 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet">
+<style>
+  /* ------------------------------------------------------------------
+     Tokens: paleta Material 3 de Google Maps sobre un cielo nocturno
+     ------------------------------------------------------------------ */
+  :root {
+    --panel-w: 408px;
+
+    --surface: #ffffff;
+    --surface-low: #f8fafd;
+    --surface-field: #f0f4f9;
+    --surface-hover: #f1f3f4;
+    --on-surface: #1f1f1f;
+    --on-surface-var: #444746;
+    --outline: #747775;
+    --outline-var: #c4c7c5;
+    --divider: #e3e3e3;
+    --hover: rgba(31, 31, 31, 0.08);
+
+    --primary: #0b57d0;
+    --primary-hover: #0842a0;
+    --primary-container: #d3e3fd;
+    --on-primary-container: #041e49;
+    --chip-selected: #c2e7ff;
+    --on-chip-selected: #001d35;
+
+    --pred: #8a4b00;
+    --pred-container: #ffdfa6;
+    --error: #b3261e;
+    --error-container: #f9dedc;
+    --on-error-container: #410e0b;
+    --tip-container: #e8f0fe;
+    --inverse: #303030;
+    --on-inverse: #f2f2f2;
+
+    /* Variables que el JS asigna en línea (epoch-mode-tag) */
+    --accent: var(--primary);
+    --emerald: #146c2e;
+    --gold: var(--pred);
+    --rose: var(--error);
+    --muted: var(--on-surface-var);
+
+    --elev-1: 0 1px 2px rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    --elev-2: 0 1px 2px rgba(60, 64, 67, 0.3), 0 2px 6px 2px rgba(60, 64, 67, 0.15);
+    --elev-3: 0 1px 3px rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15);
+
+    --font-ui: "Google Sans Flex", "Google Sans", Roboto, Arial, sans-serif;
+    --font-text: Roboto, "Google Sans Flex", Arial, sans-serif;
+
+    font-family: var(--font-text);
+    color: var(--on-surface);
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #05070d;
+    font-size: 14px;
+    line-height: 20px;
+    -webkit-font-smoothing: antialiased;
+  }
+  button, input { font: inherit; color: inherit; }
+  button { cursor: pointer; }
+  button:disabled { cursor: progress; opacity: 0.6; }
+  :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+  .msi {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    white-space: nowrap;
+    direction: ltr;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    -webkit-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    user-select: none;
+    flex: none;
+  }
+
+  /* Botones base */
+  .icon-btn {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--on-surface-var);
+    display: grid;
+    place-items: center;
+    flex: none;
+  }
+  .icon-btn:hover { background: var(--hover); }
+  .icon-btn.sm { width: 32px; height: 32px; }
+  .icon-btn.sm .msi { font-size: 20px; }
+
+  .text-btn {
+    border: 0;
+    background: transparent;
+    color: var(--primary);
+    font-family: var(--font-ui);
+    font-weight: 500;
+    font-size: 14px;
+    padding: 0 12px;
+    height: 36px;
+    border-radius: 18px;
+  }
+  .text-btn:hover { background: rgba(11, 87, 208, 0.08); }
+
+  .tonal-btn {
+    flex: none;
+    height: 40px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 20px;
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .tonal-btn:hover { box-shadow: var(--elev-1); }
+  .tonal-btn.sm { height: 32px; padding: 0 14px; font-size: 13px; }
+
+  .outline-btn {
+    flex: none;
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--outline-var);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--on-surface-var);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .outline-btn .msi { font-size: 18px; }
+  .outline-btn:hover { background: var(--surface-hover); }
+  .outline-btn.active { background: var(--primary-container); color: var(--on-primary-container); border-color: transparent; }
+
+  /* ------------------------------------------------------------------
+     Mapa del cielo: ocupa todo lo que queda a la derecha del panel
+     ------------------------------------------------------------------ */
+  #sky-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: var(--panel-w);
+    background: radial-gradient(circle at 50% 45%, #111a2e 0%, #05070d 72%);
+    z-index: 1;
+  }
+  #aladin-map { position: absolute; inset: 0; opacity: 0.78; transition: opacity 0.2s; }
+  #vector-hud { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; z-index: 3; }
+
+  /* ------------------------------------------------------------------
+     Panel lateral (ficha del objeto, como la ficha de un lugar)
+     ------------------------------------------------------------------ */
+  .panel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: var(--panel-w);
+    background: var(--surface);
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+  .panel-head { padding: 12px 16px; flex: none; }
+  .panel-body {
+    flex: 1;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-top: 1px solid var(--divider);
+  }
+
+  /* Caja de búsqueda */
+  .search { position: relative; }
+  .search-box {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 4px 0 16px;
+    background: var(--surface);
+    border-radius: 24px;
+    box-shadow: var(--elev-2);
+    position: relative;
+    z-index: 2;
+  }
+  .search:has(#suggestions:not([hidden])) .search-box { border-radius: 24px 24px 0 0; }
+  .search-mark {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    flex: none;
+    background: conic-gradient(from 200deg, #4285f4, #34a853, #fbbc04, #ea4335, #4285f4);
+    -webkit-mask: radial-gradient(circle, transparent 5px, #000 5.5px);
+            mask: radial-gradient(circle, transparent 5px, #000 5.5px);
+  }
+  #inp-query {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: transparent;
+    font-family: var(--font-ui);
+    font-size: 16px;
+    padding: 0 8px;
+    height: 100%;
+  }
+  #inp-query:focus { outline: none; }
+  #inp-query::placeholder { color: var(--on-surface-var); }
+  .search-box .icon-btn { color: var(--primary); }
+
+  .suggestions {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0 0 8px;
+    list-style: none;
+    background: var(--surface);
+    border-top: 1px solid var(--divider);
+    border-radius: 0 0 24px 24px;
+    box-shadow: var(--elev-2);
+    z-index: 30;
+  }
+  .suggestions li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  .suggestions li::before {
+    content: "location_on";
+    font-family: "Material Symbols Outlined";
+    font-size: 20px;
+    line-height: 1;
+    color: var(--on-surface-var);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--surface-field);
+    display: grid;
+    place-items: center;
+    flex: none;
+  }
+  .suggestions li:hover { background: var(--hover); }
+  .suggestions li small { display: none; }
+
+  /* Coordenadas manuales */
+  .coords {
+    display: grid;
+    grid-template-columns: 1fr 1fr 76px auto;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .field {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--surface-field);
+    border-radius: 8px;
+    padding: 6px 10px 5px;
+    min-width: 0;
+    cursor: text;
+    border: 1px solid transparent;
+  }
+  .field:focus-within { border-color: var(--primary); background: var(--surface); }
+  .field-label { font-size: 11px; line-height: 14px; color: var(--on-surface-var); }
+  .field input {
+    border: 0;
+    background: transparent;
+    padding: 0;
+    width: 100%;
+    font-size: 14px;
+    font-variant-numeric: tabular-nums;
+    -moz-appearance: textfield;
+  }
+  .field input:focus { outline: none; }
+  .field input::-webkit-outer-spin-button,
+  .field input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  .coords .text-btn { height: auto; border-radius: 8px; }
+
+  /* Aviso de datos simulados (dentro de la ficha) */
+  .sim-banner {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 24px;
+    background: var(--error-container);
+    color: var(--on-error-container);
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .sim-banner .msi { font-size: 20px; color: var(--error); margin-top: -1px; }
+  .sim-banner strong { font-weight: 500; }
+
+  /* Guía de inicio */
+  .tip {
+    margin: 16px 16px 0;
+    padding: 14px 16px 6px;
+    border-radius: 12px;
+    background: var(--tip-container);
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    column-gap: 12px;
+  }
+  .tip > .msi { color: var(--primary); font-size: 22px; }
+  .tip-title { font-family: var(--font-ui); font-size: 14px; font-weight: 500; margin: 1px 0 6px; }
+  .tip ol { margin: 0; padding-left: 18px; font-size: 13px; line-height: 19px; color: var(--on-surface-var); }
+  .tip li + li { margin-top: 4px; }
+  .tip-actions { grid-column: 2; display: flex; justify-content: flex-end; margin-top: 4px; }
+
+  /* Espectro: ocupa el lugar de la foto de portada */
+  .spectrum { background: var(--surface-low); margin-top: 16px; }
+  .spec-plot { padding: 16px 0 4px; }
+  #spectrum-canvas { width: 100%; height: 180px; display: block; }
+  .spec-caption {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 0 24px 12px;
+    font-size: 12px;
+    color: var(--on-surface-var);
+  }
+  #active-band-label { font-family: var(--font-ui); font-size: 14px; font-weight: 500; color: var(--on-surface); }
+
+  /* Bandas como pestañas */
+  .band-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    background: var(--surface);
+    border-bottom: 1px solid var(--divider);
+    padding: 0 8px;
+  }
+  .band-tabs::-webkit-scrollbar { display: none; }
+  .band-btn {
+    position: relative;
+    flex: none;
+    height: 48px;
+    padding: 0 12px;
+    border: 0;
+    background: transparent;
+    color: var(--on-surface-var);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .band-btn:hover { background: var(--hover); }
+  .band-btn .swatch {
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.12);
+  }
+  .band-btn.active { color: var(--primary); }
+  .band-btn.active::after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 0;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    background: var(--primary);
+  }
+
+  /* Nombre y tipo */
+  .place { padding: 20px 24px 0; }
+  .place-name {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--on-surface);
+  }
+  .place-type { display: block; margin-top: 4px; color: var(--on-surface-var); font-size: 14px; }
+  .place-origin {
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+    margin-top: 8px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--on-surface-var);
+  }
+  .place-origin .msi { font-size: 16px; color: var(--outline); }
+  .place-about { margin: 8px 0 0; color: var(--on-surface-var); font-size: 14px; line-height: 20px; }
+
+  /* Acciones circulares */
+  .actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 8px;
+    border-bottom: 1px solid var(--divider);
+  }
+  .action {
+    border: 0;
+    background: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 84px;
+    padding: 0;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--on-surface);
+    text-align: center;
+  }
+  .action-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    background: var(--surface);
+    color: var(--on-surface-var);
+    box-shadow: inset 0 0 0 1px var(--outline-var);
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .action:hover .action-icon { background: var(--surface-hover); }
+  .action.active .action-icon {
+    background: var(--primary-container);
+    color: var(--on-primary-container);
+    box-shadow: none;
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20;
+  }
+  .action-primary .action-icon,
+  .action-primary:hover .action-icon {
+    background: var(--primary);
+    color: #fff;
+    box-shadow: none;
+  }
+  .action-primary:hover .action-icon { background: var(--primary-hover); }
+
+  /* Lista de datos físicos */
+  .facts { list-style: none; margin: 0; padding: 8px 0; border-bottom: 1px solid var(--divider); }
+  .fact {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    column-gap: 24px;
+    align-items: start;
+    padding: 10px 24px;
+  }
+  .fact .msi { color: var(--primary); font-size: 22px; margin-top: 1px; }
+  .fact-val {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--on-surface);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+  .fact-label { display: block; font-size: 12px; line-height: 16px; color: var(--on-surface-var); }
+
+  .credits { padding: 16px 24px 24px; font-size: 12px; line-height: 16px; color: var(--on-surface-var); }
+  .credits p { margin: 0 0 4px; }
+
+  /* ------------------------------------------------------------------
+     Chips de objetivos sobre el mapa
+     ------------------------------------------------------------------ */
+  .target-chips {
+    position: fixed;
+    top: 12px;
+    left: calc(var(--panel-w) + 16px);
+    right: 16px;
+    z-index: 15;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding: 4px 2px 8px;
+  }
+  .target-chips::-webkit-scrollbar { display: none; }
+  .pill-btn {
+    flex: none;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 16px 0 10px;
+    border: 0;
+    border-radius: 16px;
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: var(--elev-1);
+    white-space: nowrap;
+  }
+  .pill-btn .msi { font-size: 18px; color: var(--on-surface-var); }
+  .pill-btn:hover { background: var(--surface-hover); }
+  .pill-btn.active { background: var(--chip-selected); color: var(--on-chip-selected); }
+  .pill-btn.active .msi { color: var(--on-chip-selected); font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 20; }
+
+  /* ------------------------------------------------------------------
+     Tarjetas flotantes sobre el mapa
+     ------------------------------------------------------------------ */
+  .float-card {
+    position: fixed;
+    top: 64px;
+    z-index: 25;
+    background: var(--surface);
+    border-radius: 8px;
+    box-shadow: var(--elev-3);
+    overflow: hidden;
+  }
+  .card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 8px 8px 16px;
+  }
+  .card-title {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+    color: var(--on-surface);
+  }
+  .card-sub { margin: 2px 0 0; font-size: 12px; line-height: 16px; color: var(--on-surface-var); font-variant-numeric: tabular-nums; }
+
+  /* Tarjeta de imágenes del objeto (óptico, píxeles SPHEREx, GIF) */
+  .insp-card {
+    left: calc(var(--panel-w) + 16px);
+    width: min(540px, calc(100vw - var(--panel-w) - 32px));
+  }
+  .insp-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0 16px;
+  }
+  .insp-tile { margin: 0; min-width: 0; }
+  .insp-tile img,
+  .gif-empty {
+    width: 100%;
+    aspect-ratio: 1;
+    display: block;
+    border-radius: 8px;
+    background: #000;
+    object-fit: cover;
+  }
+  .insp-tile img.pixelated { image-rendering: pixelated; object-fit: contain; }
+  .insp-tile figcaption {
+    margin-top: 6px;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--on-surface-var);
+  }
+  .insp-tile figcaption b { display: block; font-weight: 500; color: var(--on-surface); }
+  .gif-empty {
+    background: var(--surface-low);
+    box-shadow: inset 0 0 0 1px var(--outline-var);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    color: var(--on-surface-var);
+  }
+  .card-actions { display: flex; flex-wrap: wrap; gap: 8px; padding: 12px 16px 16px; }
+
+  /* Visor de píxeles FITS reales */
+  .fits-card { right: 16px; width: 288px; }
+  .fits-card .fits-frame { margin: 0 16px; aspect-ratio: 1; border-radius: 8px; background: #000; overflow: hidden; }
+  .fits-card img { width: 100%; height: 100%; display: block; object-fit: contain; image-rendering: pixelated; }
+  .fits-card > p { margin: 8px 16px 0; font-size: 12px; line-height: 16px; color: var(--on-surface-var); }
+  .segmented { display: flex; margin: 12px 16px 16px; }
+  .segmented button {
+    flex: 1;
+    height: 32px;
+    border: 1px solid var(--outline);
+    background: var(--surface);
+    color: var(--on-surface);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .segmented button:first-child { border-radius: 16px 0 0 16px; }
+  .segmented button:last-child { border-radius: 0 16px 16px 0; border-left: 0; }
+  .segmented button.active { background: var(--chip-selected); color: var(--on-chip-selected); }
+
+  /* ------------------------------------------------------------------
+     Pila inferior: línea de estado + tarjeta de tiempo
+     ------------------------------------------------------------------ */
+  .bottom-stack {
+    position: fixed;
+    left: calc(var(--panel-w) + 16px);
+    right: 16px;
+    bottom: 16px;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    pointer-events: none;
+  }
+  .bottom-stack > * { pointer-events: auto; }
+
+  .snackbar {
+    max-width: min(600px, 100%);
+    padding: 12px 16px;
+    border-radius: 4px;
+    background: var(--inverse);
+    color: var(--on-inverse);
+    font-size: 14px;
+    line-height: 20px;
+    box-shadow: var(--elev-3);
+  }
+
+  .timeline {
+    width: 100%;
+    max-width: 860px;
+    background: var(--surface);
+    border-radius: 8px;
+    box-shadow: var(--elev-2);
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .timeline-row { display: flex; align-items: center; gap: 12px; }
+  .epoch-chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .epoch-btn {
+    height: 32px;
+    padding: 0 12px;
+    border: 1px solid var(--outline-var);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--on-surface-var);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .epoch-btn:hover { background: var(--surface-hover); }
+  .epoch-btn.active { background: var(--chip-selected); color: var(--on-chip-selected); border-color: transparent; }
+  .epoch-btn.interp { border-style: dashed; border-color: #e3a43d; color: var(--pred); }
+  .epoch-btn.interp.active { background: var(--pred-container); color: #2c1600; border-color: transparent; border-style: solid; }
+
+  .slider { flex: 1; min-width: 160px; display: flex; flex-direction: column; gap: 2px; }
+  .slider-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .mode-tag { font-family: var(--font-ui); font-weight: 500; }
+  #mjd-readout { color: var(--on-surface-var); font-variant-numeric: tabular-nums; white-space: nowrap; }
+
+  #time-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+    margin: 0;
+  }
+  #time-slider::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: var(--primary-container); }
+  #time-slider::-moz-range-track { height: 4px; border-radius: 2px; background: var(--primary-container); }
+  #time-slider::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--primary); }
+  #time-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    margin-top: -7px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 0;
+    box-shadow: var(--elev-1);
+  }
+  #time-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 0;
+    box-shadow: var(--elev-1);
+  }
+  #time-slider:focus-visible { outline: none; }
+  #time-slider:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 6px rgba(11, 87, 208, 0.2); }
+  #time-slider:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 6px rgba(11, 87, 208, 0.2); }
+
+  /* ------------------------------------------------------------------
+     Pantallas medianas: el control de tiempo se apila
+     ------------------------------------------------------------------ */
+  @media (max-width: 1180px) {
+    .timeline-row.controls { flex-wrap: wrap; }
+    .timeline-row.controls .slider { order: -1; flex-basis: 100%; }
+  }
+
+  /* ------------------------------------------------------------------
+     Móvil: mapa a pantalla completa y ficha como hoja inferior
+     ------------------------------------------------------------------ */
+  @media (max-width: 760px) {
+    :root { --sheet-h: 38vh; }
+    #sky-container { left: 0; }
+
+    .panel {
+      top: auto;
+      left: 0;
+      right: 0;
+      width: auto;
+      height: var(--sheet-h);
+      border-radius: 28px 28px 0 0;
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.25);
+      padding-top: 16px;
+    }
+    .panel::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      width: 32px;
+      height: 4px;
+      margin-left: -16px;
+      border-radius: 2px;
+      background: var(--outline-var);
+    }
+    .panel-head { position: fixed; top: 8px; left: 8px; right: 8px; padding: 0; z-index: 30; }
+    .panel-body { border-top: 0; }
+    .coords { display: none; }
+
+    .target-chips { top: 60px; left: 8px; right: 8px; }
+    .float-card {
+      top: 104px;
+      left: 8px;
+      right: 8px;
+      width: auto;
+      max-height: calc(100vh - var(--sheet-h) - 300px);
+      overflow-y: auto;
+    }
+
+    .bottom-stack { left: 8px; right: 8px; bottom: calc(var(--sheet-h) + 8px); gap: 8px; }
+    .snackbar { font-size: 13px; line-height: 18px; padding: 8px 12px; }
+    .timeline { padding: 10px 12px; gap: 6px; }
+    .timeline-row { gap: 8px; }
+    .epoch-chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+    .epoch-btn { flex: none; padding: 0 10px; }
+    .tonal-btn { height: 32px; padding: 0 14px; }
+    .outline-btn { padding: 0 10px; font-size: 12px; }
+    .mode-tag { display: none; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Mapa del cielo (Aladin Lite + capa vectorial) -->
+  <div id="sky-container">
+    <div id="aladin-map"></div>
+    <canvas id="vector-hud" aria-label="Mapa del cielo"></canvas>
+  </div>
+
+  <!-- Ficha del objeto -->
+  <aside class="panel" aria-label="Objeto seleccionado">
+    <header class="panel-head">
+      <form class="search" id="search-form" role="search">
+        <div class="search-box">
+          <span class="search-mark" aria-hidden="true"></span>
+          <input id="inp-query" type="text" autocomplete="off" spellcheck="false"
+                 placeholder="Busca una estrella, p. ej. Barnard's Star" aria-label="Nombre o ID del objeto">
+          <button class="icon-btn" type="submit" aria-label="Buscar"><span class="msi">search</span></button>
+        </div>
+        <ul class="suggestions" id="suggestions" hidden></ul>
+
+        <div class="coords">
+          <label class="field" for="inp-ra">
+            <span class="field-label">RA (°)</span>
+            <input id="inp-ra" type="number" step="any" placeholder="269.4521">
+          </label>
+          <label class="field" for="inp-dec">
+            <span class="field-label">Dec (°)</span>
+            <input id="inp-dec" type="number" step="any" placeholder="4.6934">
+          </label>
+          <label class="field" for="inp-fov">
+            <span class="field-label">Campo (°)</span>
+            <input id="inp-fov" type="number" step="0.01" min="0.01" max="0.5" value="0.04">
+          </label>
+          <button class="text-btn" type="submit">Ir</button>
+        </div>
+      </form>
+    </header>
+
+    <div class="panel-body">
+      <div class="sim-banner" id="sim-banner" role="alert" hidden>
+        <span class="msi" aria-hidden="true">warning</span>
+        <span><strong>Datos de demostración simulados.</strong> No hubo conexión con IRSA ni S3, así que las posiciones y los flujos de este campo son sintéticos.</span>
+      </div>
+
+      <section class="tip" id="onboarding-box" aria-label="Cómo empezar">
+        <span class="msi" aria-hidden="true">lightbulb</span>
+        <div>
+          <p class="tip-title">Cómo empezar</p>
+          <ol>
+            <li>Elige un objetivo en los chips del mapa. Barnard's Star se mueve 10,4″ por año.</li>
+            <li>Usa las mediciones y el deslizador de fecha (MJD) para ver su desplazamiento.</li>
+            <li>Cambia entre las 6 bandas infrarrojas o abre los píxeles FITS reales.</li>
+          </ol>
+        </div>
+        <div class="tip-actions">
+          <button type="button" class="text-btn" id="btn-close-onboarding">Entendido</button>
+        </div>
+      </section>
+
+      <section class="spectrum" aria-label="Espectro infrarrojo">
+        <div class="spec-plot">
+          <canvas id="spectrum-canvas" width="408" height="180"></canvas>
+        </div>
+        <div class="spec-caption">
+          <span id="active-band-label">Compuesto 6 Bandas</span>
+          <span id="spec-unit" title="MicroJansky: unidad de flujo espectral (10⁻³² W·m⁻²·Hz⁻¹)">Flujo en µJy según λ en µm</span>
+        </div>
+        <div class="band-tabs" id="band-grid" role="group" aria-label="Banda infrarroja"></div>
+      </section>
+
+      <div class="place">
+        <h1 class="place-name" id="obj-name">Cargando objeto…</h1>
+        <span class="place-type" id="obj-type">Leyendo el catálogo</span>
+        <div class="place-origin">
+          <span class="msi" aria-hidden="true">info</span>
+          <span id="obj-origin">Origen de los parámetros: pendiente</span>
+        </div>
+        <p class="place-about" id="obj-desc">Haz clic en cualquier punto del mapa para ver su movimiento, su espectro y sus imágenes.</p>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="action action-primary" id="btn-reset-view">
+          <span class="action-icon msi" aria-hidden="true">my_location</span>
+          <span>Centrar</span>
+        </button>
+        <button type="button" class="action" id="btn-real-pixels">
+          <span class="action-icon msi" aria-hidden="true">satellite_alt</span>
+          <span>Píxeles FITS</span>
+        </button>
+        <button type="button" class="action active" id="btn-toggle-trails">
+          <span class="action-icon msi" aria-hidden="true">conversion_path</span>
+          <span>Trayectorias</span>
+        </button>
+        <button type="button" class="action active" id="btn-toggle-bg">
+          <span class="action-icon msi" aria-hidden="true">layers</span>
+          <span>Fondo AllWISE</span>
+        </button>
+      </div>
+
+      <ul class="facts">
+        <li class="fact">
+          <span class="msi" aria-hidden="true">location_on</span>
+          <div><span class="fact-val" id="tel-coords">—</span><span class="fact-label">Posición actual α, δ</span></div>
+        </li>
+        <li class="fact">
+          <span class="msi" aria-hidden="true">speed</span>
+          <div><span class="fact-val" id="tel-vel">—</span><span class="fact-label">Velocidad tangencial</span></div>
+        </li>
+        <li class="fact" title="Milisegundos de arco por año: desplazamiento aparente en el cielo">
+          <span class="msi" aria-hidden="true">open_with</span>
+          <div><span class="fact-val" id="tel-pm">—</span><span class="fact-label">Movimiento propio μα*, μδ</span></div>
+        </li>
+        <li class="fact">
+          <span class="msi" aria-hidden="true">straighten</span>
+          <div><span class="fact-val" id="tel-dist">—</span><span class="fact-label">Distancia</span></div>
+        </li>
+        <li class="fact">
+          <span class="msi" aria-hidden="true">scale</span>
+          <div><span class="fact-val" id="tel-mass">—</span><span class="fact-label">Masa</span></div>
+        </li>
+        <li class="fact">
+          <span class="msi" aria-hidden="true">deblur</span>
+          <div><span class="fact-val" id="tel-density">—</span><span class="fact-label">Densidad media</span></div>
+        </li>
+        <li class="fact">
+          <span class="msi" aria-hidden="true">thermostat</span>
+          <div><span class="fact-val" id="tel-temp">—</span><span class="fact-label">Temperatura efectiva</span></div>
+        </li>
+        <li class="fact" title="Flujo calibrado en apertura, en microJansky">
+          <span class="msi" aria-hidden="true">brightness_5</span>
+          <div><span class="fact-val" id="tel-flux">—</span><span class="fact-label">Brillo en la banda elegida</span></div>
+        </li>
+        <li class="fact">
+          <span class="msi" aria-hidden="true">science</span>
+          <div><span class="fact-val" id="tel-chem">—</span><span class="fact-label">Composición y bandas espectrales</span></div>
+        </li>
+      </ul>
+
+      <footer class="credits">
+        <p>SPHEREx Stellarium Explorer, NASA Space Apps 2026.</p>
+        <p>Datos de SPHEREx (IRSA), Gaia DR3, ALeRCE y SIMBAD. Fondo del cielo: AllWISE vía Aladin Lite; imagen óptica: DSS2.</p>
+      </footer>
+    </div>
+  </aside>
+
+  <!-- Objetivos oficiales del desafío -->
+  <nav class="target-chips" id="challenge-pills" aria-label="Objetivos del desafío NASA">
+    <button type="button" class="pill-btn active" data-target="Barnard's Star"><span class="msi" aria-hidden="true">star</span>Barnard's Star</button>
+    <button type="button" class="pill-btn" data-target="Epsilon Indi B"><span class="msi" aria-hidden="true">join_inner</span>Epsilon Indi B</button>
+    <button type="button" class="pill-btn" data-target="WISE 0855"><span class="msi" aria-hidden="true">ac_unit</span>WISE 0855</button>
+    <button type="button" class="pill-btn" data-target="RW Aurigae"><span class="msi" aria-hidden="true">cyclone</span>RW Aurigae</button>
+    <button type="button" class="pill-btn" data-target="R Draconis"><span class="msi" aria-hidden="true">graphic_eq</span>R Draconis</button>
+  </nav>
+
+  <!-- Imágenes del objeto elegido: óptico, píxeles SPHEREx y GIF -->
+  <section class="float-card insp-card" id="object-inspector-card" aria-label="Imágenes del objeto" style="display: none;">
+    <div class="card-head">
+      <div>
+        <h2 class="card-title" id="insp-title">Objeto seleccionado</h2>
+        <p class="card-sub" id="insp-subtitle">Coordenadas</p>
+      </div>
+      <button type="button" class="icon-btn sm" aria-label="Cerrar" onclick="document.getElementById('object-inspector-card').style.display='none'"><span class="msi">close</span></button>
+    </div>
+
+    <div class="insp-grid">
+      <figure class="insp-tile">
+        <img id="img-optical" alt="Vista óptica DSS2">
+        <figcaption><b>Óptico</b>DSS2, luz visible</figcaption>
+      </figure>
+      <figure class="insp-tile">
+        <img id="img-spherex-blink" class="pixelated" alt="Píxeles SPHEREx desde S3">
+        <figcaption><b>SPHEREx</b><span id="blink-label">Primera y última época</span></figcaption>
+      </figure>
+      <figure class="insp-tile">
+        <div class="gif-empty" id="gif-placeholder">
+          <span>Video de los cuadros con las estrellas fijas restadas</span>
+          <button type="button" class="tonal-btn sm" id="btn-load-gif">Generar GIF</button>
+        </div>
+        <img id="img-spherex-gif" class="pixelated" alt="GIF de SPHEREx en modo resta" hidden>
+        <figcaption><b>Movimiento</b><span id="gif-label">GIF en modo resta</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="card-actions">
+      <button type="button" class="outline-btn" id="btn-toggle-blink"><span class="msi" aria-hidden="true">pause</span>Pausar parpadeo</button>
+      <button type="button" class="outline-btn" id="btn-overlay-aladin"><span class="msi" aria-hidden="true">layers</span>Superponer en el mapa</button>
+      <button type="button" class="outline-btn" id="btn-toggle-gif-mode" hidden>Ver modo directo</button>
+    </div>
+  </section>
+
+  <!-- Píxeles FITS reales de SPHEREx -->
+  <section class="float-card fits-card" id="fits-modal" aria-label="Píxeles FITS de SPHEREx" hidden>
+    <div class="card-head">
+      <div>
+        <h2 class="card-title">Píxeles FITS de SPHEREx</h2>
+        <p class="card-sub">Recorte real desde S3, centro del campo</p>
+      </div>
+      <button type="button" class="icon-btn sm" id="btn-close-fits" aria-label="Cerrar"><span class="msi">close</span></button>
+    </div>
+    <div class="fits-frame"><img id="fits-real-img" alt="Recorte FITS real de SPHEREx"></div>
+    <p id="fits-status-text">Compara la primera y la última época observada.</p>
+    <div class="segmented" role="group" aria-label="Época">
+      <button type="button" class="active" id="btn-fits-ep1">Época inicial</button>
+      <button type="button" id="btn-fits-ep2">Época final</button>
+    </div>
+  </section>
+
+  <!-- Estado + mediciones y evolución temporal -->
+  <div class="bottom-stack">
+    <div class="snackbar" id="status-toast" role="status">Cargando el cielo de SPHEREx…</div>
+
+    <footer class="timeline" aria-label="Tiempo">
+      <div class="timeline-row">
+        <div class="epoch-chips" id="epoch-buttons" role="group" aria-label="Medición">
+          <button type="button" class="epoch-btn active" data-epoch="0">Medición 1</button>
+          <button type="button" class="epoch-btn" data-epoch="1">Medición 2</button>
+          <button type="button" class="epoch-btn" data-epoch="2">Medición 3</button>
+          <button type="button" class="epoch-btn" data-epoch="3">Medición 4</button>
+          <button type="button" class="epoch-btn interp" data-epoch="4">Extrapolada</button>
+        </div>
+      </div>
+
+      <div class="timeline-row controls">
+        <button type="button" class="tonal-btn" id="btn-play">▶ Simular</button>
+        <div class="slider">
+          <input id="time-slider" type="range" min="0" max="1000" step="1" value="0" aria-label="Fecha">
+          <div class="slider-meta">
+            <span class="mode-tag" id="epoch-mode-tag" style="color:var(--emerald)">Medición 1 · Observada (SPHEREx)</span>
+            <span id="mjd-readout" title="Fecha juliana modificada: conteo continuo de días usado en astronomía">MJD 60810.50 · 2025-05-15</span>
+          </div>
+        </div>
+        <button type="button" class="outline-btn" id="btn-horizon" title="Extiende el deslizador 100 años al futuro con las ecuaciones de movimiento">Horizonte: +1 Año</button>
+        <button type="button" class="outline-btn" id="btn-amplify" title="Amplifica visualmente los vectores de movimiento propio">Vector: 1x Real</button>
+      </div>
+    </footer>
+  </div>
+
+<script src="https://aladin.cds.unistra.fr/AladinLite/api/v3/latest/aladin.js" charset="utf-8"></script>
+<script>
+"use strict";
+
+const DIAS_POR_ANIO = 365.25;
+const MAS_A_DEG = 1.0 / (3600.0 * 1000.0);
+
+const STATE = {
+  data: null,
+  aladin: null,
+  aladinReady: false,
+  cam: { ra: 269.452076, dec: 4.693365, fov: 0.04 },
+  drag: { active: false, x: 0, y: 0 },
+  mjdMin: 60810.5,
+  mjdMaxBase: 61540.9,
+  mjdCurrent: 60810.5,
+  horizonYears: 0,
+  vectorScale: 1,
+  activeEpochIdx: 0,
+  selectedBandIdx: -1,
+  selectedObjectName: null,
+  hoveredObjectName: null,
+  showBg: true,
+  showTrails: true,
+  playing: false,
+  screenBodies: [],
+};
+
+const $ = id => document.getElementById(id);
+
+/* ----------------------------------------------------------------------------
+   MODO ESTÁTICO (GitHub Pages / sin backend)
+   Sin servidor Python no existe /api: se leen los JSON precalculados en
+   datos_web/ con rutas relativas. Se activa en github.io, al abrir el archivo
+   directamente, o si /api no responde JSON.
+   ---------------------------------------------------------------------------- */
+let MODO_ESTATICO = location.hostname.endsWith("github.io") || location.protocol === "file:";
+const OBJETIVOS_ESTATICOS = [
+  { nombre: "Barnard's Star", slug: "barnards_star", alias: ["barnard", "gliese 699", "gj 699"] },
+  { nombre: "Epsilon Indi B", slug: "epsilon_indi_b", alias: ["eps ind b", "epsilon indi"] },
+  { nombre: "WISE 0855", slug: "wise_0855", alias: ["wise 0855-0714", "wise j085510.83-071442.5"] },
+  { nombre: "RW Aurigae", slug: "rw_aurigae", alias: ["rw aur"] },
+  { nombre: "R Draconis", slug: "r_draconis", alias: ["r dra"] },
+];
+const AVISO_SOLO_LOCAL = "Disponible solo con el servidor local";
+function buscarObjetivoEstatico(q) {
+  const t = String(q || "").trim().toLowerCase();
+  if (!t) return null;
+  return OBJETIVOS_ESTATICOS.find(o =>
+    o.nombre.toLowerCase() === t || o.slug === t || o.alias.some(a => t.includes(a))) || null;
+}
+async function cargarJsonEstatico(q) {
+  const obj = buscarObjetivoEstatico(q);
+  if (!obj) {
+    throw new Error("Esta versión publicada solo incluye los 5 objetivos del desafío. Elige uno de los chips del mapa.");
+  }
+  const resp = await fetch(`datos_web/definitivo_${obj.slug}.json`);
+  if (!resp.ok) throw new Error(`No se encontró datos_web/definitivo_${obj.slug}.json en el sitio (HTTP ${resp.status}).`);
+  return resp.json();
+}
+
+function evaluarPosicionEnTiempo(eq, mjdObjetivo, scaleFactor = 1) {
+  const dtYr = ((mjdObjetivo - eq.t0_mjd) / DIAS_POR_ANIO) * scaleFactor;
+  const cosDec0 = Math.max(Math.cos((eq.dec_0_deg * Math.PI) / 180), 1e-6);
+
+  const dRaMas = eq.mu_ra_cosdec_mas_yr * dtYr + 0.5 * (eq.acc_ra_mas_yr2 || 0) * dtYr * dtYr;
+  const dDecMas = eq.mu_dec_mas_yr * dtYr + 0.5 * (eq.acc_dec_mas_yr2 || 0) * dtYr * dtYr;
+
+  return {
+    ra: eq.ra_0_deg + (dRaMas * MAS_A_DEG) / cosDec0,
+    dec: eq.dec_0_deg + dDecMas * MAS_A_DEG,
+  };
+}
+
+function interpolarEspectroEnTiempo(itemEq, mjdObjetivo) {
+  const epochs = STATE.data?.epochs || [];
+  const refEsp = itemEq.espectro_referencia || [];
+  if (!epochs.length || !refEsp.length) return refEsp;
+
+  let e0 = epochs[0];
+  let e1 = epochs[epochs.length - 1];
+  for (let i = 0; i < epochs.length - 1; i++) {
+    if (mjdObjetivo >= epochs[i].mjd_promedio && mjdObjetivo <= epochs[i + 1].mjd_promedio) {
+      e0 = epochs[i];
+      e1 = epochs[i + 1];
+      break;
+    }
+  }
+  if (mjdObjetivo > epochs[epochs.length - 1].mjd_promedio) {
+    e0 = epochs[epochs.length - 2] || epochs[0];
+    e1 = epochs[epochs.length - 1];
+  }
+
+  const f0 = e0.catalogo_campo?.find(x => x.nombre_oficial === itemEq.nombre_oficial);
+  const f1 = e1.catalogo_campo?.find(x => x.nombre_oficial === itemEq.nombre_oficial);
+  if (!f0 || !f1 || !f0.espectro?.length) return refEsp;
+
+  const span = Math.max(e1.mjd_promedio - e0.mjd_promedio, 1e-6);
+  const alpha = Math.max(0, Math.min(1.5, (mjdObjetivo - e0.mjd_promedio) / span));
+
+  return f0.espectro.map((b0, idx) => {
+    const b1 = f1.espectro[idx] || b0;
+    const flux = Math.max(0.05, b0.flux_ujy + (b1.flux_ujy - b0.flux_ujy) * alpha);
+    const mag = -2.5 * Math.log10(flux / 3.631e9);
+    return {
+      ...b0,
+      mjd: mjdObjetivo,
+      flux_ujy: flux,
+      mag_ab: mag,
+    };
+  });
+}
+
+function mjdToDateString(mjd) {
+  const date = new Date((mjd - 40587) * 86400 * 1000);
+  if (isNaN(date.getTime())) return `MJD ${mjd.toFixed(1)}`;
+  return date.toISOString().slice(0, 10);
+}
+
+function worldToScreen(ra, dec) {
+  const canvas = $("vector-hud");
+  if (STATE.aladinReady && STATE.aladin) {
+    try {
+      const px = STATE.aladin.world2pix(ra, dec);
+      if (px && isFinite(px[0]) && isFinite(px[1])) {
+        return { x: px[0], y: px[1] };
+      }
+    } catch (_) {}
+  }
+  const W = canvas.width;
+  const H = canvas.height;
+  const ra0 = (STATE.cam.ra * Math.PI) / 180;
+  const dec0 = (STATE.cam.dec * Math.PI) / 180;
+  const a = (ra * Math.PI) / 180;
+  const d = (dec * Math.PI) / 180;
+
+  const cosC = Math.sin(dec0) * Math.sin(d) + Math.cos(dec0) * Math.cos(d) * Math.cos(a - ra0);
+  if (cosC <= 0.1) return null;
+
+  const xRad = (Math.cos(d) * Math.sin(a - ra0)) / cosC;
+  const yRad = (Math.cos(dec0) * Math.sin(d) - Math.sin(dec0) * Math.cos(d) * Math.cos(a - ra0)) / cosC;
+
+  const fovRad = (STATE.cam.fov * Math.PI) / 180;
+  const scale = Math.min(W, H) / fovRad;
+  return {
+    x: W / 2 - xRad * scale,
+    y: H / 2 - yRad * scale,
+  };
+}
+
+function getPixelsPerArcsec() {
+  const p1 = worldToScreen(STATE.cam.ra, STATE.cam.dec);
+  const p2 = worldToScreen(STATE.cam.ra, STATE.cam.dec + 1.0 / 3600.0);
+  if (p1 && p2) {
+    const dist = Math.hypot(p2.x - p1.x, p2.y - p1.y);
+    if (dist > 0.01 && isFinite(dist)) return dist;
+  }
+  return 6.0;
+}
+
+function renderLoop() {
+  const canvas = $("vector-hud");
+  const ctx = canvas.getContext("2d");
+  if (canvas.width !== canvas.clientWidth || canvas.height !== canvas.clientHeight) {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawEquatorialGrid(ctx, canvas.width, canvas.height);
+
+  if (STATE.data && STATE.data.ecuaciones_trayectoria) {
+    const pxPerArcsec = getPixelsPerArcsec();
+    const mjdStart = STATE.data.rango_temporal_mjd.mjd_inicio;
+    const mjdEndMax = STATE.mjdMaxBase + STATE.horizonYears * DIAS_POR_ANIO;
+    const bodiesScreen = [];
+
+    for (const item of STATE.data.ecuaciones_trayectoria) {
+      const posNow = evaluarPosicionEnTiempo(item.ecuacion, STATE.mjdCurrent, STATE.vectorScale);
+      const scrNow = worldToScreen(posNow.ra, posNow.dec);
+      if (!scrNow) continue;
+
+      const isSelected = item.nombre_oficial === STATE.selectedObjectName;
+      const isHovered = item.nombre_oficial === STATE.hoveredObjectName;
+      const isTarget = item.es_objetivo;
+
+      if (STATE.showTrails && (Math.abs(item.ecuacion.mu_ra_cosdec_mas_yr) > 1 || Math.abs(item.ecuacion.mu_dec_mas_yr) > 1)) {
+        const posStart = evaluarPosicionEnTiempo(item.ecuacion, mjdStart, STATE.vectorScale);
+        const posEnd = evaluarPosicionEnTiempo(item.ecuacion, mjdEndMax, STATE.vectorScale);
+        const s0 = worldToScreen(posStart.ra, posStart.dec);
+        const s1 = worldToScreen(posEnd.ra, posEnd.dec);
+
+        if (s0 && s1 && Math.hypot(s1.x - s0.x, s1.y - s0.y) > 2) {
+          ctx.save();
+          ctx.beginPath();
+          ctx.moveTo(s0.x, s0.y);
+          ctx.lineTo(s1.x, s1.y);
+          ctx.strokeStyle = isTarget ? "rgba(251, 191, 36, 0.72)" : "rgba(56, 189, 248, 0.35)";
+          ctx.lineWidth = isTarget ? 2 : 1.2;
+          ctx.setLineDash([5, 4]);
+          ctx.stroke();
+
+          STATE.data.epochs.forEach((ep, idxEp) => {
+            const pEp = evaluarPosicionEnTiempo(item.ecuacion, ep.mjd_promedio, STATE.vectorScale);
+            const sEp = worldToScreen(pEp.ra, pEp.dec);
+            if (sEp) {
+              ctx.beginPath();
+              ctx.arc(sEp.x, sEp.y, idxEp === 4 ? 4 : 2.5, 0, Math.PI * 2);
+              ctx.fillStyle = idxEp === 4 ? "#fbbf24" : "#38bdf8";
+              ctx.fill();
+            }
+          });
+          ctx.restore();
+        }
+      }
+
+      const espAhora = interpolarEspectroEnTiempo(item, STATE.mjdCurrent);
+      let bandColor = "#38bdf8";
+      let fluxActual = 100.0;
+
+      if (STATE.selectedBandIdx >= 0 && espAhora[STATE.selectedBandIdx]) {
+        bandColor = espAhora[STATE.selectedBandIdx].color_hex;
+        fluxActual = espAhora[STATE.selectedBandIdx].flux_ujy;
+      } else if (espAhora.length) {
+        const maxPt = espAhora.reduce((a, b) => (b.flux_ujy > a.flux_ujy ? b : a), espAhora[0]);
+        bandColor = maxPt.color_hex;
+        fluxActual = espAhora.reduce((acc, b) => acc + b.flux_ujy, 0) / espAhora.length;
+      }
+
+      const logScale = Math.max(0.65, Math.min(2.4, Math.log10(Math.max(fluxActual, 1)) * 0.65));
+      const rx = Math.max(5, Math.min(42, (item.semieje_a_arcsec * 0.45 * pxPerArcsec) * 0.35 + 4.5 * logScale));
+      const ry = Math.max(4, Math.min(36, (item.semieje_b_arcsec * 0.45 * pxPerArcsec) * 0.35 + 4.5 * logScale));
+
+      ctx.save();
+      ctx.translate(scrNow.x, scrNow.y);
+      ctx.rotate((-item.angulo_deg * Math.PI) / 180);
+
+      const grad = ctx.createRadialGradient(0, 0, 1, 0, 0, rx * 2.4);
+      grad.addColorStop(0, "#ffffff");
+      grad.addColorStop(0.28, bandColor);
+      grad.addColorStop(1, "rgba(0,0,0,0)");
+
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.ellipse(0, 0, rx * 2.4, ry * 2.4, 0, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.ellipse(0, 0, rx * 0.55, ry * 0.55, 0, 0, Math.PI * 2);
+      ctx.fillStyle = "#ffffff";
+      ctx.fill();
+
+      if (item.tipo_morfologia === "extendido") {
+        ctx.strokeStyle = "#34d399";
+        ctx.lineWidth = 1.3;
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      if (isSelected || isHovered) {
+        drawStellariumReticle(ctx, scrNow.x, scrNow.y, rx + 9, isSelected ? "#ea4335" : "#8ab4f8");
+      }
+
+      if (isSelected || isHovered || isTarget || rx > 7.5) {
+        ctx.font = isSelected ? "500 13px 'Google Sans Flex', Roboto, sans-serif" : "12px Roboto, Arial, sans-serif";
+        ctx.fillStyle = isSelected ? "#ffffff" : (isTarget ? "#e8eaed" : "rgba(232, 234, 237, 0.75)");
+        ctx.fillText(item.nombre_oficial, scrNow.x + rx + 8, scrNow.y + 4);
+      }
+
+      bodiesScreen.push({
+        nombre: item.nombre_oficial,
+        x: scrNow.x,
+        y: scrNow.y,
+        hitRadius: Math.max(rx + 8, 14),
+        item,
+        posNow,
+        espAhora,
+      });
+    }
+
+    STATE.screenBodies = bodiesScreen;
+  }
+
+  requestAnimationFrame(renderLoop);
+}
+
+function drawEquatorialGrid(ctx, W, H) {
+  ctx.save();
+  ctx.strokeStyle = "rgba(56, 189, 248, 0.06)";
+  ctx.lineWidth = 1;
+  const step = 110;
+  for (let x = (W / 2) % step; x < W; x += step) {
+    ctx.beginPath();
+    ctx.moveTo(x, 0);
+    ctx.lineTo(x, H);
+    ctx.stroke();
+  }
+  for (let y = (H / 2) % step; y < H; y += step) {
+    ctx.beginPath();
+    ctx.moveTo(0, y);
+    ctx.lineTo(W, y);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function drawStellariumReticle(ctx, x, y, r, color) {
+  ctx.save();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 1.6;
+  const len = 6;
+  const corners = [[-1, -1], [1, -1], [1, 1], [-1, 1]];
+  for (const [sx, sy] of corners) {
+    ctx.beginPath();
+    ctx.moveTo(x + sx * r, y + sy * (r - len));
+    ctx.lineTo(x + sx * r, y + sy * r);
+    ctx.lineTo(x + sx * (r - len), y + sy * r);
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+function updateInspectorPanel() {
+  if (!STATE.data) return;
+  const bodyEntry = STATE.screenBodies.find(b => b.nombre === STATE.selectedObjectName)
+    || STATE.screenBodies.find(b => b.item.es_objetivo)
+    || STATE.screenBodies[0];
+
+  if (!bodyEntry) return;
+  const { item, posNow, espAhora } = bodyEntry;
+  const af = item.astrofisica || {};
+
+  $("obj-name").textContent = item.nombre_oficial;
+  $("obj-type").textContent = af.tipo_cuerpo || item.clasificacion_objeto || "Objeto Celeste";
+  $("obj-origin").textContent = `Origen: ${af.origen_parametros || "Catálogo SPHEREx"}`;
+  $("obj-desc").textContent = af.descripcion_cientifica || "";
+
+  $("tel-coords").textContent = `${posNow.ra.toFixed(5)}°, ${posNow.dec.toFixed(5)}°`;
+  $("tel-vel").textContent = af.velocidad_relativa_kms != null ? `${af.velocidad_relativa_kms} km/s` : "No determinada";
+  $("tel-pm").textContent = `${item.ecuacion.mu_ra_cosdec_mas_yr.toFixed(1)}, ${item.ecuacion.mu_dec_mas_yr.toFixed(1)} mas/yr`;
+  $("tel-dist").textContent = af.distancia_pc != null ? `${af.distancia_pc} pc (${af.distancia_ly} ly)` : "Sin paralaje Gaia > 0.5 mas";
+  $("tel-mass").textContent = af.masa || "No determinada";
+  $("tel-density").textContent = af.densidad || "No determinada";
+  $("tel-temp").textContent = af.temperatura_eff_k ? `${af.temperatura_eff_k} K` : "No determinada";
+  $("tel-chem").textContent = af.composicion_quimica || "—";
+
+  if (STATE.selectedBandIdx >= 0 && espAhora[STATE.selectedBandIdx]) {
+    const b = espAhora[STATE.selectedBandIdx];
+    $("tel-flux").textContent = `${b.flux_ujy.toFixed(2)} µJy (AB ${b.mag_ab?.toFixed(2) ?? "—"})`;
+  } else if (espAhora.length) {
+    const tot = espAhora.reduce((s, x) => s + x.flux_ujy, 0);
+    $("tel-flux").textContent = `${tot.toFixed(1)} µJy (suma 6B)`;
+  }
+
+  drawSpectrumChart(espAhora);
+}
+
+let blinkInterval = null;
+let blinkPausado = false;
+
+function obtenerUrlImagenOptica(ra, dec, fovDeg = 0.04) {
+  const params = new URLSearchParams({
+    hips: "CDS/P/DSS2/color",
+    ra: ra,
+    dec: dec,
+    fov: fovDeg,
+    width: 180,
+    height: 180,
+    format: "jpg"
+  });
+  return `https://alasky.cds.unistra.fr/hips-image-services/hips2fits?${params.toString()}`;
+}
+
+async function inspeccionarObjetoSeleccionado(objData) {
+  const card = document.getElementById("object-inspector-card");
+  card.style.display = "block";
+  document.getElementById("insp-title").textContent = objData.nombre_oficial || "Fuente SPHEREx";
+  document.getElementById("insp-subtitle").textContent = `RA: ${objData.ra.toFixed(5)}° | Dec: ${objData.dec.toFixed(5)}°`;
+  document.getElementById("blink-label").textContent = "Cargando píxeles de S3…";
+
+  // Reiniciar el 3er cuadro (GIF) para este nuevo objeto
+  const gifPlaceholder = document.getElementById("gif-placeholder");
+  const imgGif = document.getElementById("img-spherex-gif");
+  const btnLoadGif = document.getElementById("btn-load-gif");
+  const btnToggleGifMode = document.getElementById("btn-toggle-gif-mode");
+  const gifLabel = document.getElementById("gif-label");
+
+  gifPlaceholder.hidden = false;
+  imgGif.hidden = true;
+  imgGif.src = "";
+  btnToggleGifMode.hidden = true;
+  btnLoadGif.disabled = false;
+  btnLoadGif.textContent = "Generar GIF";
+  gifLabel.textContent = "GIF en modo resta";
+
+  let modoGifActual = "resta";
+
+  const cargarGif = () => {
+    if (MODO_ESTATICO) {
+      gifLabel.textContent = AVISO_SOLO_LOCAL;
+      return;
+    }
+    btnLoadGif.disabled = true;
+    btnLoadGif.textContent = "Generando…";
+    gifLabel.textContent = "Descargando cuadros de IRSA, unos 30 s";
+
+    const paramsGif = new URLSearchParams({
+      ra: objData.ra,
+      dec: objData.dec,
+      fov: 0.08,
+      modo: modoGifActual,
+      identificar: "true",
+    });
+
+    // Si es el objetivo principal (ej. Barnard's Star), pasa su nombre para seguir su movimiento propio
+    const nombreCentral = STATE.data?.meta?.nombre_objetivo || "";
+    if (objData.nombre_oficial === nombreCentral && !nombreCentral.startsWith("Campo")) {
+      paramsGif.set("objeto", nombreCentral);
+    }
+
+    const urlGif = `api/gif?${paramsGif.toString()}`;
+    imgGif.onload = () => {
+      gifPlaceholder.hidden = true;
+      imgGif.hidden = false;
+      btnToggleGifMode.hidden = false;
+      btnToggleGifMode.textContent = modoGifActual === "resta" ? "Ver modo directo" : "Ver modo resta";
+      gifLabel.textContent = `Modo ${modoGifActual}, fuentes identificadas`;
+    };
+    imgGif.onerror = () => {
+      btnLoadGif.disabled = false;
+      btnLoadGif.textContent = "Reintentar";
+      gifLabel.textContent = "IRSA no respondió o no cubre este punto";
+    };
+    imgGif.src = urlGif;
+  };
+
+  btnLoadGif.onclick = cargarGif;
+  btnToggleGifMode.onclick = () => {
+    modoGifActual = modoGifActual === "resta" ? "directo" : "resta";
+    gifPlaceholder.hidden = false;
+    imgGif.hidden = true;
+    cargarGif();
+  };
+
+  const fovActual = STATE.data?.centro_campo?.fov_deg || 0.04;
+
+  // 1. Cargar foto óptica desde CDS (DSS2)
+  document.getElementById("img-optical").src = obtenerUrlImagenOptica(objData.ra, objData.dec, fovActual);
+
+  // 2. Pedir recortes reales de SPHEREx a tu backend (S3)
+  if (MODO_ESTATICO) {
+    document.getElementById("blink-label").textContent = AVISO_SOLO_LOCAL;
+    return;
+  }
+  const url = `api/inspect_pixels?ra=${objData.ra}&dec=${objData.dec}&fov_deg=${fovActual}`;
+  let resp;
+  try { resp = await fetch(url); } catch (_) { resp = { ok: false }; }
+  if (!resp.ok) {
+    document.getElementById("blink-label").textContent = "Sin FITS en S3 para este punto";
+    return;
+  }
+  const recortes = await resp.json();
+  if (!recortes.epoch_1) return;
+
+  // 3. Iniciar Blink Comparator entre época inicial y final
+  const imgBlink = document.getElementById("img-spherex-blink");
+  const labelBlink = document.getElementById("blink-label");
+  let mostrandoEpoch1 = true;
+  blinkPausado = false;
+
+  if (blinkInterval) clearInterval(blinkInterval);
+  imgBlink.src = recortes.epoch_1.png_base64;
+  labelBlink.textContent = `Primera época, MJD ${recortes.epoch_1.mjd || ""}`;
+
+  blinkInterval = setInterval(() => {
+    if (blinkPausado) return;
+    mostrandoEpoch1 = !mostrandoEpoch1;
+    imgBlink.src = mostrandoEpoch1 ? recortes.epoch_1.png_base64 : recortes.epoch_last.png_base64;
+    labelBlink.textContent = mostrandoEpoch1
+      ? `Primera época, MJD ${recortes.epoch_1.mjd || ""}`
+      : `Última época, MJD ${recortes.epoch_last.mjd || ""}`;
+  }, 550);
+
+  document.getElementById("btn-toggle-blink").onclick = () => {
+    blinkPausado = !blinkPausado;
+    document.getElementById("btn-toggle-blink").innerHTML = blinkPausado
+      ? '<span class="msi" aria-hidden="true">play_arrow</span>Reanudar parpadeo'
+      : '<span class="msi" aria-hidden="true">pause</span>Pausar parpadeo';
+  };
+
+  // 4. Superponer píxeles reales sobre el mapa de Aladin Lite
+  document.getElementById("btn-overlay-aladin").onclick = () => {
+    if (!STATE.aladinReady || !STATE.aladin) return;
+    const overlay = A.imageOverlay(recortes.epoch_last.png_base64, {
+      bounds: recortes.epoch_last.bounds,
+      opacity: 0.7,
+    });
+    STATE.aladin.addImageOverlay(overlay);
+  };
+}
+function drawSpectrumChart(espectro) {
+  const canvas = $("spectrum-canvas");
+  const ctx = canvas.getContext("2d");
+  const W = canvas.width;
+  const H = canvas.height;
+  ctx.clearRect(0, 0, W, H);
+
+  if (!espectro || !espectro.length) return;
+
+  const pad = { l: 46, r: 16, t: 16, b: 26 };
+  const lams = espectro.map(p => p.lambda_um);
+  const fluxes = espectro.map(p => p.flux_ujy);
+
+  const xMin = Math.min(...lams) * 0.96;
+  const xMax = Math.max(...lams) * 1.04;
+  const yMin = 0;
+  const yMax = Math.max(...fluxes) * 1.2 || 10;
+
+  const toX = v => pad.l + ((v - xMin) / (xMax - xMin || 1)) * (W - pad.l - pad.r);
+  const toY = v => H - pad.b - ((v - yMin) / (yMax - yMin || 1)) * (H - pad.t - pad.b);
+
+  ctx.strokeStyle = "#e3e3e3";
+  ctx.lineWidth = 1;
+  for (let i = 0; i <= 3; i++) {
+    const y = pad.t + (i / 3) * (H - pad.t - pad.b);
+    ctx.beginPath();
+    ctx.moveTo(pad.l, y);
+    ctx.lineTo(W - pad.r, y);
+    ctx.stroke();
+  }
+
+  ctx.beginPath();
+  espectro.forEach((p, idx) => {
+    const x = toX(p.lambda_um);
+    const y = toY(p.flux_ujy);
+    if (idx === 0) ctx.moveTo(x, y);
+    else ctx.lineTo(x, y);
+  });
+  ctx.strokeStyle = "#0b57d0";
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  espectro.forEach((p, idx) => {
+    const x = toX(p.lambda_um);
+    const y = toY(p.flux_ujy);
+    const isSel = STATE.selectedBandIdx === idx;
+
+    const errPx = ((p.flux_err_ujy || 0) / (yMax - yMin)) * (H - pad.t - pad.b);
+    ctx.strokeStyle = "rgba(68, 71, 70, 0.5)";
+    ctx.beginPath();
+    ctx.moveTo(x, Math.max(pad.t, y - errPx));
+    ctx.lineTo(x, Math.min(H - pad.b, y + errPx));
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(x, y, isSel ? 6.5 : 4.5, 0, Math.PI * 2);
+    ctx.fillStyle = p.color_hex || "#38bdf8";
+    ctx.fill();
+    ctx.strokeStyle = isSel ? "#1f1f1f" : "#ffffff";
+    ctx.lineWidth = isSel ? 2 : 1.2;
+    ctx.stroke();
+  });
+
+  ctx.fillStyle = "#444746";
+  ctx.font = "11px Roboto, Arial, sans-serif";
+  ctx.textAlign = "left";
+  ctx.fillText(`${Math.min(...lams).toFixed(2)} µm`, pad.l, H - 8);
+  ctx.textAlign = "right";
+  ctx.fillText(`${Math.max(...lams).toFixed(2)} µm`, W - pad.r, H - 8);
+  ctx.fillText(`${yMax.toFixed(0)} µJy`, pad.l - 5, pad.t + 8);
+  ctx.fillText("0", pad.l - 5, H - pad.b);
+}
+
+function buildBandButtons(bandas) {
+  const grid = $("band-grid");
+  let html = `<button type="button" class="band-btn ${STATE.selectedBandIdx === -1 ? "active" : ""}" data-band="-1">
+    <span class="swatch" style="background:linear-gradient(90deg,#38bdf8,#34d399,#fbbf24,#fb7185)"></span>
+    <span>Todas (6)</span>
+  </button>`;
+
+  bandas.forEach((b, idx) => {
+    html += `<button type="button" class="band-btn ${STATE.selectedBandIdx === idx ? "active" : ""}" data-band="${idx}">
+      <span class="swatch" style="background:${b.color_hex}"></span>
+      <span>${b.lambda_um.toFixed(2)}µm</span>
+    </button>`;
+  });
+  grid.innerHTML = html;
+
+  grid.querySelectorAll(".band-btn").forEach(btn => {
+    btn.onclick = () => {
+      STATE.selectedBandIdx = Number(btn.dataset.band);
+      grid.querySelectorAll(".band-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      $("active-band-label").textContent = STATE.selectedBandIdx === -1
+        ? "Compuesto 6 Bandas"
+        : `Banda ${STATE.selectedBandIdx + 1} (${bandas[STATE.selectedBandIdx].lambda_um.toFixed(3)} µm)`;
+      updateInspectorPanel();
+    };
+  });
+}
+
+function selectMeasurementEpoch(idx) {
+  if (!STATE.data || !STATE.data.epochs[idx]) return;
+  STATE.activeEpochIdx = idx;
+  STATE.playing = false;
+  $("btn-play").textContent = "▶ Simular";
+
+  const ep = STATE.data.epochs[idx];
+  STATE.mjdCurrent = ep.mjd_promedio;
+  syncSliderFromMjd();
+
+  document.querySelectorAll(".epoch-btn").forEach((b, i) => {
+    b.classList.toggle("active", i === idx);
+  });
+
+  const tipo = ep.tipo_medicion || (ep.es_extrapolado ? "extrapolada" : "observada_spherex");
+  const etiquetas = {
+    observada_spherex: `Medición ${idx + 1} · Observada (SPHEREx)`,
+    proyectada_gaia: `Medición ${idx + 1} · Proyectada (Cinemática Gaia DR3)`,
+    extrapolada: `5ª Medición · Extrapolación Analítica`,
+    simulada: `Medición ${idx + 1} · Simulada (Modo Offline)`,
+  };
+  $("epoch-mode-tag").textContent = etiquetas[tipo] || `Medición ${idx + 1}`;
+  $("epoch-mode-tag").style.color = tipo === "observada_spherex"
+    ? "var(--emerald)"
+    : (tipo === "proyectada_gaia" ? "var(--accent)" : (tipo === "simulada" ? "var(--rose)" : "var(--gold)"));
+  updateInspectorPanel();
+}
+
+function syncSliderFromMjd() {
+  const mjdEnd = STATE.mjdMaxBase + STATE.horizonYears * DIAS_POR_ANIO;
+  const ratio = (STATE.mjdCurrent - STATE.mjdMin) / Math.max(mjdEnd - STATE.mjdMin, 1e-6);
+  $("time-slider").value = Math.round(Math.max(0, Math.min(1, ratio)) * 1000);
+  $("mjd-readout").textContent = `MJD ${STATE.mjdCurrent.toFixed(2)} · ${mjdToDateString(STATE.mjdCurrent)}`;
+}
+
+$("time-slider").addEventListener("input", e => {
+  const ratio = Number(e.target.value) / 1000;
+  const mjdEnd = STATE.mjdMaxBase + STATE.horizonYears * DIAS_POR_ANIO;
+  STATE.mjdCurrent = STATE.mjdMin + ratio * (mjdEnd - STATE.mjdMin);
+  STATE.activeEpochIdx = -1;
+
+  document.querySelectorAll(".epoch-btn").forEach(b => b.classList.remove("active"));
+  $("epoch-mode-tag").textContent = "Evolución Continua (Ecuaciones de Trayectoria)";
+  $("epoch-mode-tag").style.color = "var(--accent)";
+  $("mjd-readout").textContent = `MJD ${STATE.mjdCurrent.toFixed(2)} · ${mjdToDateString(STATE.mjdCurrent)}`;
+  updateInspectorPanel();
+});
+
+document.querySelectorAll(".epoch-btn").forEach(btn => {
+  btn.onclick = () => selectMeasurementEpoch(Number(btn.dataset.epoch));
+});
+
+$("btn-play").onclick = () => {
+  STATE.playing = !STATE.playing;
+  $("btn-play").textContent = STATE.playing ? "⏸ Pausar" : "▶ Simular";
+};
+
+$("btn-horizon").onclick = () => {
+  STATE.horizonYears = STATE.horizonYears === 0 ? 100 : 0;
+  $("btn-horizon").textContent = STATE.horizonYears === 0 ? "Horizonte: +1 Año" : "Horizonte: +100 Años";
+  $("btn-horizon").classList.toggle("active", STATE.horizonYears > 0);
+  syncSliderFromMjd();
+};
+
+$("btn-amplify").onclick = () => {
+  const nextScale = STATE.vectorScale === 1 ? 100 : (STATE.vectorScale === 100 ? 1000 : 1);
+  STATE.vectorScale = nextScale;
+  $("btn-amplify").textContent = nextScale === 1 ? "Vector: 1x Real" : `Vector: ${nextScale}x Visual`;
+  $("btn-amplify").classList.toggle("active", nextScale > 1);
+};
+
+$("btn-toggle-bg").onclick = () => {
+  STATE.showBg = !STATE.showBg;
+  $("btn-toggle-bg").classList.toggle("active", STATE.showBg);
+  $("aladin-map").style.opacity = STATE.showBg ? "0.78" : "0.0";
+};
+
+$("btn-toggle-trails").onclick = () => {
+  STATE.showTrails = !STATE.showTrails;
+  $("btn-toggle-trails").classList.toggle("active", STATE.showTrails);
+};
+
+$("btn-reset-view").onclick = () => {
+  if (!STATE.data) return;
+  centerCamera(STATE.data.centro_campo.ra, STATE.data.centro_campo.dec, STATE.data.centro_campo.fov_deg);
+};
+
+$("btn-close-onboarding").onclick = () => {
+  $("onboarding-box").style.display = "none";
+};
+
+$("btn-close-fits").onclick = () => {
+  $("fits-modal").hidden = true;
+};
+
+function loadRealFitsCutout(epIdx) {
+  if (!STATE.data) return;
+  const { ra, dec, fov_deg } = STATE.data.centro_campo;
+  $("fits-status-text").textContent = "Descargando el recorte FITS desde S3…";
+  $("btn-fits-ep1").classList.toggle("active", epIdx === 0);
+  $("btn-fits-ep2").classList.toggle("active", epIdx === 1);
+
+  if (MODO_ESTATICO) {
+    $("fits-status-text").textContent = `${AVISO_SOLO_LOCAL}.`;
+    return;
+  }
+  const imgEl = $("fits-real-img");
+  imgEl.onload = () => {
+    $("fits-status-text").textContent = `Recorte FITS real SPHEREx (${epIdx === 0 ? "Época inicial" : "Época final"}).`;
+  };
+  imgEl.onerror = () => {
+    $("fits-status-text").textContent = "No hay recorte FITS real disponible en S3 para esta coordenada/sesión.";
+  };
+  imgEl.src = `api/cutout-png?ra=${ra}&dec=${dec}&fov=${fov_deg}&epoch_idx=${epIdx}`;
+}
+
+$("btn-real-pixels").onclick = () => {
+  $("fits-modal").hidden = false;
+  loadRealFitsCutout(0);
+};
+$("btn-fits-ep1").onclick = () => loadRealFitsCutout(0);
+$("btn-fits-ep2").onclick = () => loadRealFitsCutout(1);
+
+setInterval(() => {
+  if (!STATE.playing || !STATE.data) return;
+  const mjdEnd = STATE.mjdMaxBase + STATE.horizonYears * DIAS_POR_ANIO;
+  const step = (mjdEnd - STATE.mjdMin) / 240;
+  STATE.mjdCurrent += step;
+  if (STATE.mjdCurrent > mjdEnd) STATE.mjdCurrent = STATE.mjdMin;
+  syncSliderFromMjd();
+  updateInspectorPanel();
+}, 40);
+
+const hudCanvas = $("vector-hud");
+
+hudCanvas.addEventListener("mousemove", e => {
+  const rect = hudCanvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  if (STATE.drag.active && !STATE.aladinReady) {
+    const dx = mx - STATE.drag.x;
+    const dy = my - STATE.drag.y;
+    STATE.drag.x = mx;
+    STATE.drag.y = my;
+    const degPerPx = STATE.cam.fov / Math.min(hudCanvas.width, hudCanvas.height);
+    const cosDec = Math.max(Math.cos((STATE.cam.dec * Math.PI) / 180), 0.1);
+    STATE.cam.ra += (dx * degPerPx) / cosDec;
+    STATE.cam.dec += dy * degPerPx;
+    return;
+  }
+
+  let found = null;
+  let bestDist = 1e9;
+  for (const b of STATE.screenBodies) {
+    const d = Math.hypot(mx - b.x, my - b.y);
+    if (d <= b.hitRadius && d < bestDist) {
+      bestDist = d;
+      found = b.nombre;
+    }
+  }
+  STATE.hoveredObjectName = found;
+  hudCanvas.style.cursor = found ? "pointer" : "crosshair";
+});
+
+hudCanvas.addEventListener("mousedown", e => {
+  const rect = hudCanvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+
+  for (const b of STATE.screenBodies) {
+    if (Math.hypot(mx - b.x, my - b.y) <= b.hitRadius) {
+      STATE.selectedObjectName = b.nombre;
+      updateInspectorPanel();
+      inspeccionarObjetoSeleccionado({
+        nombre_oficial: b.nombre,
+        ra: b.posNow.ra,
+        dec: b.posNow.dec
+      });
+      return;
+    }
+  }
+  STATE.drag = { active: true, x: mx, y: my };
+});
+
+window.addEventListener("mouseup", () => {
+  STATE.drag.active = false;
+});
+
+hudCanvas.addEventListener("wheel", e => {
+  e.preventDefault();
+  const factor = e.deltaY > 0 ? 1.18 : 0.85;
+  STATE.cam.fov = Math.max(0.005, Math.min(5.0, STATE.cam.fov * factor));
+  if (STATE.aladinReady && STATE.aladin) {
+    try { STATE.aladin.setFoV(STATE.cam.fov * 2.2); } catch (_) {}
+  }
+}, { passive: false });
+
+function centerCamera(ra, dec, fov) {
+  STATE.cam = { ra, dec, fov };
+  if (STATE.aladinReady && STATE.aladin) {
+    try {
+      STATE.aladin.gotoRaDec(ra, dec);
+      STATE.aladin.setFoV(Math.max(fov * 2.2, 0.04));
+    } catch (_) {}
+  }
+}
+
+async function cargarRegionEspacial({ q = null, ra = null, dec = null, fov = null }) {
+  $("status-toast").textContent = "Cargando catálogo SPHEREx y Gaia DR3…";
+
+  const params = new URLSearchParams();
+  if (q) params.set("q", q);
+  if (ra != null && isFinite(ra)) params.set("ra", ra);
+  if (dec != null && isFinite(dec)) params.set("dec", dec);
+  if (fov != null && isFinite(fov)) params.set("fov", fov);
+
+  try {
+    let data = null;
+    if (!MODO_ESTATICO) {
+      const resp = await fetch(`api/timeline?${params.toString()}`);
+      const esJson = (resp.headers.get("content-type") || "").includes("application/json");
+      if (esJson) {
+        data = await resp.json();
+        if (!resp.ok) throw new Error(data.detail || `HTTP ${resp.status}`);
+      } else {
+        MODO_ESTATICO = true;   // No hay backend: el servidor devolvió HTML
+      }
+    }
+    if (MODO_ESTATICO) data = await cargarJsonEstatico(q);
+
+    STATE.data = data;
+    STATE.screenBodies = [];
+    STATE.mjdMin = data.rango_temporal_mjd.mjd_inicio;
+    STATE.mjdMaxBase = data.rango_temporal_mjd.mjd_fin_interpolado;
+    STATE.mjdCurrent = STATE.mjdMin;
+    STATE.selectedBandIdx = -1;
+
+    const esSimulado = Boolean(data.es_simulado || (data.meta?.origen_datos || "").includes("SIMULADO"));
+    $("sim-banner").hidden = !esSimulado;
+
+    document.querySelectorAll(".epoch-btn").forEach((btn, idx) => {
+      const ep = data.epochs[idx];
+      if (!ep) return;
+      const tipo = ep.tipo_medicion || (ep.es_extrapolado ? "extrapolada" : "observada_spherex");
+      const badge = tipo === "observada_spherex"
+        ? "Obs. SPHEREx"
+        : (tipo === "proyectada_gaia" ? "Proy. Gaia" : (tipo === "simulada" ? "Simulada" : "Extrapolada"));
+      btn.textContent = `${idx + 1}ª (${badge})`;
+    });
+
+    $("inp-ra").value = data.centro_campo.ra.toFixed(6);
+    $("inp-dec").value = data.centro_campo.dec.toFixed(6);
+    $("inp-fov").value = data.centro_campo.fov_deg;
+
+    const objCentral = data.ecuaciones_trayectoria.find(x => x.es_objetivo) || data.ecuaciones_trayectoria[0];
+    STATE.selectedObjectName = objCentral ? objCentral.nombre_oficial : null;
+
+    centerCamera(data.centro_campo.ra, data.centro_campo.dec, data.centro_campo.fov_deg);
+    buildBandButtons(data.meta?.bandas_disponibles || []);
+    selectMeasurementEpoch(0);
+    requestAnimationFrame(() => requestAnimationFrame(updateInspectorPanel));
+
+    document.querySelectorAll(".pill-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.dataset.target.toLowerCase() === (data.meta?.nombre_objetivo || "").toLowerCase());
+    });
+
+    $("status-toast").textContent = `${data.meta?.nombre_objetivo} · ${data.ecuaciones_trayectoria.length} cuerpos (${data.meta?.origen_datos})`;
+  } catch (err) {
+    $("status-toast").textContent = `Error: ${err.message}`;
+  }
+}
+
+$("search-form").addEventListener("submit", e => {
+  e.preventDefault();
+  $("suggestions").hidden = true;
+  const qVal = $("inp-query").value.trim();
+  const raVal = $("inp-ra").value.trim() ? Number($("inp-ra").value) : null;
+  const decVal = $("inp-dec").value.trim() ? Number($("inp-dec").value) : null;
+  const fovVal = $("inp-fov").value.trim() ? Number($("inp-fov").value) : 0.04;
+
+  if (qVal) {
+    cargarRegionEspacial({ q: qVal, fov: fovVal });
+  } else if (raVal != null && decVal != null) {
+    cargarRegionEspacial({ ra: raVal, dec: decVal, fov: fovVal });
+  }
+});
+
+document.querySelectorAll(".pill-btn").forEach(btn => {
+  btn.onclick = () => {
+    const target = btn.dataset.target;
+    $("inp-query").value = target;
+    cargarRegionEspacial({ q: target });
+  };
+});
+
+let suggestTimer = null;
+$("inp-query").addEventListener("input", () => {
+  clearTimeout(suggestTimer);
+  const val = $("inp-query").value.trim();
+  if (val.length < 2) {
+    $("suggestions").hidden = true;
+    return;
+  }
+  suggestTimer = setTimeout(async () => {
+    try {
+      let j;
+      if (MODO_ESTATICO) {
+        const t = val.toLowerCase();
+        j = { names: OBJETIVOS_ESTATICOS
+          .filter(o => o.nombre.toLowerCase().includes(t) || o.alias.some(a => a.includes(t)))
+          .map(o => o.nombre) };
+      } else {
+        const r = await fetch(`api/suggest?q=${encodeURIComponent(val)}`);
+        j = await r.json();
+      }
+      const ul = $("suggestions");
+      if (!j.names?.length) {
+        ul.hidden = true;
+        return;
+      }
+      ul.innerHTML = j.names.map(n => `<li><span>${n}</span><small>Seleccionar</small></li>`).join("");
+      ul.hidden = false;
+      ul.querySelectorAll("li").forEach(li => {
+        li.onmousedown = () => {
+          $("inp-query").value = li.firstChild.textContent;
+          ul.hidden = true;
+          cargarRegionEspacial({ q: $("inp-query").value });
+        };
+      });
+    } catch (_) {}
+  }, 200);
+});
+
+$("inp-query").addEventListener("blur", () => {
+  setTimeout(() => { $("suggestions").hidden = true; }, 150);
+});
+
+function startApp() {
+  requestAnimationFrame(renderLoop);
+  $("inp-query").value = "Barnard's Star";
+  cargarRegionEspacial({ q: "Barnard's Star" });
+}
+
+if (typeof A !== "undefined" && A.init) {
+  A.init.then(() => {
+    STATE.aladin = A.aladin("#aladin-map", {
+      survey: "P/allWISE/color",
+      fov: 0.09,
+      target: "269.452076 4.693365",
+      showCooGrid: false,
+      showControls: false,
+      showFrame: false,
+    });
+    STATE.aladinReady = true;
+    startApp();
+  }).catch(() => {
+    STATE.aladinReady = false;
+    startApp();
+  });
+} else {
+  STATE.aladinReady = false;
+  startApp();
+}
+</script>
+</body>
+</html>
