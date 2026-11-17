@@ -272,3 +272,8 @@ Comprueba que la ecuación de movimiento de Python y su espejo en JavaScript coi
 - Bibliotecas: Astropy, Astroquery, reproject, SEP, NumPy, SciPy, Matplotlib, Pillow, imageio, FastAPI.
 
 Proyecto desarrollado para el **NASA Space Apps Challenge 2026**.
+
+### Pendientes
+- Reordenar los archivos en una estructura más amena, una carpeta src para los scripts y una carpeta frontend para el deploy
+- Colocar un screenshot al README.md
+- Actualizar el nombre del repositorio a SpheriumX
