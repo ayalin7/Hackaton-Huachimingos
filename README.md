@@ -270,7 +270,7 @@ Comprueba que la ecuación de movimiento de Python y su espejo en JavaScript coi
 - **AllWISE** — NASA/IPAC; **DSS2** vía HiPS de CDS.
 - **SkyBoT** — IMCCE, Observatorio de París.
 - Bibliotecas: Astropy, Astroquery, reproject, SEP, NumPy, SciPy, Matplotlib, Pillow, imageio, FastAPI.
-
+Distribuido bajo la licencia [MIT](LICENSE).
 Proyecto desarrollado para el **NASA Space Apps Challenge 2026**.
 
 ### Pendientes
